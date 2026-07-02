@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Karla:wght@400;500;600;700&amp;family=Prata&amp;family=Archivo:wght@400;500;600;700;800&amp;family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#efede6;font-family:system-ui,sans-serif}
+.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(0,0,0,.08);scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 20px}
+.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#1a1a1a;color:#fff;border-radius:4px;text-decoration:none}
+.dv-tname{font:600 13px/1.2 system-ui,sans-serif;color:#1a1a1a}
+.dv-opts{display:flex;flex-wrap:wrap;gap:28px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:9px;scroll-margin-top:16px}
+.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#1a1a1a;border-radius:5px;text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 11px/1.3 system-ui,sans-serif;color:rgba(0,0,0,.55)}
+.dv-card{max-width:100%;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.06);overflow:hidden}
+.dv-opt:target .dv-oid{background:#2a78d6;color:#fff}
+.dv-next{margin:22px 0 0;font:12px/1.5 system-ui,sans-serif;color:rgba(0,0,0,.5)}
+</style>
+</helmet>
+
+<section class="dv-turn" id="t4">
+<div class="dv-thd"><a class="dv-tid" href="#t4">4</a><span class="dv-tname">Inner pages in the <a class="dv-oid" href="#3b">3b</a> system — light pages, dark footer, dive saved for home</span></div>
+<div class="dv-opts">
+
+<!-- ============ 4a : HOTELS LISTING ============ -->
+<div class="dv-opt" id="4a">
+<div class="dv-olabel"><a class="dv-oid" href="#4a">4a</a>Hotels — listing page with filters + "our take" rows</div>
+<div class="dv-card" style="width:1160px;background:linear-gradient(180deg, #f3f1e6 0%, #edf2ec 55%, #e2ece4 100%)">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 44px">
+    <div style="font-family:'Instrument Sans',sans-serif;font-weight:700;font-size:20px;color:#0d2f25;letter-spacing:-0.01em;white-space:nowrap">bal-harbour<span style="color:#b5975a">.com</span></div>
+    <div style="display:flex;gap:8px;font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:500;color:#0d2f25">
+      <span style="padding:9px 16px;border-radius:99px;background:#0d2f25;color:#eef2ec">Hotels</span>
+      <span style="padding:9px 16px;border-radius:99px">Eat &amp; drink</span>
+      <span style="padding:9px 16px;border-radius:99px">Shops</span>
+      <span style="padding:9px 16px;border-radius:99px">Beach</span>
+      <span style="padding:9px 16px;border-radius:99px">Real estate</span>
+    </div>
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;background:#0d2f25;color:#eef2ec;padding:11px 20px;border-radius:99px">Book a stay</div>
+  </div>
+
+  <div style="padding:44px 44px 8px;display:flex;flex-direction:column;gap:14px">
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.16em;color:#8a6f3c">STAY · SIX HOTELS, ZERO DUDS</div>
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:46px;line-height:1.08;font-weight:700;letter-spacing:-0.02em;color:#0d2f25;max-width:700px">Every hotel on the mile, <em style="font-family:'Instrument Serif',serif;font-weight:400;color:#b5975a">honestly rated.</em></div>
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.6;color:#4c5a50;max-width:560px">We've slept, swum and ordered room service in all of them. Rates come from our booking partners — booking through us costs you nothing extra.</div>
+  </div>
+
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:22px 44px 26px">
+    <div style="display:flex;gap:8px;font-family:'Instrument Sans',sans-serif;font-size:13.5px;font-weight:600;color:#0d2f25">
+      <span style="padding:8px 16px;border-radius:99px;background:#0d2f25;color:#eef2ec">All</span>
+      <span style="padding:8px 16px;border-radius:99px;background:rgba(255,255,255,0.8)">Oceanfront</span>
+      <span style="padding:8px 16px;border-radius:99px;background:rgba(255,255,255,0.8)">Adults-mostly</span>
+      <span style="padding:8px 16px;border-radius:99px;background:rgba(255,255,255,0.8)">Family</span>
+      <span style="padding:8px 16px;border-radius:99px;background:rgba(255,255,255,0.8)">Spa</span>
+      <span style="padding:8px 16px;border-radius:99px;background:rgba(255,255,255,0.8)">Pet-friendly</span>
+    </div>
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:13.5px;font-weight:500;color:#4c5a50;background:rgba(255,255,255,0.8);border-radius:99px;padding:8px 16px">Sort: our ranking ▾</div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:20px;padding:0 44px 48px">
+    <div style="display:grid;grid-template-columns:380px 1fr;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 6px 22px rgba(13,47,37,0.1)">
+      <div style="min-height:250px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);position:relative;display:flex;align-items:center;justify-content:center">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">photo 1/5: pool at sunrise</div>
+        <div style="position:absolute;top:14px;left:14px;background:#b5975a;color:#0d2f25;font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:700;border-radius:99px;padding:6px 12px">№1 our pick</div>
+        <div style="position:absolute;left:12px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.9);box-shadow:0 2px 8px rgba(13,47,37,0.2);display:flex;align-items:center;justify-content:center;font-family:'Instrument Sans',sans-serif;font-size:15px;color:#0d2f25">‹</div>
+        <div style="position:absolute;right:12px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.9);box-shadow:0 2px 8px rgba(13,47,37,0.2);display:flex;align-items:center;justify-content:center;font-family:'Instrument Sans',sans-serif;font-size:15px;color:#0d2f25">›</div>
+        <div style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px">
+          <div style="width:7px;height:7px;border-radius:50%;background:#eef2ec"></div>
+          <div style="width:7px;height:7px;border-radius:50%;background:rgba(238,242,236,0.45)"></div>
+          <div style="width:7px;height:7px;border-radius:50%;background:rgba(238,242,236,0.45)"></div>
+          <div style="width:7px;height:7px;border-radius:50%;background:rgba(238,242,236,0.45)"></div>
+          <div style="width:7px;height:7px;border-radius:50%;background:rgba(238,242,236,0.45)"></div>
+        </div>
+      </div>
+      <div style="padding:26px 30px;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:24px;font-weight:700;color:#0d2f25">The Grande Oceanfront</div>
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#4c5a50">★★★★★ · Oceanfront</div>
+        </div>
+        <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:17px;line-height:1.5;color:#22443a">“The sunrise pool is the whole point. Get there before 9, order the cortado, thank us later.”</div>
+        <div style="display:flex;gap:8px;font-family:'Instrument Sans',sans-serif;font-size:12.5px;font-weight:600;color:#22443a">
+          <span style="background:rgba(13,47,37,0.07);border-radius:99px;padding:6px 12px">Beach service</span>
+          <span style="background:rgba(13,47,37,0.07);border-radius:99px;padding:6px 12px">Spa</span>
+          <span style="background:rgba(13,47,37,0.07);border-radius:99px;padding:6px 12px">Kids club</span>
+          <span style="background:rgba(13,47,37,0.07);border-radius:99px;padding:6px 12px">Valet</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:10px;border-top:1px solid rgba(13,47,37,0.1)">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:15px;color:#0d2f25">from <strong style="font-size:19px">$890</strong>/night</div>
+          <div style="display:flex;gap:10px">
+            <div style="font-family:'Instrument Sans',sans-serif;font-size:13.5px;font-weight:600;color:#0d2f25;border:1.5px solid rgba(13,47,37,0.3);border-radius:99px;padding:10px 18px">Full review</div>
+            <div style="font-family:'Instrument Sans',sans-serif;font-size:13.5px;font-weight:600;background:#b5975a;color:#0d2f25;border-radius:99px;padding:10px 20px">Check rates ↗</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:380px 1fr;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 6px 22px rgba(13,47,37,0.1)">
+      <div style="min-height:250px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);position:relative;display:flex;align-items:center;justify-content:center">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">photo 1/4: family cabana</div>
+        <div style="position:absolute;top:14px;left:14px;background:#eef2ec;color:#0d2f25;font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:700;border-radius:99px;padding:6px 12px">№2 · best for families</div>
+        <div style="position:absolute;left:12px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.9);box-shadow:0 2px 8px rgba(13,47,37,0.2);display:flex;align-items:center;justify-content:center;font-family:'Instrument Sans',sans-serif;font-size:15px;color:#0d2f25">‹</div>
+        <div style="position:absolute;right:12px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.9);box-shadow:0 2px 8px rgba(13,47,37,0.2);display:flex;align-items:center;justify-content:center;font-family:'Instrument Sans',sans-serif;font-size:15px;color:#0d2f25">›</div>
+        <div style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px">
+          <div style="width:7px;height:7px;border-radius:50%;background:#eef2ec"></div>
+          <div style="width:7px;height:7px;border-radius:50%;background:rgba(238,242,236,0.45)"></div>
+          <div style="width:7px;height:7px;border-radius:50%;background:rgba(238,242,236,0.45)"></div>
+          <div style="width:7px;height:7px;border-radius:50%;background:rgba(238,242,236,0.45)"></div>
+        </div>
+      </div>
+      <div style="padding:26px 30px;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:24px;font-weight:700;color:#0d2f25">Casa Palma Resort</div>
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#4c5a50">★★★★☆ · Oceanfront</div>
+        </div>
+        <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:17px;line-height:1.5;color:#22443a">“Kids cannonballing at one pool, adults pretending not to hear them at the other. Everybody wins.”</div>
+        <div style="display:flex;gap:8px;font-family:'Instrument Sans',sans-serif;font-size:12.5px;font-weight:600;color:#22443a">
+          <span style="background:rgba(13,47,37,0.07);border-radius:99px;padding:6px 12px">Two pools</span>
+          <span style="background:rgba(13,47,37,0.07);border-radius:99px;padding:6px 12px">Kids club</span>
+          <span style="background:rgba(13,47,37,0.07);border-radius:99px;padding:6px 12px">Ceviche cart</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:10px;border-top:1px solid rgba(13,47,37,0.1)">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:15px;color:#0d2f25">from <strong style="font-size:19px">$640</strong>/night</div>
+          <div style="display:flex;gap:10px">
+            <div style="font-family:'Instrument Sans',sans-serif;font-size:13.5px;font-weight:600;color:#0d2f25;border:1.5px solid rgba(13,47,37,0.3);border-radius:99px;padding:10px 18px">Full review</div>
+            <div style="font-family:'Instrument Sans',sans-serif;font-size:13.5px;font-weight:600;background:#b5975a;color:#0d2f25;border-radius:99px;padding:10px 20px">Check rates ↗</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:380px 1fr;background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 6px 22px rgba(13,47,37,0.1)">
+      <div style="min-height:250px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);position:relative;display:flex;align-items:center;justify-content:center">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">photo 1/4: bar at dusk</div>
+        <div style="position:absolute;top:14px;left:14px;background:#eef2ec;color:#0d2f25;font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:700;border-radius:99px;padding:6px 12px">№3 · adults-mostly</div>
+        <div style="position:absolute;left:12px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.9);box-shadow:0 2px 8px rgba(13,47,37,0.2);display:flex;align-items:center;justify-content:center;font-family:'Instrument Sans',sans-serif;font-size:15px;color:#0d2f25">‹</div>
+        <div style="position:absolute;right:12px;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.9);box-shadow:0 2px 8px rgba(13,47,37,0.2);display:flex;align-items:center;justify-content:center;font-family:'Instrument Sans',sans-serif;font-size:15px;color:#0d2f25">›</div>
+        <div style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px">
+          <div style="width:7px;height:7px;border-radius:50%;background:#eef2ec"></div>
+          <div style="width:7px;height:7px;border-radius:50%;background:rgba(238,242,236,0.45)"></div>
+          <div style="width:7px;height:7px;border-radius:50%;background:rgba(238,242,236,0.45)"></div>
+          <div style="width:7px;height:7px;border-radius:50%;background:rgba(238,242,236,0.45)"></div>
+        </div>
+      </div>
+      <div style="padding:26px 30px;display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:24px;font-weight:700;color:#0d2f25">The Salt House</div>
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#4c5a50">★★★★★ · Boutique</div>
+        </div>
+        <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:17px;line-height:1.5;color:#22443a">“Thirty rooms, one perfect negroni, and a lobby that smells like money and limes.”</div>
+        <div style="display:flex;gap:8px;font-family:'Instrument Sans',sans-serif;font-size:12.5px;font-weight:600;color:#22443a">
+          <span style="background:rgba(13,47,37,0.07);border-radius:99px;padding:6px 12px">Rooftop bar</span>
+          <span style="background:rgba(13,47,37,0.07);border-radius:99px;padding:6px 12px">Spa</span>
+          <span style="background:rgba(13,47,37,0.07);border-radius:99px;padding:6px 12px">Pet-friendly</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:10px;border-top:1px solid rgba(13,47,37,0.1)">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:15px;color:#0d2f25">from <strong style="font-size:19px">$720</strong>/night</div>
+          <div style="display:flex;gap:10px">
+            <div style="font-family:'Instrument Sans',sans-serif;font-size:13.5px;font-weight:600;color:#0d2f25;border:1.5px solid rgba(13,47,37,0.3);border-radius:99px;padding:10px 18px">Full review</div>
+            <div style="font-family:'Instrument Sans',sans-serif;font-size:13.5px;font-weight:600;background:#b5975a;color:#0d2f25;border-radius:99px;padding:10px 20px">Check rates ↗</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:12.5px;color:#7d8378;text-align:center;padding-top:6px">We may earn a commission when you book through links on this page. Rankings are ours alone.</div>
+  </div>
+
+  <div style="background:linear-gradient(180deg, #16453a 0%, #0b2a21 100%);padding:34px 44px;display:flex;flex-direction:column;gap:22px">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div style="font-family:'Instrument Sans',sans-serif;font-weight:700;font-size:18px;color:#eef2ec">bal-harbour<span style="color:#d8c493">.com</span></div>
+      <div style="display:flex;gap:24px;font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:500;color:rgba(238,242,236,0.75)"><span>Hotels</span><span>Eat &amp; drink</span><span>Shops</span><span>Beach</span><span>Real estate</span><span>About</span></div>
+    </div>
+    <div style="display:flex;justify-content:space-between;font-family:'Instrument Sans',sans-serif;font-size:12px;color:rgba(238,242,236,0.5);border-top:1px solid rgba(238,242,236,0.15);padding-top:18px">
+      <div>© 2026 bal-harbour.com · an independent local guide</div>
+      <div>Some links earn us a commission — it keeps the sunscreen stocked</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ============ 4b : DINING GUIDE ============ -->
+<div class="dv-opt" id="4b">
+<div class="dv-olabel"><a class="dv-oid" href="#4b">4b</a>Dining — featured table + grid, map strip</div>
+<div class="dv-card" style="width:1160px;background:linear-gradient(180deg, #f3f1e6 0%, #edf2ec 55%, #e2ece4 100%)">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 44px">
+    <div style="font-family:'Instrument Sans',sans-serif;font-weight:700;font-size:20px;color:#0d2f25;letter-spacing:-0.01em;white-space:nowrap">bal-harbour<span style="color:#b5975a">.com</span></div>
+    <div style="display:flex;gap:8px;font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:500;color:#0d2f25">
+      <span style="padding:9px 16px;border-radius:99px">Hotels</span>
+      <span style="padding:9px 16px;border-radius:99px;background:#0d2f25;color:#eef2ec">Eat &amp; drink</span>
+      <span style="padding:9px 16px;border-radius:99px">Shops</span>
+      <span style="padding:9px 16px;border-radius:99px">Beach</span>
+      <span style="padding:9px 16px;border-radius:99px">Real estate</span>
+    </div>
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;background:#0d2f25;color:#eef2ec;padding:11px 20px;border-radius:99px">Book a stay</div>
+  </div>
+
+  <div style="padding:44px 44px 8px;display:flex;flex-direction:column;gap:14px">
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.16em;color:#8a6f3c">EAT &amp; DRINK · UPDATED WEEKLY</div>
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:46px;line-height:1.08;font-weight:700;letter-spacing:-0.02em;color:#0d2f25;max-width:720px">14 tables <em style="font-family:'Instrument Serif',serif;font-weight:400;color:#b5975a">we actually love.</em></div>
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.6;color:#4c5a50;max-width:560px">No pay-to-play. If it's on this list, we've paid the bill ourselves at least twice.</div>
+  </div>
+
+  <div style="display:flex;gap:8px;padding:22px 44px 26px;font-family:'Instrument Sans',sans-serif;font-size:13.5px;font-weight:600;color:#0d2f25">
+    <span style="padding:8px 16px;border-radius:99px;background:#0d2f25;color:#eef2ec">All</span>
+    <span style="padding:8px 16px;border-radius:99px;background:rgba(255,255,255,0.8)">Breakfast</span>
+    <span style="padding:8px 16px;border-radius:99px;background:rgba(255,255,255,0.8)">Long lunch</span>
+    <span style="padding:8px 16px;border-radius:99px;background:rgba(255,255,255,0.8)">Date night</span>
+    <span style="padding:8px 16px;border-radius:99px;background:rgba(255,255,255,0.8)">Drinks</span>
+    <span style="padding:8px 16px;border-radius:99px;background:rgba(255,255,255,0.8)">On the water</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:22px;padding:0 44px">
+    <div style="background:#0d2f25;border-radius:24px;overflow:hidden;position:relative;min-height:420px">
+      <div style="position:absolute;inset:0;background:repeating-linear-gradient(45deg,#123a2e 0 12px,#16443a 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:rgba(238,242,236,0.6)">photo: terrace table, golden hour</div></div>
+      <div style="position:absolute;left:0;right:0;bottom:0;padding:110px 30px 26px;background:linear-gradient(180deg, rgba(11,42,33,0) 0%, rgba(11,42,33,0.92) 70%);display:flex;flex-direction:column;gap:8px">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.16em;color:#d8c493">TABLE OF THE MONTH</div>
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:30px;font-weight:700;color:#eef2ec">Marisma <span style="font-size:16px;font-weight:500;color:rgba(238,242,236,0.7)">· coastal Spanish · $$$$</span></div>
+        <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:17px;line-height:1.5;color:rgba(238,242,236,0.85)">“Order the whole fish and the cheapest sherry. Sit outside. Cancel your evening.”</div>
+        <div style="display:flex;gap:10px;margin-top:8px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;background:#b5975a;color:#0d2f25;border-radius:99px;padding:9px 18px">Reserve ↗</div>
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;color:#eef2ec;border:1.5px solid rgba(238,242,236,0.4);border-radius:99px;padding:9px 18px">Read the review</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:22px">
+      <div style="background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 6px 22px rgba(13,47,37,0.08);flex:1;display:flex;flex-direction:column">
+        <div style="height:120px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#7d8378">photo: pastries</div></div>
+        <div style="padding:16px 20px 18px;display:flex;flex-direction:column;gap:5px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:18px;font-weight:700;color:#0d2f25">Café Palmier <span style="font-size:13px;font-weight:500;color:#7d8378">· breakfast · $$</span></div>
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13.5px;line-height:1.5;color:#5c6058">The croissant that makes the valet line worth it.</div>
+        </div>
+      </div>
+      <div style="background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 6px 22px rgba(13,47,37,0.08);flex:1;display:flex;flex-direction:column">
+        <div style="height:120px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#7d8378">photo: raw bar</div></div>
+        <div style="padding:16px 20px 18px;display:flex;flex-direction:column;gap:5px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:18px;font-weight:700;color:#0d2f25">Inlet Oyster Club <span style="font-size:13px;font-weight:500;color:#7d8378">· drinks · $$$</span></div>
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13.5px;line-height:1.5;color:#5c6058">Happy hour with actual happiness, 4–6 daily.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:22px 44px 48px">
+    <div style="background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 6px 22px rgba(13,47,37,0.08)">
+      <div style="height:140px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#7d8378">photo: pasta</div></div>
+      <div style="padding:16px 20px 18px;display:flex;flex-direction:column;gap:5px">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:18px;font-weight:700;color:#0d2f25">Osteria del Faro <span style="font-size:13px;font-weight:500;color:#7d8378">· date night · $$$$</span></div>
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:13.5px;line-height:1.5;color:#5c6058">Candlelight, cacio e pepe, and a wine list that flirts back.</div>
+      </div>
+    </div>
+    <div style="background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 6px 22px rgba(13,47,37,0.08)">
+      <div style="height:140px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#7d8378">photo: beach picnic</div></div>
+      <div style="padding:16px 20px 18px;display:flex;flex-direction:column;gap:5px">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:18px;font-weight:700;color:#0d2f25">The Sandbar Kiosk <span style="font-size:13px;font-weight:500;color:#7d8378">· lunch · $</span></div>
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:13.5px;line-height:1.5;color:#5c6058">A $9 fish sandwich in a $9M zip code. Balance.</div>
+      </div>
+    </div>
+    <div style="background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 6px 22px rgba(13,47,37,0.08)">
+      <div style="height:140px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#7d8378">photo: rooftop bar</div></div>
+      <div style="padding:16px 20px 18px;display:flex;flex-direction:column;gap:5px">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:18px;font-weight:700;color:#0d2f25">Altamar Rooftop <span style="font-size:13px;font-weight:500;color:#7d8378">· drinks · $$$</span></div>
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:13.5px;line-height:1.5;color:#5c6058">Sunset over the inlet, negroni in hand. The 3b of bars.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin:0 44px 48px;height:190px;border-radius:24px;background:repeating-linear-gradient(45deg,#d5dfd3 0 12px,#dfe7dc 12px 24px);display:flex;align-items:center;justify-content:center;position:relative">
+    <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">map: the village with all 14 pins</div>
+    <div style="position:absolute;right:20px;bottom:20px;font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;background:#0d2f25;color:#eef2ec;border-radius:99px;padding:10px 18px">Open the map</div>
+  </div>
+
+  <div style="background:linear-gradient(180deg, #16453a 0%, #0b2a21 100%);padding:34px 44px;display:flex;flex-direction:column;gap:22px">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div style="font-family:'Instrument Sans',sans-serif;font-weight:700;font-size:18px;color:#eef2ec">bal-harbour<span style="color:#d8c493">.com</span></div>
+      <div style="display:flex;gap:24px;font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:500;color:rgba(238,242,236,0.75)"><span>Hotels</span><span>Eat &amp; drink</span><span>Shops</span><span>Beach</span><span>Real estate</span><span>About</span></div>
+    </div>
+    <div style="display:flex;justify-content:space-between;font-family:'Instrument Sans',sans-serif;font-size:12px;color:rgba(238,242,236,0.5);border-top:1px solid rgba(238,242,236,0.15);padding-top:18px">
+      <div>© 2026 bal-harbour.com · an independent local guide</div>
+      <div>Some links earn us a commission — it keeps the sunscreen stocked</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ============ 4c : REAL ESTATE LEAD FORM ============ -->
+<div class="dv-opt" id="4c">
+<div class="dv-olabel"><a class="dv-oid" href="#4c">4c</a>Real estate — lead form, dark pitch panel + light form</div>
+<div class="dv-card" style="width:1160px;background:linear-gradient(180deg, #f3f1e6 0%, #e9efe7 60%, #dfe9e1 100%)">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 44px">
+    <div style="font-family:'Instrument Sans',sans-serif;font-weight:700;font-size:20px;color:#0d2f25;letter-spacing:-0.01em;white-space:nowrap">bal-harbour<span style="color:#b5975a">.com</span></div>
+    <div style="display:flex;gap:8px;font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:500;color:#0d2f25">
+      <span style="padding:9px 16px;border-radius:99px">Hotels</span>
+      <span style="padding:9px 16px;border-radius:99px">Eat &amp; drink</span>
+      <span style="padding:9px 16px;border-radius:99px">Shops</span>
+      <span style="padding:9px 16px;border-radius:99px">Beach</span>
+      <span style="padding:9px 16px;border-radius:99px;background:#0d2f25;color:#eef2ec">Real estate</span>
+    </div>
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;background:#0d2f25;color:#eef2ec;padding:11px 20px;border-radius:99px">Book a stay</div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:28px;padding:26px 44px 56px;align-items:stretch">
+    <div style="background:linear-gradient(165deg, #0b2a21 0%, #12463a 55%, #1e6350 100%);border-radius:28px;padding:46px 42px;display:flex;flex-direction:column;gap:22px;position:relative;overflow:hidden">
+      <div style="position:absolute;top:-130px;right:-60px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle, rgba(216,196,147,0.25) 0%, rgba(216,196,147,0) 70%)"></div>
+      <div style="position:relative;font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.18em;color:#d8c493">LIVE HERE</div>
+      <div style="position:relative;font-family:'Instrument Sans',sans-serif;font-size:40px;line-height:1.12;font-weight:700;letter-spacing:-0.01em;color:#eef2ec">Make the vacation <em style="font-family:'Instrument Serif',serif;font-weight:400;color:#d8c493">permanent.</em></div>
+      <div style="position:relative;font-family:'Instrument Sans',sans-serif;font-size:15.5px;line-height:1.65;color:rgba(238,242,236,0.78)">Tell us what you're dreaming about — a condo over the marina, a family place near the school, a quiet pied-à-terre — and we'll introduce you to a Bal Harbour agent we personally trust. One intro, no spam, no obligation.</div>
+      <div style="position:relative;display:flex;flex-direction:column;gap:14px;margin-top:6px">
+        <div style="display:flex;gap:12px;align-items:baseline"><div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:20px;color:#d8c493">01</div><div style="font-family:'Instrument Sans',sans-serif;font-size:14.5px;color:rgba(238,242,236,0.85)">You tell us what you're after (2 minutes)</div></div>
+        <div style="display:flex;gap:12px;align-items:baseline"><div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:20px;color:#d8c493">02</div><div style="font-family:'Instrument Sans',sans-serif;font-size:14.5px;color:rgba(238,242,236,0.85)">We match you with one local agent — not a list</div></div>
+        <div style="display:flex;gap:12px;align-items:baseline"><div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:20px;color:#d8c493">03</div><div style="font-family:'Instrument Sans',sans-serif;font-size:14.5px;color:rgba(238,242,236,0.85)">They call you. If it's not a fit, tell us and we'll rematch</div></div>
+      </div>
+      <div style="position:relative;margin-top:auto;height:150px;border-radius:18px;background:repeating-linear-gradient(45deg,#123a2e 0 12px,#16443a 12px 24px);display:flex;align-items:center;justify-content:center;border:1px solid rgba(238,242,236,0.15)"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:rgba(238,242,236,0.6)">photo: marina at dusk</div></div>
+    </div>
+
+    <div style="background:#fff;border-radius:28px;padding:42px;box-shadow:0 10px 32px rgba(13,47,37,0.12);display:flex;flex-direction:column;gap:20px">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:22px;font-weight:700;color:#0d2f25">Get your intro</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;color:#22443a">First name</div>
+          <div style="border:1.5px solid rgba(13,47,37,0.18);border-radius:14px;padding:13px 16px;font-family:'Instrument Sans',sans-serif;font-size:14.5px;color:#9aa39c">Grace</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;color:#22443a">Email</div>
+          <div style="border:1.5px solid rgba(13,47,37,0.18);border-radius:14px;padding:13px 16px;font-family:'Instrument Sans',sans-serif;font-size:14.5px;color:#9aa39c">grace@…</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;color:#22443a">I'm looking to</div>
+        <div style="display:flex;gap:8px;font-family:'Instrument Sans',sans-serif;font-size:13.5px;font-weight:600">
+          <span style="padding:10px 20px;border-radius:99px;background:#0d2f25;color:#eef2ec">Buy</span>
+          <span style="padding:10px 20px;border-radius:99px;border:1.5px solid rgba(13,47,37,0.2);color:#0d2f25">Rent</span>
+          <span style="padding:10px 20px;border-radius:99px;border:1.5px solid rgba(13,47,37,0.2);color:#0d2f25">Sell</span>
+          <span style="padding:10px 20px;border-radius:99px;border:1.5px solid rgba(13,47,37,0.2);color:#0d2f25">Just curious</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;color:#22443a">Budget</div>
+          <div style="border:1.5px solid rgba(13,47,37,0.18);border-radius:14px;padding:13px 16px;font-family:'Instrument Sans',sans-serif;font-size:14.5px;color:#0d2f25;display:flex;justify-content:space-between"><span>$2M – $5M</span><span style="color:#9aa39c">▾</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:7px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;color:#22443a">Timeline</div>
+          <div style="border:1.5px solid rgba(13,47,37,0.18);border-radius:14px;padding:13px 16px;font-family:'Instrument Sans',sans-serif;font-size:14.5px;color:#0d2f25;display:flex;justify-content:space-between"><span>Within a year</span><span style="color:#9aa39c">▾</span></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:7px">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;color:#22443a">The dream, in a sentence <span style="font-weight:400;color:#9aa39c">(optional)</span></div>
+        <div style="border:1.5px solid rgba(13,47,37,0.18);border-radius:14px;padding:13px 16px;font-family:'Instrument Sans',sans-serif;font-size:14.5px;color:#9aa39c;min-height:64px">Ocean view, morning light, room for the dog…</div>
+      </div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:15px;font-weight:700;background:#b5975a;color:#0d2f25;border-radius:99px;padding:15px;text-align:center">Introduce me to my agent</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:12px;line-height:1.55;color:#9aa39c;text-align:center">We're paid a referral fee by the agent if you transact — never by you. Your details go to one agent, once, and nowhere else.</div>
+    </div>
+  </div>
+
+  <div style="background:linear-gradient(180deg, #16453a 0%, #0b2a21 100%);padding:34px 44px;display:flex;flex-direction:column;gap:22px">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <div style="font-family:'Instrument Sans',sans-serif;font-weight:700;font-size:18px;color:#eef2ec">bal-harbour<span style="color:#d8c493">.com</span></div>
+      <div style="display:flex;gap:24px;font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:500;color:rgba(238,242,236,0.75)"><span>Hotels</span><span>Eat &amp; drink</span><span>Shops</span><span>Beach</span><span>Real estate</span><span>About</span></div>
+    </div>
+    <div style="display:flex;justify-content:space-between;font-family:'Instrument Sans',sans-serif;font-size:12px;color:rgba(238,242,236,0.5);border-top:1px solid rgba(238,242,236,0.15);padding-top:18px">
+      <div>© 2026 bal-harbour.com · an independent local guide</div>
+      <div>Some links earn us a commission — it keeps the sunscreen stocked</div>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">Try next: "swap in real photos" · "tighten the hotel rows in <a class="dv-oid" href="#4a">4a</a>" · "package a developer handoff for Next.js"</p>
+</section>
+
+<section class="dv-turn" id="t3">
+<div class="dv-thd"><a class="dv-tid" href="#t3">3</a><span class="dv-tname">Full page from <a class="dv-oid" href="#2c">2c</a> — the gradient carried through every section, two intensities</span></div>
+<div class="dv-opts">
+
+<!-- ============ 3a : DAYLIGHT WASH ============ -->
+<div class="dv-opt" id="3a">
+<div class="dv-olabel"><a class="dv-oid" href="#3a">3a</a>Daylight wash — one continuous light gradient, dusk returns in the bands</div>
+<div class="dv-card" style="width:1160px;background:linear-gradient(180deg, #f3f1e6 0%, #edf2ec 30%, #e2ece4 62%, #d5e5da 100%);position:relative;overflow:hidden">
+
+  <div style="position:absolute;top:36px;left:50%;transform:translateX(-50%);width:560px;height:560px;border-radius:50%;background:radial-gradient(circle, rgba(216,182,110,0.5) 0%, rgba(216,182,110,0.22) 45%, rgba(216,182,110,0) 70%)"></div>
+  <div style="position:absolute;top:1150px;left:-160px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle, rgba(127,168,146,0.28) 0%, rgba(127,168,146,0) 70%)"></div>
+
+  <div style="position:relative;display:flex;align-items:center;justify-content:space-between;padding:20px 44px">
+    <div style="font-family:'Instrument Sans',sans-serif;font-weight:700;font-size:20px;color:#0d2f25;letter-spacing:-0.01em;white-space:nowrap">bal-harbour<span style="color:#b5975a">.com</span></div>
+    <div style="display:flex;gap:8px;font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:500;color:#0d2f25">
+      <span style="padding:9px 16px;border-radius:99px;background:rgba(255,255,255,0.7)">Hotels</span>
+      <span style="padding:9px 16px;border-radius:99px">Eat &amp; drink</span>
+      <span style="padding:9px 16px;border-radius:99px">Shops</span>
+      <span style="padding:9px 16px;border-radius:99px">Beach</span>
+      <span style="padding:9px 16px;border-radius:99px">Real estate</span>
+    </div>
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;background:#0d2f25;color:#eef2ec;padding:11px 20px;border-radius:99px">Book a stay</div>
+  </div>
+
+  <div style="position:relative;margin:26px 44px 0;background:linear-gradient(160deg, #0b2a21 0%, #12463a 52%, #1e6350 100%);border-radius:28px;overflow:hidden">
+    <div style="position:absolute;top:-120px;right:24%;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle, rgba(216,196,147,0.28) 0%, rgba(216,196,147,0) 70%)"></div>
+    <div style="position:relative;padding:70px 56px 190px;display:flex;flex-direction:column;gap:20px;max-width:520px">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.16em;color:#d8c493">BAL HARBOUR, FLORIDA</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:54px;line-height:1.08;font-weight:700;letter-spacing:-0.02em;color:#eef2ec">Sun's out. We know <em style="font-family:'Instrument Serif',serif;font-weight:400;color:#d8c493">the good spots.</em></div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.6;color:rgba(238,242,236,0.75);max-width:460px">A friendly local guide to the fanciest little village in Florida — where to stay, eat, shop and float.</div>
+    </div>
+    <div style="position:absolute;right:0;top:0;bottom:0;width:38%;background:repeating-linear-gradient(45deg,#123a2e 0 12px,#16443a 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:rgba(238,242,236,0.65)">photo: palms + surf</div></div>
+    <div style="position:absolute;left:56px;right:calc(38% + 40px);bottom:48px;display:flex;align-items:center;gap:10px;background:#eef2ec;border-radius:99px;padding:10px 10px 10px 24px;box-shadow:0 12px 32px rgba(0,0,0,0.25)">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:15px;color:#7d8378;flex:1">Try “rooftop dinner”…</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;background:#b5975a;color:#0d2f25;border-radius:99px;padding:11px 22px">Search</div>
+    </div>
+  </div>
+
+  <div style="position:relative;display:flex;align-items:baseline;justify-content:space-between;padding:56px 44px 22px">
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:30px;font-weight:700;letter-spacing:-0.01em;color:#0d2f25">Stay somewhere <em style="font-family:'Instrument Serif',serif;font-weight:400;color:#b5975a">lovely</em></div>
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;color:#0d2f25;border-bottom:2px solid #b5975a;padding-bottom:2px">See all six hotels</div>
+  </div>
+  <div style="position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:0 44px 56px">
+    <div style="background:rgba(255,255,255,0.88);border-radius:22px;overflow:hidden;box-shadow:0 2px 10px rgba(13,47,37,0.06)">
+      <div style="height:170px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">photo: pool terrace</div></div>
+      <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:7px">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:19px;font-weight:700;color:#0d2f25">The Grande Oceanfront</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#0d2f25">from <strong>$890</strong>/nt</div>
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;background:rgba(181,151,90,0.18);color:#8a6f3c;border-radius:99px;padding:8px 16px">Check rates</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.88);border-radius:22px;overflow:hidden;box-shadow:0 2px 10px rgba(13,47,37,0.06)">
+      <div style="height:170px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">photo: suite, ocean view</div></div>
+      <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:7px">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:19px;font-weight:700;color:#0d2f25">Casa Palma Resort</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#0d2f25">from <strong>$640</strong>/nt</div>
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;background:rgba(181,151,90,0.18);color:#8a6f3c;border-radius:99px;padding:8px 16px">Check rates</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.88);border-radius:22px;overflow:hidden;box-shadow:0 2px 10px rgba(13,47,37,0.06)">
+      <div style="height:170px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">photo: beach cabanas</div></div>
+      <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:7px">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:19px;font-weight:700;color:#0d2f25">The Salt House</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#0d2f25">from <strong>$720</strong>/nt</div>
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;background:rgba(181,151,90,0.18);color:#8a6f3c;border-radius:99px;padding:8px 16px">Check rates</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:0 44px 56px">
+    <div style="background:rgba(255,255,255,0.6);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:6px">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:17px;font-weight:700;color:#0d2f25">Eat &amp; drink</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#5c6058">14 tables we love →</div>
+    </div>
+    <div style="background:rgba(255,255,255,0.6);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:6px">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:17px;font-weight:700;color:#0d2f25">The Shops</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#5c6058">Window-shop like a pro →</div>
+    </div>
+    <div style="background:rgba(255,255,255,0.6);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:6px">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:17px;font-weight:700;color:#0d2f25">Beach days</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#5c6058">Cabanas, paths, tides →</div>
+    </div>
+    <div style="background:linear-gradient(135deg,#c3a366 0%,#b5975a 100%);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:6px">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:17px;font-weight:700;color:#0d2f25">Move here</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#3c3524">Talk to a real agent →</div>
+    </div>
+  </div>
+
+  <div style="position:relative;margin:0 44px 56px;background:linear-gradient(160deg, #0b2a21 0%, #12463a 52%, #1e6350 100%);border-radius:28px;overflow:hidden;display:grid;grid-template-columns:1.2fr 1fr">
+    <div style="position:absolute;top:-140px;left:18%;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle, rgba(216,196,147,0.24) 0%, rgba(216,196,147,0) 70%)"></div>
+    <div style="position:relative;padding:52px 56px;display:flex;flex-direction:column;gap:14px;justify-content:center">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.18em;color:#d8c493">REAL ESTATE</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:34px;line-height:1.15;font-weight:700;letter-spacing:-0.01em;color:#eef2ec">What if the vacation just <em style="font-family:'Instrument Serif',serif;font-weight:400;color:#d8c493">didn't end?</em></div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.6;color:rgba(238,242,236,0.75);max-width:420px">Tell us what you're dreaming about and we'll introduce you to a local agent we'd send our own parents to.</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;background:#b5975a;color:#0d2f25;border-radius:99px;padding:12px 24px;align-self:flex-start;margin-top:6px">Get matched</div>
+    </div>
+    <div style="min-height:280px;background:repeating-linear-gradient(45deg,#123a2e 0 12px,#16443a 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:rgba(238,242,236,0.65)">photo: condo terrace</div></div>
+  </div>
+
+  <div style="position:relative;display:flex;justify-content:space-between;padding:22px 44px;border-top:1px solid rgba(13,47,37,0.15);font-family:'Instrument Sans',sans-serif;font-size:12.5px;color:#4c5a50">
+    <div>© 2026 bal-harbour.com · an independent local guide</div>
+    <div>Some links earn us a commission — it keeps the sunscreen stocked</div>
+  </div>
+</div>
+</div>
+
+<!-- ============ 3b : SUNSET DIVE ============ -->
+<div class="dv-opt" id="3b">
+<div class="dv-olabel"><a class="dv-oid" href="#3b">3b</a>Sunset dive — page darkens into deep palm by the footer, bolder</div>
+<div class="dv-card" style="width:1160px;background:linear-gradient(180deg, #f3f1e6 0%, #e9efe7 26%, #cfe0d3 48%, #5f8a75 72%, #16453a 88%, #0b2a21 100%);position:relative;overflow:hidden">
+
+  <div style="position:absolute;top:36px;left:50%;transform:translateX(-50%);width:560px;height:560px;border-radius:50%;background:radial-gradient(circle, rgba(216,182,110,0.5) 0%, rgba(216,182,110,0.22) 45%, rgba(216,182,110,0) 70%)"></div>
+  <div style="position:absolute;top:1420px;right:-140px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle, rgba(216,196,147,0.18) 0%, rgba(216,196,147,0) 70%)"></div>
+
+  <div style="position:relative;display:flex;align-items:center;justify-content:space-between;padding:20px 44px">
+    <div style="font-family:'Instrument Sans',sans-serif;font-weight:700;font-size:20px;color:#0d2f25;letter-spacing:-0.01em;white-space:nowrap">bal-harbour<span style="color:#b5975a">.com</span></div>
+    <div style="display:flex;gap:8px;font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:500;color:#0d2f25">
+      <span style="padding:9px 16px;border-radius:99px;background:rgba(255,255,255,0.7)">Hotels</span>
+      <span style="padding:9px 16px;border-radius:99px">Eat &amp; drink</span>
+      <span style="padding:9px 16px;border-radius:99px">Shops</span>
+      <span style="padding:9px 16px;border-radius:99px">Beach</span>
+      <span style="padding:9px 16px;border-radius:99px">Real estate</span>
+    </div>
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;background:#0d2f25;color:#eef2ec;padding:11px 20px;border-radius:99px">Book a stay</div>
+  </div>
+
+  <div style="position:relative;margin:26px 44px 0;background:linear-gradient(160deg, #0b2a21 0%, #12463a 52%, #1e6350 100%);border-radius:28px;overflow:hidden">
+    <div style="position:absolute;top:-120px;right:24%;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle, rgba(216,196,147,0.28) 0%, rgba(216,196,147,0) 70%)"></div>
+    <div style="position:relative;padding:70px 56px 190px;display:flex;flex-direction:column;gap:20px;max-width:520px">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.16em;color:#d8c493">BAL HARBOUR, FLORIDA</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:54px;line-height:1.08;font-weight:700;letter-spacing:-0.02em;color:#eef2ec">Sun's out. We know <em style="font-family:'Instrument Serif',serif;font-weight:400;color:#d8c493">the good spots.</em></div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.6;color:rgba(238,242,236,0.75);max-width:460px">A friendly local guide to the fanciest little village in Florida — where to stay, eat, shop and float.</div>
+    </div>
+    <div style="position:absolute;right:0;top:0;bottom:0;width:38%;background:repeating-linear-gradient(45deg,#123a2e 0 12px,#16443a 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:rgba(238,242,236,0.65)">photo: palms + surf</div></div>
+    <div style="position:absolute;left:56px;right:calc(38% + 40px);bottom:48px;display:flex;align-items:center;gap:10px;background:#eef2ec;border-radius:99px;padding:10px 10px 10px 24px;box-shadow:0 12px 32px rgba(0,0,0,0.25)">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:15px;color:#7d8378;flex:1">Try “rooftop dinner”…</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;background:#b5975a;color:#0d2f25;border-radius:99px;padding:11px 22px">Search</div>
+    </div>
+  </div>
+
+  <div style="position:relative;display:flex;align-items:baseline;justify-content:space-between;padding:56px 44px 22px">
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:30px;font-weight:700;letter-spacing:-0.01em;color:#0d2f25">Stay somewhere <em style="font-family:'Instrument Serif',serif;font-weight:400;color:#8a6f3c">lovely</em></div>
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;color:#0d2f25;border-bottom:2px solid #b5975a;padding-bottom:2px">See all six hotels</div>
+  </div>
+  <div style="position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:0 44px 56px">
+    <div style="background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 6px 22px rgba(13,47,37,0.14)">
+      <div style="height:170px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">photo: pool terrace</div></div>
+      <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:7px">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:19px;font-weight:700;color:#0d2f25">The Grande Oceanfront</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#0d2f25">from <strong>$890</strong>/nt</div>
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;background:rgba(181,151,90,0.18);color:#8a6f3c;border-radius:99px;padding:8px 16px">Check rates</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 6px 22px rgba(13,47,37,0.14)">
+      <div style="height:170px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">photo: suite, ocean view</div></div>
+      <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:7px">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:19px;font-weight:700;color:#0d2f25">Casa Palma Resort</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#0d2f25">from <strong>$640</strong>/nt</div>
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;background:rgba(181,151,90,0.18);color:#8a6f3c;border-radius:99px;padding:8px 16px">Check rates</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 6px 22px rgba(13,47,37,0.14)">
+      <div style="height:170px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">photo: beach cabanas</div></div>
+      <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:7px">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:19px;font-weight:700;color:#0d2f25">The Salt House</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#0d2f25">from <strong>$720</strong>/nt</div>
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;background:rgba(181,151,90,0.18);color:#8a6f3c;border-radius:99px;padding:8px 16px">Check rates</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:0 44px 56px">
+    <div style="background:rgba(255,255,255,0.16);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.25);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:6px">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:17px;font-weight:700;color:#0d2f25">Eat &amp; drink</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#22443a">14 tables we love →</div>
+    </div>
+    <div style="background:rgba(255,255,255,0.16);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.25);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:6px">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:17px;font-weight:700;color:#0d2f25">The Shops</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#22443a">Window-shop like a pro →</div>
+    </div>
+    <div style="background:rgba(255,255,255,0.16);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.25);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:6px">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:17px;font-weight:700;color:#0d2f25">Beach days</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#22443a">Cabanas, paths, tides →</div>
+    </div>
+    <div style="background:linear-gradient(135deg,#c3a366 0%,#b5975a 100%);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:6px">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:17px;font-weight:700;color:#0d2f25">Move here</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#3c3524">Talk to a real agent →</div>
+    </div>
+  </div>
+
+  <div style="position:relative;margin:0 44px 64px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.18em;color:#d8c493">REAL ESTATE</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:38px;line-height:1.12;font-weight:700;letter-spacing:-0.01em;color:#f3f1e6">What if the vacation just <em style="font-family:'Instrument Serif',serif;font-weight:400;color:#d8c493">didn't end?</em></div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:15px;line-height:1.6;color:rgba(238,242,236,0.78);max-width:440px">Tell us what you're dreaming about and we'll introduce you to a local agent we'd send our own parents to.</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;background:#b5975a;color:#0d2f25;border-radius:99px;padding:12px 24px;align-self:flex-start;margin-top:6px">Get matched</div>
+    </div>
+    <div style="height:280px;border-radius:22px;background:repeating-linear-gradient(45deg,#123a2e 0 12px,#16443a 12px 24px);display:flex;align-items:center;justify-content:center;border:1px solid rgba(238,242,236,0.18)"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:rgba(238,242,236,0.65)">photo: condo terrace</div></div>
+  </div>
+
+  <div style="position:relative;display:flex;justify-content:space-between;padding:22px 44px;border-top:1px solid rgba(238,242,236,0.2);font-family:'Instrument Sans',sans-serif;font-size:12.5px;color:rgba(238,242,236,0.6)">
+    <div>© 2026 bal-harbour.com · an independent local guide</div>
+    <div>Some links earn us a commission — it keeps the sunscreen stocked</div>
+  </div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">Try next: "lock in <a class="dv-oid" href="#3a">3a</a> and build the hotels + dining pages" · "push <a class="dv-oid" href="#3b">3b</a>'s dive to start lower" · "try the sun glow bigger"</p>
+</section>
+
+<section class="dv-turn" id="t2">
+<div class="dv-thd"><a class="dv-tid" href="#t2">2</a><span class="dv-tname">Riffs on <a class="dv-oid" href="#1c">1c</a> — same layout, more life in the background</span></div>
+<div class="dv-opts">
+
+<!-- ============ 2a : MORNING LIGHT ============ -->
+<div class="dv-opt" id="2a">
+<div class="dv-olabel"><a class="dv-oid" href="#2a">2a</a>Morning light — soft sun + seafoam washes, hero gets a warm glow</div>
+<div class="dv-card" style="width:1160px;background:radial-gradient(900px 520px at 12% -5%, #f7edd8 0%, rgba(247,237,216,0) 62%), radial-gradient(1100px 640px at 95% 90%, #d9eadf 0%, rgba(217,234,223,0) 65%), #eef2ec">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 44px">
+    <div style="font-family:'Instrument Sans',sans-serif;font-weight:700;font-size:20px;color:#0d2f25;letter-spacing:-0.01em;white-space:nowrap">bal-harbour<span style="color:#b5975a">.com</span></div>
+    <div style="display:flex;gap:8px;font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:500;color:#0d2f25">
+      <span style="padding:9px 16px;border-radius:99px;background:rgba(13,47,37,0.07)">Hotels</span>
+      <span style="padding:9px 16px;border-radius:99px">Eat &amp; drink</span>
+      <span style="padding:9px 16px;border-radius:99px">Shops</span>
+      <span style="padding:9px 16px;border-radius:99px">Beach</span>
+      <span style="padding:9px 16px;border-radius:99px">Real estate</span>
+    </div>
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;background:#0d2f25;color:#eef2ec;padding:11px 20px;border-radius:99px">Book a stay</div>
+  </div>
+
+  <div style="margin:16px 44px 0;background:radial-gradient(620px 380px at 85% -10%, rgba(216,196,147,0.35) 0%, rgba(216,196,147,0) 60%), linear-gradient(135deg, #0d2f25 0%, #144539 58%, #1b5647 100%);border-radius:28px;overflow:hidden;position:relative">
+    <div style="padding:70px 56px 190px;display:flex;flex-direction:column;gap:20px;max-width:520px">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.16em;color:#d8c493">BAL HARBOUR, FLORIDA</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:54px;line-height:1.08;font-weight:700;letter-spacing:-0.02em;color:#eef2ec">Sun's out. We know <em style="font-family:'Instrument Serif',serif;font-weight:400;color:#d8c493">the good spots.</em></div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.6;color:rgba(238,242,236,0.75);max-width:460px">A friendly local guide to the fanciest little village in Florida — where to stay, eat, shop and float.</div>
+    </div>
+    <div style="position:absolute;right:0;top:0;bottom:0;width:38%;background:repeating-linear-gradient(45deg,#123a2e 0 12px,#16443a 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:rgba(238,242,236,0.65)">photo: palms + surf</div></div>
+    <div style="position:absolute;left:56px;right:calc(38% + 40px);bottom:48px;display:flex;align-items:center;gap:10px;background:#eef2ec;border-radius:99px;padding:10px 10px 10px 24px;box-shadow:0 12px 32px rgba(0,0,0,0.25)">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:15px;color:#7d8378;flex:1">Try “rooftop dinner”…</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;background:#b5975a;color:#0d2f25;border-radius:99px;padding:11px 22px">Search</div>
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:baseline;justify-content:space-between;padding:56px 44px 22px">
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:30px;font-weight:700;letter-spacing:-0.01em;color:#0d2f25">Stay somewhere <em style="font-family:'Instrument Serif',serif;font-weight:400;color:#b5975a">lovely</em></div>
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;color:#0d2f25;border-bottom:2px solid #b5975a;padding-bottom:2px">See all six hotels</div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:0 44px 48px">
+    <div style="background:rgba(255,255,255,0.85);backdrop-filter:blur(4px);border-radius:22px;overflow:hidden;box-shadow:0 2px 10px rgba(13,47,37,0.06)">
+      <div style="height:170px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">photo: pool terrace</div></div>
+      <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:7px">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:19px;font-weight:700;color:#0d2f25">The Grande Oceanfront</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#0d2f25">from <strong>$890</strong>/nt</div>
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;background:rgba(181,151,90,0.18);color:#8a6f3c;border-radius:99px;padding:8px 16px">Check rates</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.85);backdrop-filter:blur(4px);border-radius:22px;overflow:hidden;box-shadow:0 2px 10px rgba(13,47,37,0.06)">
+      <div style="height:170px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">photo: suite, ocean view</div></div>
+      <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:7px">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:19px;font-weight:700;color:#0d2f25">Casa Palma Resort</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#0d2f25">from <strong>$640</strong>/nt</div>
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;background:rgba(181,151,90,0.18);color:#8a6f3c;border-radius:99px;padding:8px 16px">Check rates</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.85);backdrop-filter:blur(4px);border-radius:22px;overflow:hidden;box-shadow:0 2px 10px rgba(13,47,37,0.06)">
+      <div style="height:170px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">photo: beach cabanas</div></div>
+      <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:7px">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:19px;font-weight:700;color:#0d2f25">The Salt House</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#0d2f25">from <strong>$720</strong>/nt</div>
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;background:rgba(181,151,90,0.18);color:#8a6f3c;border-radius:99px;padding:8px 16px">Check rates</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ============ 2b : WATER TEXTURE ============ -->
+<div class="dv-opt" id="2b">
+<div class="dv-olabel"><a class="dv-oid" href="#2b">2b</a>Water texture — quiet fish-scale tide pattern across the page</div>
+<div class="dv-card" style="width:1160px;background-color:#ecf1ea;background-image:radial-gradient(circle at 50% 100%, rgba(13,47,37,0.045) 20px, transparent 21px), radial-gradient(circle at 50% 0%, rgba(13,47,37,0.045) 20px, transparent 21px);background-size:64px 64px;background-position:0 0, 32px 32px">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 44px">
+    <div style="font-family:'Instrument Sans',sans-serif;font-weight:700;font-size:20px;color:#0d2f25;letter-spacing:-0.01em;white-space:nowrap">bal-harbour<span style="color:#b5975a">.com</span></div>
+    <div style="display:flex;gap:8px;font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:500;color:#0d2f25">
+      <span style="padding:9px 16px;border-radius:99px;background:rgba(255,255,255,0.75)">Hotels</span>
+      <span style="padding:9px 16px;border-radius:99px">Eat &amp; drink</span>
+      <span style="padding:9px 16px;border-radius:99px">Shops</span>
+      <span style="padding:9px 16px;border-radius:99px">Beach</span>
+      <span style="padding:9px 16px;border-radius:99px">Real estate</span>
+    </div>
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;background:#0d2f25;color:#eef2ec;padding:11px 20px;border-radius:99px">Book a stay</div>
+  </div>
+
+  <div style="margin:16px 44px 0;background:#0d2f25;border-radius:28px;overflow:hidden;position:relative">
+    <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 50% 100%, rgba(238,242,236,0.05) 20px, transparent 21px), radial-gradient(circle at 50% 0%, rgba(238,242,236,0.05) 20px, transparent 21px);background-size:64px 64px;background-position:0 0, 32px 32px"></div>
+    <div style="position:relative;padding:70px 56px 190px;display:flex;flex-direction:column;gap:20px;max-width:520px">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.16em;color:#d8c493">BAL HARBOUR, FLORIDA</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:54px;line-height:1.08;font-weight:700;letter-spacing:-0.02em;color:#eef2ec">Sun's out. We know <em style="font-family:'Instrument Serif',serif;font-weight:400;color:#d8c493">the good spots.</em></div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.6;color:rgba(238,242,236,0.75);max-width:460px">A friendly local guide to the fanciest little village in Florida — where to stay, eat, shop and float.</div>
+    </div>
+    <div style="position:absolute;right:0;top:0;bottom:0;width:38%;background:repeating-linear-gradient(45deg,#123a2e 0 12px,#16443a 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:rgba(238,242,236,0.65)">photo: palms + surf</div></div>
+    <div style="position:absolute;left:56px;right:calc(38% + 40px);bottom:48px;display:flex;align-items:center;gap:10px;background:#eef2ec;border-radius:99px;padding:10px 10px 10px 24px;box-shadow:0 12px 32px rgba(0,0,0,0.25)">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:15px;color:#7d8378;flex:1">Try “rooftop dinner”…</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;background:#b5975a;color:#0d2f25;border-radius:99px;padding:11px 22px">Search</div>
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:baseline;justify-content:space-between;padding:56px 44px 22px">
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:30px;font-weight:700;letter-spacing:-0.01em;color:#0d2f25">Stay somewhere <em style="font-family:'Instrument Serif',serif;font-weight:400;color:#b5975a">lovely</em></div>
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;color:#0d2f25;border-bottom:2px solid #b5975a;padding-bottom:2px">See all six hotels</div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:0 44px 48px">
+    <div style="background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 2px 10px rgba(13,47,37,0.06)">
+      <div style="height:170px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">photo: pool terrace</div></div>
+      <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:7px">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:19px;font-weight:700;color:#0d2f25">The Grande Oceanfront</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#0d2f25">from <strong>$890</strong>/nt</div>
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;background:rgba(181,151,90,0.18);color:#8a6f3c;border-radius:99px;padding:8px 16px">Check rates</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 2px 10px rgba(13,47,37,0.06)">
+      <div style="height:170px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">photo: suite, ocean view</div></div>
+      <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:7px">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:19px;font-weight:700;color:#0d2f25">Casa Palma Resort</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#0d2f25">from <strong>$640</strong>/nt</div>
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;background:rgba(181,151,90,0.18);color:#8a6f3c;border-radius:99px;padding:8px 16px">Check rates</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 2px 10px rgba(13,47,37,0.06)">
+      <div style="height:170px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">photo: beach cabanas</div></div>
+      <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:7px">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:19px;font-weight:700;color:#0d2f25">The Salt House</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#0d2f25">from <strong>$720</strong>/nt</div>
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;background:rgba(181,151,90,0.18);color:#8a6f3c;border-radius:99px;padding:8px 16px">Check rates</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ============ 2c : SUN & HORIZON ============ -->
+<div class="dv-opt" id="2c">
+<div class="dv-olabel"><a class="dv-oid" href="#2c">2c</a>Sun &amp; horizon — a big gold sun rises behind the hero, dusk gradient inside</div>
+<div class="dv-card" style="width:1160px;background:linear-gradient(180deg, #f3f1e6 0%, #edf2ec 40%, #e2ece4 100%);position:relative;overflow:hidden">
+
+  <div style="position:absolute;top:36px;left:50%;transform:translateX(-50%);width:560px;height:560px;border-radius:50%;background:radial-gradient(circle, rgba(216,182,110,0.5) 0%, rgba(216,182,110,0.22) 45%, rgba(216,182,110,0) 70%)"></div>
+
+  <div style="position:relative;display:flex;align-items:center;justify-content:space-between;padding:20px 44px">
+    <div style="font-family:'Instrument Sans',sans-serif;font-weight:700;font-size:20px;color:#0d2f25;letter-spacing:-0.01em;white-space:nowrap">bal-harbour<span style="color:#b5975a">.com</span></div>
+    <div style="display:flex;gap:8px;font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:500;color:#0d2f25">
+      <span style="padding:9px 16px;border-radius:99px;background:rgba(255,255,255,0.7)">Hotels</span>
+      <span style="padding:9px 16px;border-radius:99px">Eat &amp; drink</span>
+      <span style="padding:9px 16px;border-radius:99px">Shops</span>
+      <span style="padding:9px 16px;border-radius:99px">Beach</span>
+      <span style="padding:9px 16px;border-radius:99px">Real estate</span>
+    </div>
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;background:#0d2f25;color:#eef2ec;padding:11px 20px;border-radius:99px">Book a stay</div>
+  </div>
+
+  <div style="position:relative;margin:26px 44px 0;background:linear-gradient(160deg, #0b2a21 0%, #12463a 52%, #1e6350 100%);border-radius:28px;overflow:hidden">
+    <div style="position:absolute;top:-120px;right:24%;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle, rgba(216,196,147,0.28) 0%, rgba(216,196,147,0) 70%)"></div>
+    <div style="position:relative;padding:70px 56px 190px;display:flex;flex-direction:column;gap:20px;max-width:520px">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.16em;color:#d8c493">BAL HARBOUR, FLORIDA</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:54px;line-height:1.08;font-weight:700;letter-spacing:-0.02em;color:#eef2ec">Sun's out. We know <em style="font-family:'Instrument Serif',serif;font-weight:400;color:#d8c493">the good spots.</em></div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.6;color:rgba(238,242,236,0.75);max-width:460px">A friendly local guide to the fanciest little village in Florida — where to stay, eat, shop and float.</div>
+    </div>
+    <div style="position:absolute;right:0;top:0;bottom:0;width:38%;background:repeating-linear-gradient(45deg,#123a2e 0 12px,#16443a 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:rgba(238,242,236,0.65)">photo: palms + surf</div></div>
+    <div style="position:absolute;left:56px;right:calc(38% + 40px);bottom:48px;display:flex;align-items:center;gap:10px;background:#eef2ec;border-radius:99px;padding:10px 10px 10px 24px;box-shadow:0 12px 32px rgba(0,0,0,0.25)">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:15px;color:#7d8378;flex:1">Try “rooftop dinner”…</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;background:#b5975a;color:#0d2f25;border-radius:99px;padding:11px 22px">Search</div>
+    </div>
+  </div>
+
+  <div style="position:relative;display:flex;align-items:baseline;justify-content:space-between;padding:56px 44px 22px">
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:30px;font-weight:700;letter-spacing:-0.01em;color:#0d2f25">Stay somewhere <em style="font-family:'Instrument Serif',serif;font-weight:400;color:#b5975a">lovely</em></div>
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;color:#0d2f25;border-bottom:2px solid #b5975a;padding-bottom:2px">See all six hotels</div>
+  </div>
+  <div style="position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:0 44px 48px">
+    <div style="background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 2px 10px rgba(13,47,37,0.06)">
+      <div style="height:170px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">photo: pool terrace</div></div>
+      <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:7px">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:19px;font-weight:700;color:#0d2f25">The Grande Oceanfront</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#0d2f25">from <strong>$890</strong>/nt</div>
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;background:rgba(181,151,90,0.18);color:#8a6f3c;border-radius:99px;padding:8px 16px">Check rates</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 2px 10px rgba(13,47,37,0.06)">
+      <div style="height:170px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">photo: suite, ocean view</div></div>
+      <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:7px">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:19px;font-weight:700;color:#0d2f25">Casa Palma Resort</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#0d2f25">from <strong>$640</strong>/nt</div>
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;background:rgba(181,151,90,0.18);color:#8a6f3c;border-radius:99px;padding:8px 16px">Check rates</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 2px 10px rgba(13,47,37,0.06)">
+      <div style="height:170px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">photo: beach cabanas</div></div>
+      <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:7px">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:19px;font-weight:700;color:#0d2f25">The Salt House</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#0d2f25">from <strong>$720</strong>/nt</div>
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;background:rgba(181,151,90,0.18);color:#8a6f3c;border-radius:99px;padding:8px 16px">Check rates</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">Try next: "combine <a class="dv-oid" href="#2a">2a</a>'s washes with <a class="dv-oid" href="#2c">2c</a>'s sun" · "make the pattern in <a class="dv-oid" href="#2b">2b</a> stronger/softer" · "lock it in and build the inner pages"</p>
+</section>
+
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">bal-harbour.com — three homepage directions. Brief: local guide + affiliate (hotels, dining, shops) with real-estate leads. Deep palm + gold, ocean, fine but fun — never stuffy. Striped blocks are photo placeholders.</span></div>
+<div class="dv-opts">
+
+<!-- ============ 1a : EMERALD CLASSIC ============ -->
+<div class="dv-opt" id="1a">
+<div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Emerald Classic — Cormorant serif, old-money warmth, gold rules</div>
+<div class="dv-card" style="width:1160px;background:#f4f1e8">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:22px 48px;border-bottom:1px solid rgba(13,47,37,0.15)">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;letter-spacing:0.08em;color:#0d2f25">BAL HARBOUR<span style="color:#b5975a">.com</span></div>
+    <div style="display:flex;gap:34px;font-family:Karla,sans-serif;font-size:13px;letter-spacing:0.14em;color:#0d2f25">
+      <span>HOTELS</span><span>DINING</span><span>SHOPS</span><span>BEACH</span><span>REAL ESTATE</span>
+    </div>
+    <div style="font-family:Karla,sans-serif;font-size:12px;letter-spacing:0.12em;color:#b5975a;border:1px solid #b5975a;padding:9px 18px">PLAN A STAY</div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1.05fr 1fr;background:#0d2f25">
+    <div style="padding:76px 56px 76px 48px;display:flex;flex-direction:column;justify-content:center;gap:26px">
+      <div style="font-family:Karla,sans-serif;font-size:12px;letter-spacing:0.28em;color:#b5975a">MIAMI'S QUIETEST MILE OF SAND</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:58px;line-height:1.08;font-weight:500;color:#f4f1e8">Your gracious guide to <em style="color:#d8c493">Bal Harbour</em> — the hotels, the tables, the tide.</div>
+      <div style="font-family:Karla,sans-serif;font-size:16px;line-height:1.65;color:rgba(244,241,232,0.75);max-width:440px">We live here, we eat here, we know which cabana gets shade after noon. Independent picks; we may earn a commission when you book.</div>
+      <div style="display:flex;gap:14px;align-items:center">
+        <div style="font-family:Karla,sans-serif;font-size:13px;letter-spacing:0.12em;background:#b5975a;color:#0d2f25;padding:14px 26px;font-weight:600">BROWSE HOTELS</div>
+        <div style="font-family:Karla,sans-serif;font-size:13px;letter-spacing:0.12em;color:#d8c493;border-bottom:1px solid #b5975a;padding:4px 2px">THE VILLAGE GUIDE →</div>
+      </div>
+    </div>
+    <div style="position:relative;min-height:480px;background:repeating-linear-gradient(45deg,#123a2e 0 12px,#16443a 12px 24px);display:flex;align-items:center;justify-content:center">
+      <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:rgba(244,241,232,0.6);background:rgba(13,47,37,0.7);padding:8px 14px">photo: oceanfront aerial, dusk</div>
+    </div>
+  </div>
+
+  <div style="padding:64px 48px 24px">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid #b5975a;padding-bottom:14px">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:500;color:#0d2f25">Where to stay</div>
+      <div style="font-family:Karla,sans-serif;font-size:12px;letter-spacing:0.14em;color:#b5975a">ALL 6 HOTELS →</div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:26px;padding:26px 48px 56px">
+    <div style="background:#fffdf7;border:1px solid rgba(13,47,37,0.12)">
+      <div style="height:190px;background:repeating-linear-gradient(45deg,#dfe3d6 0 12px,#e9ece0 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">photo: pool terrace</div></div>
+      <div style="padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;color:#0d2f25">The Grande Oceanfront</div>
+        <div style="font-family:Karla,sans-serif;font-size:13px;line-height:1.55;color:#5c6058">Nine floors of quiet, a pool that faces the sunrise, espresso at the towel stand.</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+          <div style="font-family:Karla,sans-serif;font-size:13px;color:#0d2f25">from <strong>$890</strong>/nt</div>
+          <div style="font-family:Karla,sans-serif;font-size:12px;letter-spacing:0.1em;color:#b5975a;font-weight:600">CHECK RATES →</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:#fffdf7;border:1px solid rgba(13,47,37,0.12)">
+      <div style="height:190px;background:repeating-linear-gradient(45deg,#dfe3d6 0 12px,#e9ece0 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">photo: suite, ocean view</div></div>
+      <div style="padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;color:#0d2f25">Casa Palma Resort</div>
+        <div style="font-family:Karla,sans-serif;font-size:13px;line-height:1.55;color:#5c6058">Family-friendly without feeling like it. The ceviche cart alone is worth the trip.</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+          <div style="font-family:Karla,sans-serif;font-size:13px;color:#0d2f25">from <strong>$640</strong>/nt</div>
+          <div style="font-family:Karla,sans-serif;font-size:12px;letter-spacing:0.1em;color:#b5975a;font-weight:600">CHECK RATES →</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:#fffdf7;border:1px solid rgba(13,47,37,0.12)">
+      <div style="height:190px;background:repeating-linear-gradient(45deg,#dfe3d6 0 12px,#e9ece0 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">photo: beach cabanas</div></div>
+      <div style="padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:23px;font-weight:600;color:#0d2f25">The Salt House</div>
+        <div style="font-family:Karla,sans-serif;font-size:13px;line-height:1.55;color:#5c6058">Small, adults-mostly, and the best negroni within a mile of the inlet.</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
+          <div style="font-family:Karla,sans-serif;font-size:13px;color:#0d2f25">from <strong>$720</strong>/nt</div>
+          <div style="font-family:Karla,sans-serif;font-size:12px;letter-spacing:0.1em;color:#b5975a;font-weight:600">CHECK RATES →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(13,47,37,0.15);border-bottom:1px solid rgba(13,47,37,0.15)">
+    <div style="padding:30px 24px;border-right:1px solid rgba(13,47,37,0.15);display:flex;flex-direction:column;gap:6px">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:#0d2f25">Dining</div>
+      <div style="font-family:Karla,sans-serif;font-size:12px;color:#8a8e84">14 tables we love</div>
+    </div>
+    <div style="padding:30px 24px;border-right:1px solid rgba(13,47,37,0.15);display:flex;flex-direction:column;gap:6px">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:#0d2f25">Shopping</div>
+      <div style="font-family:Karla,sans-serif;font-size:12px;color:#8a8e84">The Shops &amp; beyond</div>
+    </div>
+    <div style="padding:30px 24px;border-right:1px solid rgba(13,47,37,0.15);display:flex;flex-direction:column;gap:6px">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:#0d2f25">Beach &amp; spa</div>
+      <div style="font-family:Karla,sans-serif;font-size:12px;color:#8a8e84">Cabanas, paths, tides</div>
+    </div>
+    <div style="padding:30px 24px;display:flex;flex-direction:column;gap:6px">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:#0d2f25">Real estate</div>
+      <div style="font-family:Karla,sans-serif;font-size:12px;color:#8a8e84">Live here, actually</div>
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:center;justify-content:space-between;background:#0d2f25;padding:40px 48px;margin:56px 48px;gap:32px">
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:30px;color:#f4f1e8">Thinking about buying on the beach?</div>
+      <div style="font-family:Karla,sans-serif;font-size:14px;color:rgba(244,241,232,0.7)">We'll introduce you to an agent who actually picks up the phone.</div>
+    </div>
+    <div style="font-family:Karla,sans-serif;font-size:13px;letter-spacing:0.12em;background:#b5975a;color:#0d2f25;padding:14px 26px;font-weight:600;white-space:nowrap">GET AN INTRO</div>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;padding:26px 48px;border-top:1px solid rgba(13,47,37,0.15);font-family:Karla,sans-serif;font-size:12px;color:#8a8e84">
+    <div>© 2026 bal-harbour.com — an independent guide, not affiliated with the Village of Bal Harbour</div>
+    <div>Some links earn us a commission</div>
+  </div>
+</div>
+</div>
+
+<!-- ============ 1b : SALT AIR EDITORIAL ============ -->
+<div class="dv-opt" id="1b">
+<div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Salt Air Editorial — Prata + Archivo, magazine energy, playful stickers</div>
+<div class="dv-card" style="width:1160px;background:#f2f0e8">
+
+  <div style="display:flex;justify-content:center;gap:40px;padding:10px 48px;background:#0d2f25;font-family:Archivo,sans-serif;font-size:11px;letter-spacing:0.18em;color:#d8c493">
+    <span>88°F &amp; SUNNY</span><span>·</span><span>OCEAN: CALM</span><span>·</span><span>VALET: EVERYWHERE</span><span>·</span><span>DRESS CODE: LINEN</span>
+  </div>
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:26px 48px;border-bottom:2px solid #0d2f25">
+    <div style="display:flex;gap:28px;font-family:Archivo,sans-serif;font-size:12px;font-weight:600;letter-spacing:0.14em;color:#0d2f25"><span>STAY</span><span>EAT</span><span>SHOP</span></div>
+    <div style="font-family:Prata,serif;font-size:30px;letter-spacing:0.04em;color:#0d2f25">BAL—HARBOUR<span style="color:#b5975a">.COM</span></div>
+    <div style="display:flex;gap:28px;font-family:Archivo,sans-serif;font-size:12px;font-weight:600;letter-spacing:0.14em;color:#0d2f25"><span>BEACH</span><span>LIVE HERE</span><span style="color:#b5975a">BOOK ↗</span></div>
+  </div>
+
+  <div style="position:relative;padding:66px 48px 30px">
+    <div style="font-family:Prata,serif;font-size:88px;line-height:1.02;color:#0d2f25;max-width:1000px">Salt air &amp;<br>good taste.</div>
+    <div style="position:absolute;top:52px;right:64px;width:150px;height:150px;border-radius:50%;background:#b5975a;color:#0d2f25;display:flex;align-items:center;justify-content:center;text-align:center;font-family:Archivo,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.1em;line-height:1.5;transform:rotate(8deg);padding:18px;box-sizing:border-box">THE 33154 GUIDE — BY PEOPLE WHO TAN HERE</div>
+    <div style="display:flex;gap:24px;align-items:flex-end;margin-top:36px">
+      <div style="flex:1.4;height:340px;background:repeating-linear-gradient(45deg,#d9ddd0 0 12px,#e5e8dc 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378;background:#f2f0e8;padding:6px 12px">photo: beach walk, morning</div></div>
+      <div style="flex:1;height:260px;background:repeating-linear-gradient(45deg,#123a2e 0 12px,#16443a 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:rgba(244,241,232,0.7);padding:6px 12px">photo: hotel pool</div></div>
+      <div style="flex:0.9;display:flex;flex-direction:column;gap:16px;padding-bottom:8px">
+        <div style="font-family:Archivo,sans-serif;font-size:15px;line-height:1.6;color:#3c4038">The hotels worth the rate, the tables worth the wait, and the one beach entrance nobody tells you about. Independent, opinionated, occasionally commissioned.</div>
+        <div style="font-family:Archivo,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.14em;color:#f2f0e8;background:#0d2f25;padding:14px 22px;align-self:flex-start">START WITH HOTELS →</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="overflow:hidden;border-top:2px solid #0d2f25;border-bottom:2px solid #0d2f25;margin-top:40px;padding:16px 0;white-space:nowrap">
+    <div style="display:inline-flex;gap:36px;font-family:Prata,serif;font-size:26px;color:#0d2f25;padding-left:48px">
+      <span>Hotels</span><span style="color:#b5975a">◆</span><span>Dining</span><span style="color:#b5975a">◆</span><span>The Shops</span><span style="color:#b5975a">◆</span><span>Beach club</span><span style="color:#b5975a">◆</span><span>Real estate</span><span style="color:#b5975a">◆</span><span>Hotels</span><span style="color:#b5975a">◆</span><span>Dining</span>
+    </div>
+  </div>
+
+  <div style="padding:56px 48px">
+    <div style="font-family:Archivo,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.22em;color:#b5975a;margin-bottom:26px">THIS SEASON'S STAYS — RANKED</div>
+    <div style="display:flex;flex-direction:column">
+      <div style="display:grid;grid-template-columns:70px 1fr 340px 150px;gap:24px;align-items:center;padding:22px 0;border-top:1px solid rgba(13,47,37,0.25)">
+        <div style="font-family:Prata,serif;font-size:34px;color:#b5975a">01</div>
+        <div style="display:flex;flex-direction:column;gap:5px">
+          <div style="font-family:Prata,serif;font-size:26px;color:#0d2f25">The Grande Oceanfront</div>
+          <div style="font-family:Archivo,sans-serif;font-size:13px;color:#5c6058">Sunrise pool, espresso at the towel stand · from $890/nt</div>
+        </div>
+        <div style="height:90px;background:repeating-linear-gradient(45deg,#d9ddd0 0 10px,#e5e8dc 10px 20px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#7d8378">photo</div></div>
+        <div style="font-family:Archivo,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.12em;color:#0d2f25;border:2px solid #0d2f25;padding:11px 0;text-align:center">CHECK RATES</div>
+      </div>
+      <div style="display:grid;grid-template-columns:70px 1fr 340px 150px;gap:24px;align-items:center;padding:22px 0;border-top:1px solid rgba(13,47,37,0.25)">
+        <div style="font-family:Prata,serif;font-size:34px;color:#b5975a">02</div>
+        <div style="display:flex;flex-direction:column;gap:5px">
+          <div style="font-family:Prata,serif;font-size:26px;color:#0d2f25">Casa Palma Resort</div>
+          <div style="font-family:Archivo,sans-serif;font-size:13px;color:#5c6058">Kids welcome, taste intact · from $640/nt</div>
+        </div>
+        <div style="height:90px;background:repeating-linear-gradient(45deg,#d9ddd0 0 10px,#e5e8dc 10px 20px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#7d8378">photo</div></div>
+        <div style="font-family:Archivo,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.12em;color:#0d2f25;border:2px solid #0d2f25;padding:11px 0;text-align:center">CHECK RATES</div>
+      </div>
+      <div style="display:grid;grid-template-columns:70px 1fr 340px 150px;gap:24px;align-items:center;padding:22px 0;border-top:1px solid rgba(13,47,37,0.25);border-bottom:1px solid rgba(13,47,37,0.25)">
+        <div style="font-family:Prata,serif;font-size:34px;color:#b5975a">03</div>
+        <div style="display:flex;flex-direction:column;gap:5px">
+          <div style="font-family:Prata,serif;font-size:26px;color:#0d2f25">The Salt House</div>
+          <div style="font-family:Archivo,sans-serif;font-size:13px;color:#5c6058">Adults-mostly, best negroni on the mile · from $720/nt</div>
+        </div>
+        <div style="height:90px;background:repeating-linear-gradient(45deg,#d9ddd0 0 10px,#e5e8dc 10px 20px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:10px;color:#7d8378">photo</div></div>
+        <div style="font-family:Archivo,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.12em;color:#0d2f25;border:2px solid #0d2f25;padding:11px 0;text-align:center">CHECK RATES</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;background:#0d2f25">
+    <div style="padding:52px 48px;display:flex;flex-direction:column;gap:14px;justify-content:center">
+      <div style="font-family:Archivo,sans-serif;font-size:11px;font-weight:700;letter-spacing:0.22em;color:#b5975a">REAL ESTATE</div>
+      <div style="font-family:Prata,serif;font-size:38px;line-height:1.15;color:#f2f0e8">What if the vacation just… didn't end?</div>
+      <div style="font-family:Archivo,sans-serif;font-size:14px;line-height:1.6;color:rgba(242,240,232,0.7);max-width:420px">Tell us what you're dreaming about and we'll connect you with a local agent we'd send our own parents to.</div>
+      <div style="font-family:Archivo,sans-serif;font-size:12px;font-weight:700;letter-spacing:0.14em;background:#b5975a;color:#0d2f25;padding:14px 24px;align-self:flex-start;margin-top:6px">GET MATCHED →</div>
+    </div>
+    <div style="min-height:320px;background:repeating-linear-gradient(45deg,#123a2e 0 12px,#16443a 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:rgba(244,241,232,0.7)">photo: condo terrace, ocean</div></div>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;padding:24px 48px;font-family:Archivo,sans-serif;font-size:12px;color:#8a8e84">
+    <div>© 2026 BAL—HARBOUR.COM · Independent guide · Some links pay us a commission</div>
+    <div style="letter-spacing:0.14em">MADE WITH SUNSCREEN</div>
+  </div>
+</div>
+</div>
+
+<!-- ============ 1c : BREEZY MODERN ============ -->
+<div class="dv-opt" id="1c">
+<div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>Breezy Modern — Instrument Sans + italic serif accents, rounded, lightest touch</div>
+<div class="dv-card" style="width:1160px;background:#eef2ec">
+
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 44px">
+    <div style="font-family:'Instrument Sans',sans-serif;font-weight:700;font-size:20px;color:#0d2f25;letter-spacing:-0.01em;white-space:nowrap">bal-harbour<span style="color:#b5975a">.com</span></div>
+    <div style="display:flex;gap:8px;font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:500;color:#0d2f25">
+      <span style="padding:9px 16px;border-radius:99px;background:rgba(13,47,37,0.07)">Hotels</span>
+      <span style="padding:9px 16px;border-radius:99px">Eat &amp; drink</span>
+      <span style="padding:9px 16px;border-radius:99px">Shops</span>
+      <span style="padding:9px 16px;border-radius:99px">Beach</span>
+      <span style="padding:9px 16px;border-radius:99px">Real estate</span>
+    </div>
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;background:#0d2f25;color:#eef2ec;padding:11px 20px;border-radius:99px">Book a stay</div>
+  </div>
+
+  <div style="margin:16px 44px 0;background:#0d2f25;border-radius:28px;overflow:hidden;position:relative">
+    <div style="padding:70px 56px 190px;display:flex;flex-direction:column;gap:20px;max-width:520px">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.16em;color:#b5975a">BAL HARBOUR, FLORIDA</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:54px;line-height:1.08;font-weight:700;letter-spacing:-0.02em;color:#eef2ec">Sun's out. We know <em style="font-family:'Instrument Serif',serif;font-weight:400;color:#d8c493">the good spots.</em></div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:16px;line-height:1.6;color:rgba(238,242,236,0.75);max-width:460px">A friendly local guide to the fanciest little village in Florida — where to stay, eat, shop and float. We earn a small commission on some bookings; opinions stay ours.</div>
+    </div>
+    <div style="position:absolute;right:0;top:0;bottom:0;width:38%;background:repeating-linear-gradient(45deg,#123a2e 0 12px,#16443a 12px 24px);display:flex;align-items:center;justify-content:center"><div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:rgba(238,242,236,0.65)">photo: palms + surf</div></div>
+    <div style="position:absolute;left:56px;right:calc(38% + 40px);bottom:48px;display:flex;align-items:center;gap:10px;background:#eef2ec;border-radius:99px;padding:10px 10px 10px 24px;box-shadow:0 12px 32px rgba(0,0,0,0.25)">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:15px;color:#7d8378;flex:1">Try “rooftop dinner” or “beachfront suite”…</div>
+      <div style="display:flex;gap:6px;font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:600;color:#0d2f25">
+        <span style="background:rgba(13,47,37,0.08);border-radius:99px;padding:8px 14px">Hotels</span>
+        <span style="background:rgba(13,47,37,0.08);border-radius:99px;padding:8px 14px">Dining</span>
+        <span style="background:rgba(13,47,37,0.08);border-radius:99px;padding:8px 14px">Beach</span>
+      </div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;background:#b5975a;color:#0d2f25;border-radius:99px;padding:11px 22px">Search</div>
+    </div>
+  </div>
+
+  <div style="display:flex;align-items:baseline;justify-content:space-between;padding:56px 44px 22px">
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:30px;font-weight:700;letter-spacing:-0.01em;color:#0d2f25">Stay somewhere <em style="font-family:'Instrument Serif',serif;font-weight:400;color:#b5975a">lovely</em></div>
+    <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;font-weight:600;color:#0d2f25;border-bottom:2px solid #b5975a;padding-bottom:2px">See all six hotels</div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:0 44px 56px">
+    <div style="background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 2px 10px rgba(13,47,37,0.06)">
+      <div style="height:180px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);position:relative;display:flex;align-items:center;justify-content:center">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">photo: pool terrace</div>
+        <div style="position:absolute;top:14px;left:14px;background:#0d2f25;color:#eef2ec;font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:600;border-radius:99px;padding:6px 12px">Local favorite</div>
+      </div>
+      <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:7px">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:19px;font-weight:700;color:#0d2f25">The Grande Oceanfront</div>
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:13.5px;line-height:1.55;color:#5c6058">Sunrise pool, espresso at the towel stand, zero fuss.</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#0d2f25">from <strong>$890</strong>/nt</div>
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;background:rgba(181,151,90,0.18);color:#8a6f3c;border-radius:99px;padding:8px 16px">Check rates</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 2px 10px rgba(13,47,37,0.06)">
+      <div style="height:180px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);position:relative;display:flex;align-items:center;justify-content:center">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">photo: suite, ocean view</div>
+        <div style="position:absolute;top:14px;left:14px;background:#eef2ec;color:#0d2f25;font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:600;border-radius:99px;padding:6px 12px">Great for families</div>
+      </div>
+      <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:7px">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:19px;font-weight:700;color:#0d2f25">Casa Palma Resort</div>
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:13.5px;line-height:1.55;color:#5c6058">Kids welcome, taste intact. Ceviche cart at 2pm sharp.</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#0d2f25">from <strong>$640</strong>/nt</div>
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;background:rgba(181,151,90,0.18);color:#8a6f3c;border-radius:99px;padding:8px 16px">Check rates</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 2px 10px rgba(13,47,37,0.06)">
+      <div style="height:180px;background:repeating-linear-gradient(45deg,#dbe2d6 0 12px,#e6ebe0 12px 24px);position:relative;display:flex;align-items:center;justify-content:center">
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:#7d8378">photo: beach cabanas</div>
+        <div style="position:absolute;top:14px;left:14px;background:#eef2ec;color:#0d2f25;font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:600;border-radius:99px;padding:6px 12px">Adults-mostly</div>
+      </div>
+      <div style="padding:18px 20px 20px;display:flex;flex-direction:column;gap:7px">
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:19px;font-weight:700;color:#0d2f25">The Salt House</div>
+        <div style="font-family:'Instrument Sans',sans-serif;font-size:13.5px;line-height:1.55;color:#5c6058">Small and quiet, with the best negroni on the mile.</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px">
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:14px;color:#0d2f25">from <strong>$720</strong>/nt</div>
+          <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;font-weight:600;background:rgba(181,151,90,0.18);color:#8a6f3c;border-radius:99px;padding:8px 16px">Check rates</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:0 44px 56px">
+    <div style="background:rgba(13,47,37,0.06);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:6px">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:17px;font-weight:700;color:#0d2f25">Eat &amp; drink</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#5c6058">14 tables we love →</div>
+    </div>
+    <div style="background:rgba(13,47,37,0.06);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:6px">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:17px;font-weight:700;color:#0d2f25">The Shops</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#5c6058">Window-shop like a pro →</div>
+    </div>
+    <div style="background:rgba(13,47,37,0.06);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:6px">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:17px;font-weight:700;color:#0d2f25">Beach days</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#5c6058">Cabanas, paths, tides →</div>
+    </div>
+    <div style="background:#b5975a;border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:6px">
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:17px;font-weight:700;color:#0d2f25">Move here</div>
+      <div style="font-family:'Instrument Sans',sans-serif;font-size:13px;color:#3c3524">Talk to a real agent →</div>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;padding:22px 44px;border-top:1px solid rgba(13,47,37,0.12);font-family:'Instrument Sans',sans-serif;font-size:12.5px;color:#8a8e84">
+    <div>© 2026 bal-harbour.com · an independent local guide</div>
+    <div>Some links earn us a commission — it keeps the sunscreen stocked</div>
+  </div>
+</div>
+</div>
+
+</div>
+<p class="dv-next">Try next: "go deeper on <a class="dv-oid" href="#1c">1c</a> with more pages" · "mix <a class="dv-oid" href="#1b">1b</a>'s big type with <a class="dv-oid" href="#1c">1c</a>'s rounded cards" · "show a hotels listing page for <a class="dv-oid" href="#1a">1a</a>"</p>
+</section>
+</x-dc>
+</body>
+</html>
