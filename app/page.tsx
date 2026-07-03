@@ -1,8 +1,27 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 import { HOTELS } from "@/lib/hotels";
+import { HOME_FAQS } from "@/lib/faq";
+import {
+  touristDestinationJsonLd,
+  hotelsItemListJsonLd,
+  faqPageJsonLd,
+} from "@/lib/seo";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
+
+const QUICK_FACTS = [
+  "25 min from Miami (MIA) airport",
+  "Best time to visit: Nov–Apr",
+  "Free public beach + Jetty Walk",
+  "Walk to the Bal Harbour Shops",
+];
 
 export default function Home() {
   const featured = HOTELS;
@@ -42,17 +61,20 @@ export default function Home() {
         />
         <div className="relative z-10 flex flex-col gap-5 px-6 pb-16 pt-10 md:max-w-[520px] md:px-14 md:pb-[190px] md:pt-[70px]">
           <div className="text-[13px] font-semibold tracking-[0.16em] text-gold-light">
-            BAL HARBOUR, FLORIDA
+            BAL HARBOUR, FLORIDA · LOCAL TRAVEL GUIDE
           </div>
           <h1 className="text-4xl font-bold leading-[1.08] tracking-tight text-ivory md:text-[54px]">
             Sun&apos;s out. We know{" "}
             <em className="font-serif-italic text-gold-light">
-              the good spots.
-            </em>
+              the good spots
+            </em>{" "}
+            in Bal Harbour.
           </h1>
-          <p className="max-w-[460px] text-base leading-relaxed text-ivory/75">
-            A friendly local guide to the fanciest little village in Florida
-            — where to stay, eat, shop and float.
+          <p className="max-w-[470px] text-base leading-relaxed text-ivory/75">
+            Your friendly local guide to Bal Harbour, Florida — the fanciest
+            little village in Miami Beach. We live here, and we&apos;ll point
+            you to the best oceanfront hotels, restaurants, beach days, and the
+            famous Bal Harbour Shops.
           </p>
         </div>
 
@@ -97,16 +119,48 @@ export default function Home() {
         </form>
       </div>
 
+      {/* Intro — quotable definition + quick facts (answer-first for AI) */}
+      <section className="relative px-6 pt-12 md:px-11">
+        <p className="text-xs font-semibold tracking-[0.18em] text-gold-deep">
+          THE SHORT VERSION
+        </p>
+        <h2 className="mt-2.5 max-w-[860px] text-2xl font-semibold leading-[1.35] tracking-tight text-ink md:text-[27px]">
+          Bal Harbour is a small, upscale beachfront village at the north end
+          of Miami Beach — known for the luxury Bal Harbour Shops, oceanfront
+          resorts, and a quiet, public-access Atlantic Ocean beach.
+        </h2>
+        <p className="mt-4 max-w-[720px] text-[15px] leading-relaxed text-body">
+          We actually live here. Below: the hotels we&apos;d book ourselves, the
+          tables worth the reservation, how to do the Shops without wilting,
+          where to lay a towel — and, if you fall for the place, how to move
+          here.
+        </p>
+        <ul className="mt-6 flex flex-wrap gap-2">
+          {QUICK_FACTS.map((fact) => (
+            <li
+              key={fact}
+              className="flex items-center gap-2 rounded-full bg-ink/8 px-3.5 py-2 text-[13px] font-medium text-ink-2"
+            >
+              <span aria-hidden className="text-gold-deep">
+                ◆
+              </span>
+              {fact}
+            </li>
+          ))}
+        </ul>
+      </section>
+
       {/* Featured hotels */}
-      <div className="relative flex items-baseline justify-between px-6 pb-5 pt-12 md:px-11">
+      <div className="relative flex items-baseline justify-between px-6 pb-5 pt-14 md:px-11">
         <h2 className="text-2xl font-bold tracking-tight text-ink md:text-[30px]">
-          Stay somewhere <em className="font-serif-italic text-gold-deep">lovely</em>
+          Where to <em className="font-serif-italic text-gold-deep">stay</em> in
+          Bal Harbour
         </h2>
         <Link
           href="/hotels"
           className="border-b-2 border-gold pb-0.5 text-sm font-semibold text-ink no-underline"
         >
-          See all hotels
+          See all six hotels
         </Link>
       </div>
       <div className="relative grid grid-cols-1 gap-5 px-6 pb-12 md:grid-cols-3 md:px-11">
@@ -160,21 +214,27 @@ export default function Home() {
           className="glass-tile hover-lift flex flex-col gap-1.5 rounded-[18px] p-6 no-underline"
         >
           <div className="text-[17px] font-bold text-ink">Eat & drink</div>
-          <div className="text-[13px] text-ink-2">14 tables we love →</div>
+          <div className="text-[13px] text-ink-2">
+            Best restaurants in Bal Harbour →
+          </div>
         </Link>
         <Link
           href="/shops"
           className="glass-tile hover-lift flex flex-col gap-1.5 rounded-[18px] p-6 no-underline"
         >
           <div className="text-[17px] font-bold text-ink">The Shops</div>
-          <div className="text-[13px] text-ink-2">Window-shop like a pro →</div>
+          <div className="text-[13px] text-ink-2">
+            The Bal Harbour Shops, decoded →
+          </div>
         </Link>
         <Link
           href="/beach"
           className="glass-tile hover-lift flex flex-col gap-1.5 rounded-[18px] p-6 no-underline"
         >
           <div className="text-[17px] font-bold text-ink">Beach days</div>
-          <div className="text-[13px] text-ink-2">Cabanas, paths, tides →</div>
+          <div className="text-[13px] text-ink-2">
+            Bal Harbour Beach access →
+          </div>
         </Link>
         <Link
           href="/real-estate"
@@ -182,7 +242,7 @@ export default function Home() {
         >
           <div className="text-[17px] font-bold text-ink">Move here</div>
           <div className="text-[13px] text-gold-dark-text">
-            Talk to a real agent →
+            Bal Harbour real estate →
           </div>
         </Link>
       </div>
@@ -191,15 +251,17 @@ export default function Home() {
       <div className="relative mx-6 mb-16 grid grid-cols-1 items-center gap-8 md:mx-11 md:grid-cols-[1.2fr_1fr] md:gap-10">
         <div className="flex flex-col gap-3.5">
           <div className="text-xs font-semibold tracking-[0.18em] text-gold-light">
-            REAL ESTATE
+            BAL HARBOUR REAL ESTATE
           </div>
           <h2 className="text-3xl font-bold leading-[1.12] tracking-tight text-sand md:text-[38px]">
             What if the vacation just{" "}
             <em className="font-serif-italic text-gold-light">didn&apos;t end?</em>
           </h2>
-          <p className="max-w-[440px] text-[15px] leading-relaxed text-ivory/78">
-            Tell us what you&apos;re dreaming about and we&apos;ll introduce you to
-            a local agent we&apos;d send our own parents to.
+          <p className="max-w-[460px] text-[15px] leading-relaxed text-ivory/78">
+            Bal Harbour real estate, from oceanfront condos on Collins Avenue to
+            tucked-away village homes. Tell us what you&apos;re dreaming about and
+            we&apos;ll introduce you to a local agent we&apos;d send our own
+            parents to.
           </p>
           <Link
             href="/real-estate"
@@ -211,7 +273,7 @@ export default function Home() {
         <div className="relative h-[220px] overflow-hidden rounded-[22px] border border-ivory/18 md:h-[280px]">
           <Image
             src="/img/condo-terrace.jpg"
-            alt="A condo terrace overlooking the water"
+            alt="Oceanfront condo terrace in Bal Harbour, Florida overlooking the water"
             fill
             sizes="(max-width: 768px) 100vw, 40vw"
             className="object-cover"
@@ -219,7 +281,46 @@ export default function Home() {
         </div>
       </div>
 
+      {/* FAQ — question keywords, answer-first (feeds FAQPage structured data).
+          Sits over the dark lower gradient, so it uses light text. */}
+      <section
+        className="relative px-6 pb-20 md:px-11"
+        aria-labelledby="faq-heading"
+      >
+        <p className="text-xs font-semibold tracking-[0.18em] text-gold-light">
+          GOOD TO KNOW
+        </p>
+        <h2
+          id="faq-heading"
+          className="mt-2.5 text-3xl font-bold tracking-tight text-sand md:text-[34px]"
+        >
+          Bal Harbour,{" "}
+          <em className="font-serif-italic text-gold-light">answered</em>
+        </h2>
+        <div className="mt-7 grid gap-x-12 md:grid-cols-2">
+          {HOME_FAQS.map((faq) => (
+            <div
+              key={faq.question}
+              className="border-t border-ivory/15 py-5"
+            >
+              <h3 className="text-[17px] font-semibold leading-snug text-ivory">
+                {faq.question}
+              </h3>
+              <p className="mt-2 text-[14.5px] leading-relaxed text-ivory/72">
+                {faq.answer}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <Footer />
+
+      {/* Structured data — helps Google rich results and lets AI answer
+          engines (ChatGPT, Perplexity, AI Overviews) trust and cite the page. */}
+      <JsonLd data={touristDestinationJsonLd()} />
+      <JsonLd data={hotelsItemListJsonLd(featured)} />
+      <JsonLd data={faqPageJsonLd(HOME_FAQS)} />
     </div>
   );
 }

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Instrument_Sans, Instrument_Serif } from "next/font/google";
 import "./globals.css";
+import { SITE } from "@/lib/site";
+import JsonLd from "@/components/JsonLd";
+import { websiteJsonLd, organizationJsonLd } from "@/lib/seo";
 
 const instrumentSans = Instrument_Sans({
   variable: "--font-instrument-sans",
@@ -17,13 +20,47 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bal-harbour.com"),
+  metadataBase: new URL(SITE.url),
   title: {
-    default: "bal-harbour.com — a friendly local guide",
+    default: SITE.title,
     template: "%s · bal-harbour.com",
   },
-  description:
-    "A friendly, upscale-but-not-stuffy local guide to Bal Harbour, Florida — where to stay, eat, shop and float.",
+  description: SITE.description,
+  keywords: [...SITE.keywords],
+  applicationName: SITE.name,
+  authors: [{ name: "bal-harbour.com" }],
+  creator: "bal-harbour.com",
+  publisher: "bal-harbour.com",
+  category: "travel",
+  formatDetection: { telephone: false },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: SITE.url,
+    siteName: SITE.name,
+    title: SITE.title,
+    description: SITE.description,
+    images: [
+      { url: SITE.ogImage, alt: "Bal Harbour, Florida — palms over the surf" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE.title,
+    description: SITE.description,
+    images: [SITE.ogImage],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -37,7 +74,11 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       className={`${instrumentSans.variable} ${instrumentSerif.variable}`}
     >
-      <body className="min-h-full antialiased">{children}</body>
+      <body className="min-h-full antialiased">
+        {children}
+        <JsonLd data={websiteJsonLd()} />
+        <JsonLd data={organizationJsonLd()} />
+      </body>
     </html>
   );
 }

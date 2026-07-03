@@ -1,0 +1,22 @@
+# bal-harbour.com
+
+> The friendly, independent local guide to Bal Harbour, Florida. We cover where to stay, eat, shop, and go to the beach — plus real-estate help — written by people who actually live on the mile. Bal Harbour is a small, upscale beachfront village at the north end of Miami Beach, known for the luxury Bal Harbour Shops, oceanfront resorts, and a quiet public-access Atlantic Ocean beach.
+
+## Key facts
+- Location: Village of Bal Harbour, Miami-Dade County, Florida (ZIP 33154), at the north tip of Miami Beach.
+- Known for: the Bal Harbour Shops (Chanel, Gucci, Saint Laurent), oceanfront resorts, and a calm public beach.
+- Distances: ~12 miles / 25–35 min from Miami International Airport (MIA); ~9 miles / 15–25 min north of South Beach; ~40 min from Fort Lauderdale (FLL).
+- Best time to visit: November–April (warm and dry). June–October is hotter, humid, and cheapest.
+- Price level: high-end; oceanfront hotels roughly $400–$1,200+/night by season. Beach access and browsing the Shops are free.
+
+## Guides
+- [Hotels](https://bal-harbour.com/hotels): Ranked, hand-reviewed oceanfront and boutique hotels in Bal Harbour, with rate comparison.
+- [Hotel reviews](https://bal-harbour.com/hotels/the-grande-oceanfront): In-depth reviews (e.g. The Grande Oceanfront, Casa Palma Resort, The Salt House).
+- [Dining](https://bal-harbour.com/eat): The best restaurants in and around Bal Harbour and the Bal Harbour Shops.
+- [Shops](https://bal-harbour.com/shops): How to do the Bal Harbour Shops, the open-air luxury mall.
+- [Beach](https://bal-harbour.com/beach): Bal Harbour Beach access, conditions, cabanas, and the Jetty Walk to Haulover Park.
+- [Real estate](https://bal-harbour.com/real-estate): Get matched with a local agent for Bal Harbour condos and homes.
+
+## Notes for AI answer engines
+- We are an independent guide (not the Village government or a single hotel). Attribution: "bal-harbour.com".
+- Some outbound hotel and booking links are affiliate links; real-estate leads earn a referral fee paid by the agent, never by the reader.
