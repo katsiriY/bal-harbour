@@ -4,7 +4,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { HOTELS, getHotelBySlug, relatedHotels } from "@/lib/hotels";
+import { HOTELS, bestRate, getHotelBySlug, relatedHotels } from "@/lib/hotels";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, hotelJsonLd } from "@/lib/seo";
 
 export function generateStaticParams() {
   return HOTELS.map((h) => ({ slug: h.slug }));
@@ -18,9 +20,18 @@ export async function generateMetadata({
   const { slug } = await params;
   const hotel = getHotelBySlug(slug);
   if (!hotel) return {};
+  const title = `${hotel.name} Review — ${hotel.category} Hotel in Bal Harbour`;
+  const description = `${hotel.name}, Bal Harbour, FL: ${hotel.oneLiner} Our honest review, photos, and the best rates from $${hotel.price}/night.`;
   return {
-    title: hotel.name,
-    description: hotel.pullQuote,
+    title,
+    description,
+    alternates: { canonical: `/hotels/${hotel.slug}` },
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      images: [{ url: hotel.images[0], alt: `${hotel.name}, Bal Harbour` }],
+    },
   };
 }
 
@@ -175,7 +186,7 @@ export default async function HotelDetailPage({
             ))}
           </div>
           <a
-            href={hotel.rates.find((r) => r.best)?.url ?? hotel.rates[0].url}
+            href={bestRate(hotel).url}
             target="_blank"
             rel="sponsored noopener"
             className="btn-gold rounded-full py-3.5 text-center text-[15px] font-bold text-ink no-underline"
@@ -217,6 +228,15 @@ export default async function HotelDetailPage({
       )}
 
       <Footer />
+
+      <JsonLd data={hotelJsonLd(hotel)} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Hotels", path: "/hotels" },
+          { name: hotel.name, path: `/hotels/${hotel.slug}` },
+        ])}
+      />
     </div>
   );
 }

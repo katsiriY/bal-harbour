@@ -1,3 +1,9 @@
+import {
+  bookingSearchUrl,
+  expediaSearchUrl,
+  hotelDirectUrl,
+} from "@/lib/affiliates";
+
 export type FilterTag =
   | "Oceanfront"
   | "Adults-mostly"
@@ -34,24 +40,23 @@ export type Hotel = {
   rates: Rate[];
 };
 
-function ratesFor(base: number): Rate[] {
-  const enc = (s: string) => encodeURIComponent(s);
+function ratesFor(base: number, hotelName: string): Rate[] {
   return [
     {
       site: "Booking.com",
       price: Math.round(base * 1.025),
-      url: `https://www.booking.com/searchresults.html?ss=${enc("Bal Harbour Florida")}`,
+      url: bookingSearchUrl(),
     },
     {
       site: "Expedia",
       price: base,
       best: true,
-      url: `https://www.expedia.com/Hotel-Search?destination=${enc("Bal Harbour, FL")}`,
+      url: expediaSearchUrl(),
     },
     {
       site: "Hotel direct",
       price: Math.round(base * 1.05),
-      url: "#",
+      url: hotelDirectUrl(hotelName),
     },
   ];
 }
@@ -93,7 +98,7 @@ export const HOTELS: Hotel[] = [
         { label: "Parking", value: "Valet only, $65/nt" },
       ],
     },
-    rates: ratesFor(890),
+    rates: ratesFor(890, "The Grande Oceanfront"),
   },
   {
     slug: "casa-palma-resort",
@@ -130,7 +135,7 @@ export const HOTELS: Hotel[] = [
         { label: "Parking", value: "Self-park $45/nt" },
       ],
     },
-    rates: ratesFor(640),
+    rates: ratesFor(640, "Casa Palma Resort"),
   },
   {
     slug: "the-salt-house",
@@ -167,12 +172,17 @@ export const HOTELS: Hotel[] = [
         { label: "Parking", value: "Valet only, $55/nt" },
       ],
     },
-    rates: ratesFor(720),
+    rates: ratesFor(720, "The Salt House"),
   },
 ];
 
 export function getHotelBySlug(slug: string): Hotel | undefined {
   return HOTELS.find((h) => h.slug === slug);
+}
+
+// The rate every "Check rates" / "Book the best rate" CTA points at.
+export function bestRate(hotel: Hotel): Rate {
+  return hotel.rates.find((r) => r.best) ?? hotel.rates[0];
 }
 
 export function relatedHotels(slug: string, count = 2): Hotel[] {

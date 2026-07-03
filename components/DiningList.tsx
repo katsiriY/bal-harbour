@@ -3,18 +3,15 @@
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { DINING_TAGS, RESTAURANTS, type DiningTag, type Restaurant } from "@/lib/restaurants";
+import { openTableSearchUrl } from "@/lib/affiliates";
 
 const FILTERS: ("All" | DiningTag)[] = ["All", ...DINING_TAGS];
-
-function reserveUrl(name: string) {
-  return `https://www.opentable.com/s?term=${encodeURIComponent(`${name} Bal Harbour`)}`;
-}
 
 function RestaurantCard({ r, imageHeight = "h-[140px]" }: { r: Restaurant; imageHeight?: string }) {
   return (
     <div className="hover-lift overflow-hidden rounded-[22px] bg-white shadow-small">
       <div className={`relative ${imageHeight}`}>
-        <Image src={r.image} alt={r.name} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
+        <Image src={r.image} alt={`${r.name} — ${r.category} restaurant in Bal Harbour`} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
       </div>
       <div className="flex flex-col gap-1.5 px-5 pb-4.5 pt-4">
         <div className="text-lg font-bold text-ink">
@@ -24,6 +21,14 @@ function RestaurantCard({ r, imageHeight = "h-[140px]" }: { r: Restaurant; image
           </span>
         </div>
         <p className="text-[13.5px] leading-snug text-body">{r.blurb}</p>
+        <a
+          href={openTableSearchUrl(r.name)}
+          target="_blank"
+          rel="sponsored noopener"
+          className="mt-1 self-start text-[13px] font-semibold text-gold-deep no-underline hover:underline"
+        >
+          Reserve a table ↗
+        </a>
       </div>
     </div>
   );
@@ -63,7 +68,7 @@ export default function DiningList() {
         <>
           <div className="relative grid grid-cols-1 gap-5 px-6 md:grid-cols-[1.5fr_1fr] md:px-11">
             <a
-              href={reserveUrl(featured.name)}
+              href={openTableSearchUrl(featured.name)}
               target="_blank"
               rel="sponsored noopener"
               className="hover-lift relative block min-h-[420px] overflow-hidden rounded-[24px] no-underline"

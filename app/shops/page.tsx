@@ -3,11 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, shoppingCenterJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Shops",
+  title: "Bal Harbour Shops — A Local's Guide to the Luxury Mall",
   description:
-    "The open-air mall, decoded — our guide to shopping Bal Harbour right, whatever your budget.",
+    "The Bal Harbour Shops, decoded: which luxury boutiques to hit (Chanel, Gucci, the jewel boxes), when to go, where to park and what's free — a local's guide to the famous open-air mall.",
+  alternates: { canonical: "/shops" },
 };
 
 const TIPS = [
@@ -40,16 +43,17 @@ export default function ShopsPage() {
 
       <div className="relative flex flex-col gap-3.5 px-6 pb-2 pt-8 md:px-11 md:pt-11">
         <div className="text-[13px] font-semibold tracking-[0.16em] text-gold-deep">
-          SHOPPING · THE VILLAGE &amp; BEYOND
+          THE BAL HARBOUR SHOPS &amp; BEYOND
         </div>
         <h1 className="max-w-[720px] text-4xl font-bold leading-[1.08] tracking-tight text-ink md:text-[46px]">
           Window-shopping is free.{" "}
           <em className="font-serif-italic text-gold">Everything else isn&apos;t.</em>
         </h1>
-        <p className="max-w-[560px] text-base leading-relaxed text-ink-4">
-          The open-air mall here is world-famous for a reason — koi ponds,
-          couture and the best people-watching in Miami. Our guide to doing
-          it right, whatever your budget.
+        <p className="max-w-[600px] text-base leading-relaxed text-ink-4">
+          The Bal Harbour Shops — the open-air luxury mall that made the
+          village famous — is worth the trip even if you buy nothing: koi
+          ponds, couture and the best people-watching in Miami. Our guide to
+          doing it right, whatever your budget.
         </p>
       </div>
 
@@ -111,6 +115,14 @@ export default function ShopsPage() {
       </div>
 
       <Footer />
+
+      <JsonLd data={shoppingCenterJsonLd()} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Shops", path: "/shops" },
+        ])}
+      />
     </div>
   );
 }

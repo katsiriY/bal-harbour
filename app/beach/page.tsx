@@ -3,11 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
+import { beachJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Beach",
+  title: "Bal Harbour Beach — Public Access, Parking & Local Tips",
   description:
-    "One mile of sand, properly explained — where to get on, where to park, when the light is best.",
+    "Bal Harbour Beach is public and gloriously uncrowded — here's where to get on (the quiet 96th Street entrance), where to park, when the light and tides are best, and how the Jetty Walk works.",
+  alternates: { canonical: "/beach" },
 };
 
 const INFO_CARDS = [
@@ -35,10 +38,10 @@ export default function BeachPage() {
 
       <div className="relative flex flex-col gap-3.5 px-6 pb-2 pt-8 md:px-11 md:pt-11">
         <div className="text-[13px] font-semibold tracking-[0.16em] text-gold-deep">
-          THE BEACH · OPEN SUNRISE TO SUNSET
+          BAL HARBOUR BEACH · OPEN SUNRISE TO SUNSET
         </div>
         <h1 className="max-w-[720px] text-4xl font-bold leading-[1.08] tracking-tight text-ink md:text-[46px]">
-          One mile of sand,{" "}
+          One mile of public sand,{" "}
           <em className="font-serif-italic text-gold">properly explained.</em>
         </h1>
         <p className="max-w-[560px] text-base leading-relaxed text-ink-4">
@@ -127,6 +130,14 @@ export default function BeachPage() {
       </div>
 
       <Footer />
+
+      <JsonLd data={beachJsonLd()} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Beach", path: "/beach" },
+        ])}
+      />
     </div>
   );
 }

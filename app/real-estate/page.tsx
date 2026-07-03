@@ -3,11 +3,14 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import LeadForm from "@/components/LeadForm";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbJsonLd, realEstateServiceJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Real estate",
+  title: "Bal Harbour Real Estate — Condos, Homes & a Local Agent Intro",
   description:
-    "Make the vacation permanent. Tell us what you're dreaming about and we'll introduce you to a Bal Harbour agent we personally trust.",
+    "Buying, renting or selling in Bal Harbour, Florida? Tell us what you're dreaming about — oceanfront condo, family home, pied-à-terre — and we'll introduce you to one trusted local agent. Free, no spam, no obligation.",
+  alternates: { canonical: "/real-estate" },
 };
 
 const STEPS = [
@@ -73,6 +76,14 @@ export default function RealEstatePage() {
       </div>
 
       <Footer />
+
+      <JsonLd data={realEstateServiceJsonLd()} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Real estate", path: "/real-estate" },
+        ])}
+      />
     </div>
   );
 }

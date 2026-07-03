@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import ImageCarousel from "@/components/ImageCarousel";
-import type { FilterTag, Hotel } from "@/lib/hotels";
+import { bestRate, type FilterTag, type Hotel } from "@/lib/hotels";
 
 const FILTERS: ("All" | FilterTag)[] = [
   "All",
@@ -115,7 +115,7 @@ export default function HotelsList({ hotels }: { hotels: Hotel[] }) {
                     Full review
                   </Link>
                   <a
-                    href={hotel.rates.find((r) => r.best)?.url ?? hotel.rates[0].url}
+                    href={bestRate(hotel).url}
                     target="_blank"
                     rel="sponsored noopener"
                     className="btn-gold rounded-full px-5 py-2.5 text-[13.5px] font-semibold text-ink no-underline"

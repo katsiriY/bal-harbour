@@ -3,7 +3,42 @@
 import { useState, type FormEvent } from "react";
 
 const LOOKING_TO = ["Buy", "Rent", "Sell", "Just curious"] as const;
-const BUDGETS = ["Under $1M", "$1M – $2M", "$2M – $5M", "$5M+"];
+type Intent = (typeof LOOKING_TO)[number];
+
+// Budget options follow the intent — renting asks monthly, selling asks the
+// home's value. Purchase prices would make no sense on a rental inquiry.
+const BUDGET_CONFIG: Record<
+  Intent,
+  { label: string; options: string[]; defaultIndex: number }
+> = {
+  Buy: {
+    label: "Budget",
+    options: ["Under $1M", "$1M – $2M", "$2M – $5M", "$5M+"],
+    defaultIndex: 2,
+  },
+  Rent: {
+    label: "Monthly budget",
+    options: ["Under $5K/mo", "$5K – $10K/mo", "$10K – $20K/mo", "$20K+/mo"],
+    defaultIndex: 1,
+  },
+  Sell: {
+    label: "Estimated value",
+    options: [
+      "Under $1M",
+      "$1M – $2M",
+      "$2M – $5M",
+      "$5M+",
+      "No idea — that's why I'm here",
+    ],
+    defaultIndex: 2,
+  },
+  "Just curious": {
+    label: "Budget (dreaming is free)",
+    options: ["Not sure yet", "Under $1M", "$1M – $2M", "$2M – $5M", "$5M+"],
+    defaultIndex: 0,
+  },
+};
+
 const TIMELINES = ["Just browsing", "Within a year", "Within 6 months", "ASAP"];
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -13,8 +48,10 @@ type Status = "idle" | "submitting" | "success" | "error";
 export default function LeadForm() {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
-  const [lookingTo, setLookingTo] = useState<(typeof LOOKING_TO)[number]>("Buy");
-  const [budget, setBudget] = useState(BUDGETS[2]);
+  const [lookingTo, setLookingTo] = useState<Intent>("Buy");
+  const [budget, setBudget] = useState(
+    BUDGET_CONFIG.Buy.options[BUDGET_CONFIG.Buy.defaultIndex],
+  );
   const [timeline, setTimeline] = useState(TIMELINES[1]);
   const [dream, setDream] = useState("");
   const [status, setStatus] = useState<Status>("idle");
@@ -116,7 +153,13 @@ export default function LeadForm() {
             <button
               key={opt}
               type="button"
-              onClick={() => setLookingTo(opt)}
+              onClick={() => {
+                setLookingTo(opt);
+                // Swap the budget scale with the intent so a rental inquiry
+                // never carries a stale purchase price (and vice versa).
+                const cfg = BUDGET_CONFIG[opt];
+                setBudget(cfg.options[cfg.defaultIndex]);
+              }}
               aria-pressed={lookingTo === opt}
               className={[
                 "rounded-full px-5 py-2.5 transition-colors",
@@ -134,7 +177,7 @@ export default function LeadForm() {
       <div className="grid grid-cols-1 gap-3.5 sm:grid-cols-2">
         <div className="flex flex-col gap-1.5">
           <label htmlFor="budget" className="text-[13px] font-semibold text-ink-2">
-            Budget
+            {BUDGET_CONFIG[lookingTo].label}
           </label>
           <select
             id="budget"
@@ -142,7 +185,7 @@ export default function LeadForm() {
             onChange={(e) => setBudget(e.target.value)}
             className="rounded-[14px] border-[1.5px] border-ink/18 px-4 py-3.5 text-[14.5px] text-ink focus:border-ink/40 focus:outline-none"
           >
-            {BUDGETS.map((b) => (
+            {BUDGET_CONFIG[lookingTo].options.map((b) => (
               <option key={b} value={b}>
                 {b}
               </option>

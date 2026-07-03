@@ -4,7 +4,7 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
-import { HOTELS } from "@/lib/hotels";
+import { HOTELS, bestRate } from "@/lib/hotels";
 import { HOME_FAQS } from "@/lib/faq";
 import {
   touristDestinationJsonLd,
@@ -160,20 +160,26 @@ export default function Home() {
           href="/hotels"
           className="border-b-2 border-gold pb-0.5 text-sm font-semibold text-ink no-underline"
         >
-          See all six hotels
+          See all hotels
         </Link>
       </div>
       <div className="relative grid grid-cols-1 gap-5 px-6 pb-12 md:grid-cols-3 md:px-11">
         {featured.map((hotel) => (
-          <Link
+          <article
             key={hotel.slug}
-            href={`/hotels/${hotel.slug}`}
-            className="hover-lift block overflow-hidden rounded-[22px] bg-white shadow-card no-underline"
+            className="hover-lift relative overflow-hidden rounded-[22px] bg-white shadow-card"
           >
+            {/* Whole card opens the review; the "Check rates" pill sits above
+                this overlay as a real affiliate link (no nested anchors). */}
+            <Link
+              href={`/hotels/${hotel.slug}`}
+              aria-label={`${hotel.name} — read the full review`}
+              className="absolute inset-0 z-[1]"
+            />
             <div className="relative h-[180px]">
               <Image
                 src={hotel.images[0]}
-                alt={hotel.name}
+                alt={`${hotel.name} hotel in Bal Harbour, Florida`}
                 fill
                 sizes="(max-width: 768px) 100vw, 33vw"
                 className="object-cover"
@@ -198,12 +204,17 @@ export default function Home() {
                 <div className="text-sm text-ink">
                   from <strong>${hotel.price}</strong>/nt
                 </div>
-                <div className="rounded-full bg-gold/18 px-4 py-2 text-[13px] font-semibold text-gold-deep">
+                <a
+                  href={bestRate(hotel).url}
+                  target="_blank"
+                  rel="sponsored noopener"
+                  className="relative z-[2] rounded-full bg-gold/18 px-4 py-2 text-[13px] font-semibold text-gold-deep no-underline transition-colors hover:bg-gold/30"
+                >
                   Check rates
-                </div>
+                </a>
               </div>
             </div>
-          </Link>
+          </article>
         ))}
       </div>
 
