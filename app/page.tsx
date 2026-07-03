@@ -20,13 +20,24 @@ export default function Home() {
 
       <Header />
 
-      {/* Hero panel */}
-      <div className="bg-hero-panel relative mx-4 mt-4 overflow-hidden rounded-[28px] md:mx-11 md:mt-6">
+      {/* Hero panel — full-bleed photo with the panel green blending
+          seamlessly into it (no hard edge). */}
+      <div className="bg-hero-panel relative mx-4 mt-4 min-h-[420px] overflow-hidden rounded-[28px] md:mx-11 md:mt-6">
+        <Image
+          src="/img/palms-surf.jpg"
+          alt="Palm trees over the surf at Bal Harbour"
+          fill
+          sizes="(max-width: 768px) 100vw, 1160px"
+          className="object-cover"
+          style={{ objectPosition: "65% center" }}
+          priority
+        />
+        <div aria-hidden className="hero-blend" />
         <div
           aria-hidden
-          className="sun-glow-panel pointer-events-none absolute -top-[120px] right-[24%] hidden h-[340px] w-[340px] rounded-full md:block"
+          className="sun-glow-panel pointer-events-none absolute -top-[120px] right-[24%] z-10 hidden h-[340px] w-[340px] rounded-full md:block"
         />
-        <div className="relative flex flex-col gap-5 px-6 pb-16 pt-10 md:max-w-[520px] md:px-14 md:pb-[190px] md:pt-[70px]">
+        <div className="relative z-10 flex flex-col gap-5 px-6 pb-16 pt-10 md:max-w-[520px] md:px-14 md:pb-[190px] md:pt-[70px]">
           <div className="text-[13px] font-semibold tracking-[0.16em] text-gold-light">
             BAL HARBOUR, FLORIDA
           </div>
@@ -41,22 +52,12 @@ export default function Home() {
             — where to stay, eat, shop and float.
           </p>
         </div>
-        <div className="relative h-56 w-full md:absolute md:inset-y-0 md:right-0 md:h-auto md:w-[38%]">
-          <Image
-            src="/img/palms-surf.jpg"
-            alt="Palm trees over the surf at Bal Harbour"
-            fill
-            sizes="(max-width: 768px) 100vw, 38vw"
-            className="object-cover"
-            priority
-          />
-        </div>
 
         {/* Search bar */}
         <form
           action="/hotels"
           method="GET"
-          className="relative mx-6 mb-6 flex flex-col gap-3 rounded-[28px] bg-ivory p-4 shadow-[0_12px_32px_rgba(0,0,0,0.25)] sm:flex-row sm:items-center sm:rounded-full sm:py-2.5 sm:pl-6 sm:pr-2.5 md:absolute md:inset-x-14 md:bottom-12 md:mx-0 md:mb-0 md:mr-[calc(38%+40px)]"
+          className="relative z-10 mx-6 mb-6 flex flex-col gap-3 rounded-[28px] bg-ivory p-4 shadow-[0_12px_32px_rgba(0,0,0,0.25)] sm:flex-row sm:items-center sm:rounded-full sm:py-2.5 sm:pl-6 sm:pr-2.5 md:absolute md:inset-x-14 md:bottom-12 md:mx-0 md:mb-0 md:mr-[calc(38%+40px)]"
         >
           <input
             type="text"

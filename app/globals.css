@@ -86,6 +86,36 @@ body {
   background: linear-gradient(135deg, #c3a366 0%, #b5975a 100%);
 }
 
+/* Homepage hero: full-bleed photo with the panel green dissolving
+   seamlessly into it. The overlay IS the panel gradient, masked to
+   fade out toward the photo, so the greens match with no visible seam. */
+.hero-blend {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, #0b2a21 0%, #12463a 52%, #1e6350 100%);
+  /* Mobile: green up top, dissolving down into the photo. */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 52%,
+    transparent 95%
+  );
+  mask-image: linear-gradient(to bottom, #000 0%, #000 52%, transparent 95%);
+}
+
+@media (min-width: 768px) {
+  .hero-blend {
+    /* Desktop: green on the left, dissolving right into the photo. */
+    -webkit-mask-image: linear-gradient(
+      to right,
+      #000 0%,
+      #000 48%,
+      transparent 76%
+    );
+    mask-image: linear-gradient(to right, #000 0%, #000 48%, transparent 76%);
+  }
+}
+
 .sun-glow-top {
   background: radial-gradient(
     circle,
