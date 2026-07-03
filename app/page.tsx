@@ -20,19 +20,22 @@ export default function Home() {
 
       <Header />
 
-      {/* Hero panel — full-bleed photo with the panel green blending
-          seamlessly into it (no hard edge). */}
+      {/* Hero panel — photo masked to fade into the green, plus a green
+          tint overlay, so the photo blends seamlessly (recipe from
+          Home.dc.html). */}
       <div className="bg-hero-panel relative mx-4 mt-4 min-h-[420px] overflow-hidden rounded-[28px] md:mx-11 md:mt-6">
-        <Image
-          src="/img/palms-surf.jpg"
-          alt="Palm trees over the surf at Bal Harbour"
-          fill
-          sizes="(max-width: 768px) 100vw, 1160px"
-          className="object-cover"
-          style={{ objectPosition: "65% center" }}
-          priority
-        />
-        <div aria-hidden className="hero-blend" />
+        <div aria-hidden className="hero-photo">
+          <Image
+            src="/img/palms-surf.jpg"
+            alt="Palm trees over the surf at Bal Harbour"
+            fill
+            sizes="(max-width: 768px) 100vw, 64vw"
+            className="object-cover"
+            style={{ objectPosition: "65% center" }}
+            priority
+          />
+        </div>
+        <div aria-hidden className="hero-tint" />
         <div
           aria-hidden
           className="sun-glow-panel pointer-events-none absolute -top-[120px] right-[24%] z-10 hidden h-[340px] w-[340px] rounded-full md:block"

@@ -86,33 +86,72 @@ body {
   background: linear-gradient(135deg, #c3a366 0%, #b5975a 100%);
 }
 
-/* Homepage hero: full-bleed photo with the panel green dissolving
-   seamlessly into it. The overlay IS the panel gradient, masked to
-   fade out toward the photo, so the greens match with no visible seam. */
-.hero-blend {
+/* Homepage hero: seamless photo-to-green blend (recipe from Home.dc.html).
+   The photo itself is masked so it fades in from the green side, and a
+   green tint overlay carries the panel color across the transition. */
+.hero-photo {
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, #0b2a21 0%, #12463a 52%, #1e6350 100%);
-  /* Mobile: green up top, dissolving down into the photo. */
+  /* Mobile: photo fades in from the top down. */
   -webkit-mask-image: linear-gradient(
     to bottom,
-    #000 0%,
-    #000 52%,
-    transparent 95%
+    transparent 0%,
+    rgba(0, 0, 0, 0.15) 22%,
+    rgba(0, 0, 0, 0.55) 44%,
+    #000 72%
   );
-  mask-image: linear-gradient(to bottom, #000 0%, #000 52%, transparent 95%);
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.15) 22%,
+    rgba(0, 0, 0, 0.55) 44%,
+    #000 72%
+  );
+}
+
+.hero-tint {
+  position: absolute;
+  inset: 0;
+  /* Mobile: green wash strongest at the top, clearing downward. */
+  background: linear-gradient(
+    to bottom,
+    rgba(11, 42, 33, 0.55) 0%,
+    rgba(11, 42, 33, 0.15) 38%,
+    rgba(11, 42, 33, 0) 62%
+  );
 }
 
 @media (min-width: 768px) {
-  .hero-blend {
-    /* Desktop: green on the left, dissolving right into the photo. */
+  .hero-photo {
+    left: auto;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 64%;
+    /* Desktop: photo occupies the right 64%, fading in from its left edge. */
     -webkit-mask-image: linear-gradient(
-      to right,
-      #000 0%,
-      #000 48%,
-      transparent 76%
+      90deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.15) 30%,
+      rgba(0, 0, 0, 0.55) 55%,
+      #000 80%
     );
-    mask-image: linear-gradient(to right, #000 0%, #000 48%, transparent 76%);
+    mask-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.15) 30%,
+      rgba(0, 0, 0, 0.55) 55%,
+      #000 80%
+    );
+  }
+
+  .hero-tint {
+    background: linear-gradient(
+      90deg,
+      rgba(11, 42, 33, 0.55) 0%,
+      rgba(11, 42, 33, 0.15) 38%,
+      rgba(11, 42, 33, 0) 60%
+    );
   }
 }
 
