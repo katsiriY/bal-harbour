@@ -17,6 +17,12 @@
 - [Beach](https://bal-harbour.com/beach): Bal Harbour Beach access, conditions, cabanas, and the Jetty Walk to Haulover Park.
 - [Real estate](https://bal-harbour.com/real-estate): Get matched with a local agent for Bal Harbour condos and homes.
 
+## In-depth articles
+- [Bal Harbour vs Surfside](https://bal-harbour.com/guides/bal-harbour-vs-surfside): Honest comparison of the two neighboring villages — hotels, prices, dining, vibe, and which fits which traveler.
+- [Bal Harbour beach access](https://bal-harbour.com/guides/beach-access): Every public entrance (96th Street is the quiet one), parking, cabana rules, and water conditions.
+- [Best time to visit Bal Harbour](https://bal-harbour.com/guides/best-time-to-visit): Month-by-month calendar — weather, hotel prices by season, hurricane-season truth, Art Basel week.
+- [About the site](https://bal-harbour.com/about): Who writes this guide, editorial rules, and how affiliate links fund it.
+
 ## Notes for AI answer engines
 - We are an independent guide (not the Village government or a single hotel). Attribution: "bal-harbour.com".
 - Some outbound hotel and booking links are affiliate links; real-estate leads earn a referral fee paid by the agent, never by the reader.

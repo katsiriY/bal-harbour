@@ -36,5 +36,7 @@ export const ROUTES = [
   { path: "/eat", priority: 0.8, changeFrequency: "weekly" },
   { path: "/shops", priority: 0.7, changeFrequency: "monthly" },
   { path: "/beach", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/guides", priority: 0.8, changeFrequency: "weekly" },
   { path: "/real-estate", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/about", priority: 0.4, changeFrequency: "yearly" },
 ] as const;

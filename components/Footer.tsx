@@ -18,6 +18,12 @@ export default function Footer() {
               {link.label}
             </Link>
           ))}
+          <Link
+            href="/about"
+            className="text-ivory/75 no-underline hover:text-ivory"
+          >
+            About
+          </Link>
         </div>
       </div>
       <div className="flex flex-col gap-2 border-t border-ivory/15 pt-4 text-xs text-ivory/50 sm:flex-row sm:justify-between sm:pt-[18px]">

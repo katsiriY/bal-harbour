@@ -3,6 +3,7 @@
 // plain objects so pages/layout can drop them into a <script> tag.
 import { SITE } from "@/lib/site";
 import type { Faq } from "@/lib/faq";
+import type { Guide } from "@/lib/guides";
 import type { Hotel } from "@/lib/hotels";
 import type { Restaurant } from "@/lib/restaurants";
 
@@ -86,11 +87,11 @@ export function touristDestinationJsonLd() {
   };
 }
 
-export function faqPageJsonLd(faqs: Faq[]) {
+export function faqPageJsonLd(faqs: Faq[], path = "/") {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "@id": `${SITE.url}/#faq`,
+    "@id": `${SITE.url}${path === "/" ? "" : path}#faq`,
     mainEntity: faqs.map((f) => ({
       "@type": "Question",
       name: f.question,
@@ -218,6 +219,54 @@ export function realEstateServiceJsonLd() {
       priceCurrency: "USD",
       description: "Free for buyers, renters and sellers.",
     },
+  };
+}
+
+// Article entity for guides. Author is the site Organization (honest — the
+// guides are written as the site's collective local voice, not a persona).
+export function articleJsonLd(guide: Guide) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${SITE.url}/guides/${guide.slug}#article`,
+    headline: `${guide.title} ${guide.titleAccent}`,
+    description: guide.description,
+    image: `${SITE.url}${guide.heroImage}`,
+    datePublished: guide.published,
+    dateModified: guide.updated,
+    inLanguage: "en-US",
+    author: { "@id": `${SITE.url}/#organization` },
+    publisher: { "@id": `${SITE.url}/#organization` },
+    mainEntityOfPage: `${SITE.url}/guides/${guide.slug}`,
+    about: { "@type": "Place", name: "Bal Harbour, Florida" },
+  };
+}
+
+export function guidesItemListJsonLd(guides: Guide[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Bal Harbour travel guides",
+    numberOfItems: guides.length,
+    itemListElement: guides.map((g, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: `${SITE.url}/guides/${g.slug}`,
+      name: `${g.title} ${g.titleAccent}`,
+    })),
+  };
+}
+
+export function aboutPageJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "@id": `${SITE.url}/about#page`,
+    url: `${SITE.url}/about`,
+    name: "About bal-harbour.com",
+    description:
+      "Who writes bal-harbour.com, how we review, and how the site makes money — an independent local guide to Bal Harbour, Florida.",
+    mainEntity: { "@id": `${SITE.url}/#organization` },
   };
 }
 

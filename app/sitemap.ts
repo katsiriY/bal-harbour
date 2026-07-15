@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE, ROUTES } from "@/lib/site";
 import { HOTELS } from "@/lib/hotels";
+import { GUIDES } from "@/lib/guides";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
@@ -19,5 +20,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticPages, ...hotelPages];
+  // Guides carry their real edit date — a freshness signal search engines
+  // and AI crawlers actually read.
+  const guidePages: MetadataRoute.Sitemap = GUIDES.map((g) => ({
+    url: `${SITE.url}/guides/${g.slug}`,
+    lastModified: new Date(`${g.updated}T12:00:00Z`),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...hotelPages, ...guidePages];
 }
