@@ -17,22 +17,22 @@ const TIPS = [
   {
     n: "01",
     title: "The big houses",
-    body: "Every major fashion house within four blocks. Go weekday mornings for actual browsing room.",
+    body: "Chanel, Dior, Gucci, Prada — more than 100 boutiques on two open-air levels. Go weekday mornings for actual browsing room.",
   },
   {
     n: "02",
-    title: "The jewel boxes",
-    body: "Watches and high jewelry with security guards friendlier than most maître d's.",
+    title: "The anchors",
+    body: "Saks on one end; on the other, the 1971 Neiman Marcus — the first outside Texas — fresh off a full renovation with a new bar, spa and personal-shopping suite.",
   },
   {
     n: "03",
-    title: "Resortwear done right",
-    body: "Linen, sandals and swim that survives more than one season. Our short list.",
+    title: "The refuel",
+    body: "Four real restaurants and a Milanese café hide inside: Makoto's sushi, Slim's steaks, Carpaccio's terrace, Hillstone's burger, Sant Ambroeus espresso.",
   },
   {
     n: "04",
     title: "The free stuff",
-    body: "Koi ponds, sculpture, seasonal installations — a museum where everything's for sale.",
+    body: "Koi ponds, banyan shade, seasonal art installations — a museum where everything's for sale. Browsing costs nothing.",
   },
 ];
 
@@ -59,11 +59,12 @@ export default function ShopsPage() {
 
       <div className="relative mx-6 mt-7 h-[280px] overflow-hidden rounded-[28px] md:mx-11 md:h-[340px]">
         <Image
-          src="/img/shops-arcade.jpg"
-          alt="The open-air shopping arcade"
+          src="/img/bal-harbour-shops-real.jpg"
+          alt="Café tables under the palm canopy in the Bal Harbour Shops courtyard"
           fill
           sizes="(max-width: 768px) 100vw, 1160px"
           className="object-cover"
+          style={{ objectPosition: "center 62%" }}
           priority
         />
         <div className="absolute inset-x-0 bottom-0 flex flex-col items-start justify-end gap-2 bg-gradient-to-t from-[rgba(11,42,33,0.85)] from-75% to-transparent px-6 pb-6 pt-24 md:flex-row md:items-end md:justify-between md:px-9">

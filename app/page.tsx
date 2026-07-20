@@ -283,8 +283,8 @@ export default function Home() {
         </div>
         <div className="relative h-[220px] overflow-hidden rounded-[22px] border border-ivory/18 md:h-[280px]">
           <Image
-            src="/img/condo-terrace.jpg"
-            alt="Oceanfront condo terrace in Bal Harbour, Florida overlooking the water"
+            src="/img/bal-harbour-skyline.jpg"
+            alt="The Bal Harbour condo skyline across Biscayne Bay"
             fill
             sizes="(max-width: 768px) 100vw, 40vw"
             className="object-cover"

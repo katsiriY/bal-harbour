@@ -131,6 +131,19 @@ export default function AboutPage() {
         </a>
       </div>
 
+      <div className="relative flex flex-col gap-2 px-6 pb-12 md:px-11">
+        <h2 className="text-lg font-bold text-ink">Photo credits</h2>
+        <p className="max-w-[680px] text-[13px] leading-relaxed text-muted">
+          Real-place photography via Wikimedia Commons: St. Regis Bal Harbour
+          by Mk17b (CC BY-SA 4.0) · Bal Harbour Shops courtyard by
+          (WT-de) Mistoffeles (CC BY-SA 4.0) · Bal Harbour skyline by
+          Fredlyfish4 (CC BY 4.0) · Haulover Park by Elmschrat (CC BY-SA
+          3.0) · vintage Sea View Hotel postcard, Tichnor Brothers, public
+          domain. Remaining photography via Unsplash — illustrative of the
+          area, not of specific properties.
+        </p>
+      </div>
+
       <Footer />
 
       <JsonLd data={aboutPageJsonLd()} />

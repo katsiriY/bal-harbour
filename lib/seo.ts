@@ -113,8 +113,11 @@ export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
   };
 }
 
-// Full Hotel entity for the detail pages. No aggregateRating on purpose —
-// we have no collected reviews, and faking them risks a manual action.
+// Full Hotel entity for the detail pages. These are REAL hotels, so the
+// entity carries its real street address, coordinates, and a sameAs link
+// to the official site — the strongest disambiguation signal we can send.
+// No aggregateRating on purpose: we have no collected reviews, and faking
+// them risks a manual action.
 export function hotelJsonLd(hotel: Hotel) {
   return {
     "@context": "https://schema.org",
@@ -122,15 +125,19 @@ export function hotelJsonLd(hotel: Hotel) {
     "@id": `${SITE.url}/hotels/${hotel.slug}#hotel`,
     name: hotel.name,
     url: `${SITE.url}/hotels/${hotel.slug}`,
+    sameAs: [hotel.officialUrl],
     description: hotel.oneLiner,
     image: hotel.images.map((img) => `${SITE.url}${img}`),
     starRating: { "@type": "Rating", ratingValue: hotel.stars },
     priceRange: `From $${hotel.price} per night`,
-    address: ADDRESS,
+    address: {
+      ...ADDRESS,
+      streetAddress: hotel.address.split(",")[0],
+    },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: SITE.geo.latitude,
-      longitude: SITE.geo.longitude,
+      latitude: hotel.geo.lat,
+      longitude: hotel.geo.lng,
     },
     amenityFeature: hotel.amenities.map((a) => ({
       "@type": "LocationFeatureSpecification",
@@ -158,6 +165,12 @@ export function restaurantsItemListJsonLd(restaurants: Restaurant[]) {
         description: r.blurb,
         image: `${SITE.url}${r.image}`,
         address: ADDRESS,
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: r.geo.lat,
+          longitude: r.geo.lng,
+        },
+        ...(r.reserveUrl ? { acceptsReservations: r.reserveUrl } : {}),
       },
     })),
   };
@@ -171,7 +184,7 @@ export function shoppingCenterJsonLd() {
     "@type": "ShoppingCenter",
     name: "Bal Harbour Shops",
     description:
-      "Open-air luxury shopping center in Bal Harbour, Florida — roughly 100 boutiques including Chanel, Gucci and Saint Laurent, set around koi ponds and tropical landscaping.",
+      "Open-air luxury shopping center in Bal Harbour, Florida — more than 100 boutiques including Chanel, Dior, Gucci and Prada, anchored by Saks Fifth Avenue and a newly renovated Neiman Marcus, set around koi ponds and tropical landscaping.",
     url: `${SITE.url}/shops`,
     sameAs: ["https://www.balharbourshops.com"],
     address: { ...ADDRESS, streetAddress: "9700 Collins Ave" },
@@ -284,10 +297,11 @@ export function hotelsItemListJsonLd(hotels: Hotel[]) {
         "@type": "Hotel",
         name: h.name,
         url: `${SITE.url}/hotels/${h.slug}`,
+        sameAs: [h.officialUrl],
         description: h.oneLiner,
         starRating: { "@type": "Rating", ratingValue: h.stars },
         priceRange: `From $${h.price} per night`,
-        address: ADDRESS,
+        address: { ...ADDRESS, streetAddress: h.address.split(",")[0] },
       },
     })),
   };

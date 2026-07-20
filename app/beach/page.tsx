@@ -16,18 +16,18 @@ export const metadata: Metadata = {
 const INFO_CARDS = [
   {
     eyebrow: "GETTING ON",
-    title: "The public entrances",
-    body: "Three access points along Collins. The 96th Street one is the quiet one — no hotel crowds, and the path comes out by the best sandbar.",
+    title: "The 96th Street access",
+    body: "The village's public entrance is at 96th & Collins, on the Surfside border — metered parking (about $1–2/hr, 4-hour limit), restrooms and an outdoor shower by the path, and a bike-share station on the south side.",
   },
   {
     eyebrow: "SITTING DOWN",
     title: "Cabanas & loungers",
-    body: "Hotel cabanas rent to non-guests on slow days — call after 10am. Or bring a chair; the sand is public below the tide line and gloriously free.",
+    body: "The cabana rows belong to the St. Regis and Sea View beach clubs — some rent to non-guests on slow days; call after 10am. Or bring a chair: the sand below the tide line is public and gloriously free.",
   },
   {
     eyebrow: "TIMING IT",
-    title: "Light & tides",
-    body: "Sunrise is the show here — the beach faces east. Low tide mid-morning means a wide, firm walking strand. Sunset happens behind you; go to the inlet for it.",
+    title: "Light, tides & lifeguards",
+    body: "Sunrise is the show — the beach faces due east. Lifeguards are on daily 9am–5pm. Low tide mid-morning leaves a wide, firm walking strand; for sunset, walk the Jetty Walk at the inlet.",
   },
 ];
 
@@ -62,13 +62,13 @@ export default function BeachPage() {
         />
         <div className="absolute bottom-5 left-5 flex flex-wrap gap-2.5">
           <div className="rounded-full bg-ivory/92 px-4 py-2.5 text-[13px] font-semibold text-ink">
-            88°F water
+            Summer water: high 80s°F
           </div>
           <div className="rounded-full bg-ivory/92 px-4 py-2.5 text-[13px] font-semibold text-ink">
-            Calm surf
+            Usually calm surf
           </div>
           <div className="rounded-full bg-ivory/92 px-4 py-2.5 text-[13px] font-semibold text-ink">
-            UV 9 — hat weather
+            Lifeguards 9am–5pm daily
           </div>
         </div>
       </div>

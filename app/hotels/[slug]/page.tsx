@@ -51,6 +51,8 @@ export default async function HotelDetailPage({
   const related = relatedHotels(hotel.slug);
   const [big, ...rest] = hotel.images;
   const gallery = [big, ...rest, ...rest].slice(0, 5);
+  const alts = hotel.imageAlts ?? hotel.images.map(() => hotel.name);
+  const galleryAlts = [alts[0], ...alts.slice(1), ...alts.slice(1)].slice(0, 5);
 
   return (
     <div className="bg-inner-wash relative w-full font-sans">
@@ -84,26 +86,42 @@ export default async function HotelDetailPage({
         </div>
       </div>
 
+      {hotel.notice && (
+        <div className="relative mx-6 mt-5 rounded-[16px] border-[1.5px] border-gold/60 bg-gold/12 px-5 py-3.5 text-[14px] leading-relaxed text-ink md:mx-11">
+          <strong className="pr-1">Heads up:</strong>
+          {hotel.notice}
+        </div>
+      )}
+
       {/* Photo gallery */}
       <div className="relative grid grid-cols-2 gap-3.5 px-6 pb-2 pt-6 md:grid-cols-4 md:grid-rows-[210px_210px] md:px-11">
         <div className="relative col-span-2 row-span-2 h-[220px] overflow-hidden rounded-[24px] md:h-full">
-          <Image src={gallery[0]} alt={`${hotel.name} — pool`} fill sizes="50vw" className="object-cover" priority />
+          <Image src={gallery[0]} alt={galleryAlts[0]} fill sizes="50vw" className="object-cover" priority />
         </div>
         <div className="relative h-[105px] overflow-hidden rounded-[20px] md:h-full">
-          <Image src={gallery[1]} alt={`${hotel.name} — room`} fill sizes="25vw" className="object-cover" />
+          <Image src={gallery[1]} alt={galleryAlts[1]} fill sizes="25vw" className="object-cover" />
         </div>
         <div className="relative h-[105px] overflow-hidden rounded-[20px] md:h-full">
-          <Image src={gallery[2]} alt={`${hotel.name} — lobby`} fill sizes="25vw" className="object-cover" />
+          <Image src={gallery[2]} alt={galleryAlts[2]} fill sizes="25vw" className="object-cover" />
         </div>
         <div className="relative h-[105px] overflow-hidden rounded-[20px] md:h-full">
-          <Image src={gallery[3]} alt={`${hotel.name} — beach`} fill sizes="25vw" className="object-cover" />
+          <Image src={gallery[3]} alt={galleryAlts[3]} fill sizes="25vw" className="object-cover" />
         </div>
         <div className="relative h-[105px] overflow-hidden rounded-[20px] md:h-full">
-          <Image src={gallery[4]} alt={`${hotel.name} — bar`} fill sizes="25vw" className="object-cover" />
-          <div className="absolute bottom-2.5 right-2.5 rounded-full bg-ivory/92 px-3.5 py-2 text-[12.5px] font-semibold text-ink">
-            All 24 photos
-          </div>
+          <Image src={gallery[4]} alt={galleryAlts[4]} fill sizes="25vw" className="object-cover" />
+          <a
+            href={hotel.officialUrl}
+            target="_blank"
+            rel="noopener"
+            className="absolute bottom-2.5 right-2.5 rounded-full bg-ivory/92 px-3.5 py-2 text-[12.5px] font-semibold text-ink no-underline"
+          >
+            Official gallery ↗
+          </a>
         </div>
+      </div>
+      <div className="relative px-6 pt-2 text-[11.5px] text-muted md:px-11">
+        Photos marked “illustrative” show the area&apos;s style, not this
+        specific property — the official gallery has the real rooms.
       </div>
 
       <div className="relative grid grid-cols-1 items-start gap-8 px-6 pb-14 pt-8 md:grid-cols-[1fr_380px] md:px-11">

@@ -4,14 +4,19 @@ import Image from "next/image";
 import { useMemo, useState } from "react";
 import { DINING_TAGS, RESTAURANTS, type DiningTag, type Restaurant } from "@/lib/restaurants";
 import { openTableSearchUrl } from "@/lib/affiliates";
+import VillageMap from "@/components/VillageMap";
 
 const FILTERS: ("All" | DiningTag)[] = ["All", ...DINING_TAGS];
+
+function reserveHref(r: Restaurant): string {
+  return r.reserveUrl ?? openTableSearchUrl(r.name);
+}
 
 function RestaurantCard({ r, imageHeight = "h-[140px]" }: { r: Restaurant; imageHeight?: string }) {
   return (
     <div className="hover-lift overflow-hidden rounded-[22px] bg-white shadow-small">
       <div className={`relative ${imageHeight}`}>
-        <Image src={r.image} alt={`${r.name} — ${r.category} restaurant in Bal Harbour`} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
+        <Image src={r.image} alt={r.imageAlt} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
       </div>
       <div className="flex flex-col gap-1.5 px-5 pb-4.5 pt-4">
         <div className="text-lg font-bold text-ink">
@@ -21,14 +26,17 @@ function RestaurantCard({ r, imageHeight = "h-[140px]" }: { r: Restaurant; image
           </span>
         </div>
         <p className="text-[13.5px] leading-snug text-body">{r.blurb}</p>
-        <a
-          href={openTableSearchUrl(r.name)}
-          target="_blank"
-          rel="sponsored noopener"
-          className="mt-1 self-start text-[13px] font-semibold text-gold-deep no-underline hover:underline"
-        >
-          Reserve a table ↗
-        </a>
+        <div className="mt-1 flex items-center justify-between gap-2">
+          <span className="text-xs text-muted">{r.location}</span>
+          <a
+            href={reserveHref(r)}
+            target="_blank"
+            rel="sponsored noopener"
+            className="text-[13px] font-semibold text-gold-deep no-underline hover:underline"
+          >
+            Reserve ↗
+          </a>
+        </div>
       </div>
     </div>
   );
@@ -68,14 +76,14 @@ export default function DiningList() {
         <>
           <div className="relative grid grid-cols-1 gap-5 px-6 md:grid-cols-[1.5fr_1fr] md:px-11">
             <a
-              href={openTableSearchUrl(featured.name)}
+              href={reserveHref(featured)}
               target="_blank"
               rel="sponsored noopener"
               className="hover-lift relative block min-h-[420px] overflow-hidden rounded-[24px] no-underline"
             >
               <Image
                 src={featured.image}
-                alt={featured.name}
+                alt={featured.imageAlt}
                 fill
                 sizes="(max-width: 768px) 100vw, 60vw"
                 className="object-cover"
@@ -130,17 +138,7 @@ export default function DiningList() {
         </div>
       )}
 
-      <div className="relative mx-6 mb-12 flex h-[190px] items-center justify-center rounded-[24px] bg-[repeating-linear-gradient(45deg,#d5dfd3_0,#d5dfd3_12px,#dfe7dc_12px,#dfe7dc_24px)] md:mx-11">
-        <div className="font-mono text-[11px] text-muted">
-          map: the village with all 14 pins
-        </div>
-        <button
-          type="button"
-          className="btn-dark absolute bottom-5 right-5 rounded-full px-4.5 py-2.5 text-[13px] font-semibold text-ivory"
-        >
-          Open the map
-        </button>
-      </div>
+      <VillageMap />
     </>
   );
 }

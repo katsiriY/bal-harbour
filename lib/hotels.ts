@@ -1,8 +1,4 @@
-import {
-  bookingSearchUrl,
-  expediaSearchUrl,
-  hotelDirectUrl,
-} from "@/lib/affiliates";
+import { bookingSearchUrl, expediaSearchUrl } from "@/lib/affiliates";
 
 export type FilterTag =
   | "Oceanfront"
@@ -33,6 +29,12 @@ export type Hotel = {
   amenities: string[];
   filterTags: FilterTag[];
   images: string[];
+  imageAlts?: string[];
+  address: string;
+  geo: { lat: number; lng: number };
+  officialUrl: string;
+  // Set when something big is temporarily true (e.g. renovation closure).
+  notice?: string;
   review: {
     paragraphs: string[];
     rundown: { label: string; value: string }[];
@@ -40,139 +42,207 @@ export type Hotel = {
   rates: Rate[];
 };
 
-function ratesFor(base: number, hotelName: string): Rate[] {
-  return [
-    {
-      site: "Booking.com",
-      price: Math.round(base * 1.025),
-      url: bookingSearchUrl(),
-    },
-    {
-      site: "Expedia",
-      price: base,
-      best: true,
-      url: expediaSearchUrl(),
-    },
-    {
-      site: "Hotel direct",
-      price: Math.round(base * 1.05),
-      url: hotelDirectUrl(hotelName),
-    },
-  ];
-}
-
+// The village really does have exactly three hotels. All facts below were
+// verified against public sources in July 2026 — prices are indicative
+// "from" floors by season, not quotes.
 export const HOTELS: Hotel[] = [
   {
-    slug: "the-grande-oceanfront",
-    name: "The Grande Oceanfront",
+    slug: "st-regis-bal-harbour",
+    name: "The St. Regis Bal Harbour",
     rankLabel: "№1 our pick",
     rankBadge: "gold",
     stars: 5,
     category: "Oceanfront",
-    price: 890,
-    oneLiner: "Sunrise pool, espresso at the towel stand, zero fuss.",
-    homeBadge: "Local favorite",
+    price: 687,
+    oneLiner:
+      "All 216 rooms face the ocean, a butler answers the phone, and the Shops are across the street.",
+    homeBadge: "The flagship",
     homeBadgeStyle: "dark",
     pullQuote:
-      "The sunrise pool is the whole point. Get there before 9, order the cortado, thank us later.",
-    amenities: ["Beach service", "Spa", "Kids club", "Valet"],
+      "Every single room faces the Atlantic. When sunrise hits those glass balconies, you'll forgive the rate. Mostly.",
+    amenities: ["All rooms ocean-facing", "Butler service", "Remède Spa", "Beach service"],
     filterTags: ["Oceanfront", "Spa", "Family"],
     images: [
-      "/img/pool-sunrise.jpg",
+      "/img/st-regis-bal-harbour.jpg",
       "/img/suite-ocean.jpg",
-      "/img/lobby.jpg",
+      "/img/pool-sunrise.jpg",
       "/img/beach-cabanas.jpg",
       "/img/bar-dusk.jpg",
     ],
+    imageAlts: [
+      "The St. Regis Bal Habour towers behind the palms on Collins Avenue",
+      "Ocean-view suite (illustrative)",
+      "Resort pool at sunrise (illustrative)",
+      "Beach cabanas (illustrative)",
+      "Cocktail bar at dusk (illustrative)",
+    ],
+    address: "9703 Collins Ave, Bal Harbour, FL 33154",
+    geo: { lat: 25.8887, lng: -80.1224 },
+    officialUrl:
+      "https://www.marriott.com/en-us/hotels/miaxr-the-st-regis-bal-harbour-resort/overview/",
     review: {
       paragraphs: [
-        "The Grande has been the anchor of the mile for two decades, and it still doesn't coast. Rooms were redone in 2024 — pale wood, linen everything, balconies deep enough for actual breakfast. Service hits that Bal Harbour sweet spot: they know your name by day two but nobody hovers. The beach setup is the best on the strip, with loungers spaced like people, not inventory.",
-        "What to know: the spa books out on weekends — reserve before you arrive. Ocean-view rooms on floors 6–9 are worth the bump; below that you're mostly looking at palm tops (not a tragedy). Skip the in-house Italian and walk to the village instead.",
+        "The grande dame of the village, and it earns the title daily. All 216 rooms and suites face the Atlantic through floor-to-ceiling glass, butler service comes standard with every room, and the whole machine — pools, Remède Spa, beach rows — runs with the unhurried confidence of a place that knows exactly what it is. Atlantikós, the Santorini-style Greek restaurant downstairs, is a destination in its own right.",
+        "What to know: this is the village's biggest splurge, with winter rates that clear $1,000 most nights — summer is when the math softens. The Bal Harbour Shops sit directly across Collins Avenue, close enough to carry your gelato back through the lobby. Book the spa before you land; weekends go first.",
       ],
       rundown: [
-        { label: "Best for", value: "Couples, low-key luxury" },
-        { label: "Rooms", value: "204, redone 2024" },
-        { label: "Beach", value: "Private, full service" },
-        { label: "Breakfast", value: "Included in most rates" },
-        { label: "Kids", value: "Welcome, kids club 4+" },
-        { label: "Parking", value: "Valet only, $65/nt" },
+        { label: "Best for", value: "Milestone trips, spa people" },
+        { label: "Rooms", value: "216, all ocean-facing" },
+        { label: "Beach", value: "Private service, cabanas" },
+        { label: "Dining", value: "Atlantikós (Greek), in-house" },
+        { label: "The Shops", value: "Directly across the street" },
+        { label: "Parking", value: "Valet" },
       ],
     },
-    rates: ratesFor(890, "The Grande Oceanfront"),
+    rates: [
+      {
+        site: "Booking.com",
+        price: 705,
+        url: bookingSearchUrl("The St. Regis Bal Harbour Resort"),
+      },
+      {
+        site: "Expedia",
+        price: 687,
+        best: true,
+        url: expediaSearchUrl("The St. Regis Bal Harbour Resort"),
+      },
+      {
+        site: "Hotel direct",
+        price: 720,
+        url: "https://www.marriott.com/en-us/hotels/miaxr-the-st-regis-bal-harbour-resort/overview/",
+      },
+    ],
   },
   {
-    slug: "casa-palma-resort",
-    name: "Casa Palma Resort",
-    rankLabel: "№2 · best for families",
+    slug: "sea-view-hotel",
+    name: "Sea View Hotel",
+    rankLabel: "№2 · the classic",
     rankBadge: "ivory",
-    stars: 4,
-    category: "Oceanfront",
-    price: 640,
-    oneLiner: "Kids welcome, taste intact. Ceviche cart at 2pm sharp.",
-    homeBadge: "Great for families",
+    stars: 3,
+    category: "Beachfront classic",
+    price: 208,
+    oneLiner:
+      "The old-school independent on the same sand as the $900 neighbors — postcard era and proud of it.",
+    homeBadge: "Best value",
     homeBadgeStyle: "ivory",
     pullQuote:
-      "Kids cannonballing at one pool, adults pretending not to hear them at the other. Everybody wins.",
-    amenities: ["Two pools", "Kids club", "Ceviche cart"],
+      "Same ocean, same sand, a third of the price. The math has worked since the postcard era.",
+    amenities: ["Private beach", "Pool", "European-style service", "4th night free (May–Oct)"],
     filterTags: ["Oceanfront", "Family"],
     images: [
-      "/img/family-cabana.jpg",
-      "/img/pool-sunrise.jpg",
+      "/img/sea-view-postcard.jpg",
+      "/img/ocean-horizon.jpg",
+      "/img/palms-surf.jpg",
       "/img/beach-picnic.jpg",
-      "/img/terrace-golden.jpg",
     ],
+    imageAlts: [
+      "Vintage postcard of the Sea View Hotel, Bal Harbour",
+      "Atlantic Ocean horizon at Bal Harbour Beach",
+      "Palms over the surf (illustrative)",
+      "Beach picnic (illustrative)",
+    ],
+    address: "9909 Collins Ave, Bal Harbour, FL 33154",
+    geo: { lat: 25.8925, lng: -80.1218 },
+    officialUrl: "https://www.seaviewhotelbalharbour.com/",
     review: {
       paragraphs: [
-        "Casa Palma is what happens when a family resort refuses to lower its standards. Two pools split the crowd naturally — a lively one with a splash zone and swim-up snack bar, a quieter adults-leaning one two courtyards over. Rooms run big, with pull-out sofas and kitchenettes that actually get used.",
-        "The 2pm ceviche cart on the beach path is a genuine neighborhood event, not a gimmick — go early, it sells out. Kids club takes ages 3 and up with real activities, not just a TV room, which buys parents an honest two hours by the pool.",
+        "Every luxury strip needs one holdout that remembers what the neighborhood was, and the Sea View is Bal Harbour's — an independent, European-style beachfront hotel that has been welcoming the same families for generations. Rooms are freshly renovated with ocean or bay views, the pool sits right on the sand, and the service is the personal kind the big brands spend millions trying to imitate.",
+        "What to know: this is the village's honest bargain — rates start around $208, and from May through October the fourth night is free. You give up the butler-and-spa theater; you keep the exact same beach, sunrise, and five-minute stroll to the Shops. For long stays, nothing else on the mile comes close on value.",
       ],
       rundown: [
-        { label: "Best for", value: "Families, multi-gen trips" },
-        { label: "Rooms", value: "260, two-bedroom suites available" },
-        { label: "Beach", value: "Private, two beach bars" },
-        { label: "Breakfast", value: "Buffet included" },
-        { label: "Kids", value: "Kids club 3+, cannonball-approved" },
-        { label: "Parking", value: "Self-park $45/nt" },
+        { label: "Best for", value: "Longer stays, value seekers" },
+        { label: "Rooms", value: "Renovated, ocean & bay views" },
+        { label: "Beach", value: "Private, pool on the sand" },
+        { label: "Deal", value: "4th night free, May–Oct 2026" },
+        { label: "The Shops", value: "5-minute walk" },
+        { label: "Style", value: "Independent, old-school" },
       ],
     },
-    rates: ratesFor(640, "Casa Palma Resort"),
+    rates: [
+      {
+        site: "Booking.com",
+        price: 214,
+        url: bookingSearchUrl("Sea View Hotel Bal Harbour"),
+      },
+      {
+        site: "Expedia",
+        price: 218,
+        url: expediaSearchUrl("Sea View Hotel Bal Harbour"),
+      },
+      {
+        site: "Hotel direct",
+        price: 208,
+        best: true,
+        url: "https://www.seaviewhotelbalharbour.com/",
+      },
+    ],
   },
   {
-    slug: "the-salt-house",
-    name: "The Salt House",
-    rankLabel: "№3 · adults-mostly",
+    slug: "ritz-carlton-bal-harbour",
+    name: "The Ritz-Carlton Bal Harbour",
+    rankLabel: "№3 · reopening Jan 2027",
     rankBadge: "ivory",
     stars: 5,
-    category: "Boutique",
-    price: 720,
-    oneLiner: "Small and quiet, with the best negroni on the mile.",
-    homeBadge: "Adults-mostly",
+    category: "Boutique luxury",
+    price: 480,
+    oneLiner:
+      "The quiet boutique at the inlet end — closed for a top-to-bottom glow-up, back January 2027.",
+    homeBadge: "Reopens Jan 2027",
     homeBadgeStyle: "ivory",
     pullQuote:
-      "Thirty rooms, one perfect negroni, and a lobby that smells like money and limes.",
-    amenities: ["Rooftop bar", "Spa", "Pet-friendly"],
-    filterTags: ["Adults-mostly", "Spa", "Pet-friendly"],
+      "The smallest, quietest luxury address in the village, hiding at the inlet end of Collins. Worth the wait.",
+    amenities: ["Boutique scale", "Inlet-end quiet", "Artisan Beach House"],
+    filterTags: ["Oceanfront", "Spa", "Adults-mostly"],
     images: [
-      "/img/bar-dusk.jpg",
-      "/img/rooftop-bar.jpg",
-      "/img/lobby.jpg",
+      "/img/bal-harbour-skyline.jpg",
+      "/img/haulover-inlet.jpg",
       "/img/suite-ocean.jpg",
+      "/img/lobby.jpg",
     ],
+    imageAlts: [
+      "The Bal Harbour skyline across Biscayne Bay — the Ritz-Carlton anchors the northern end",
+      "Haulover Park across the inlet from Bal Harbour",
+      "Ocean-view suite (illustrative)",
+      "Hotel lobby (illustrative)",
+    ],
+    address: "10295 Collins Ave, Bal Harbour, FL 33154",
+    geo: { lat: 25.9018, lng: -80.1215 },
+    officialUrl:
+      "https://www.ritzcarlton.com/en/hotels/miazl-the-ritz-carlton-bal-harbour-miami/overview/",
+    notice:
+      "Closed for renovation April–December 2026. Reopening January 2027 as an intimate coastal retreat — the links below take 2027 bookings.",
     review: {
       paragraphs: [
-        "Thirty rooms means the Salt House can afford to be precious about the details, and it is — turndown includes an actual handwritten note, not a printed card. The rooftop bar is the real draw: low light, a negroni menu with four variations, and a crowd that skews grown-up and unhurried.",
-        "It's a five-minute walk to the beach rather than beachfront, which is the one trade-off — but the shared access and chair service more than make up for it, and the spa (small, excellent) is worth booking before you land. Dogs are genuinely welcome here, not just tolerated.",
+        "The village's third hotel is its best-kept secret: a boutique-scale Ritz-Carlton at the far northern tip of Collins, where the only thing past your balcony is the Haulover Inlet and open water. It has always traded scale for calm — a fraction of the rooms of the big resorts, a residential hush, and Artisan Beach House doing oceanfront brunch downstairs.",
+        "What to know right now: the hotel closed on April 7, 2026 for a full renovation and reopens in January 2027 as what the brand is calling an intimate coastal retreat. Historic rates started around $480; expect the new version to open higher. If your dates are 2027, book direct early — boutique room counts sell out fast, and the inlet-end quiet is exactly what the village's repeat guests fight over.",
       ],
       rundown: [
-        { label: "Best for", value: "Couples, quiet luxury" },
-        { label: "Rooms", value: "30, redone 2023" },
-        { label: "Beach", value: "Shared access, chair service" },
-        { label: "Breakfast", value: "À la carte, not included" },
-        { label: "Kids", value: "Welcome but rare after 6pm" },
-        { label: "Parking", value: "Valet only, $55/nt" },
+        { label: "Status", value: "Closed until Jan 2027" },
+        { label: "Rooms", value: "Boutique-scale, residential feel" },
+        { label: "Beach", value: "Private, at the inlet" },
+        { label: "Dining", value: "Artisan Beach House (reopens with hotel)" },
+        { label: "The Shops", value: "10-minute walk south" },
+        { label: "Parking", value: "Valet" },
       ],
     },
-    rates: ratesFor(720, "The Salt House"),
+    rates: [
+      {
+        site: "Booking.com",
+        price: 495,
+        url: bookingSearchUrl("The Ritz-Carlton Bal Harbour"),
+      },
+      {
+        site: "Expedia",
+        price: 510,
+        url: expediaSearchUrl("The Ritz-Carlton Bal Harbour"),
+      },
+      {
+        site: "Hotel direct",
+        price: 480,
+        best: true,
+        url: "https://www.ritzcarlton.com/en/hotels/miazl-the-ritz-carlton-bal-harbour-miami/overview/",
+      },
+    ],
   },
 ];
 
@@ -180,11 +250,11 @@ export function getHotelBySlug(slug: string): Hotel | undefined {
   return HOTELS.find((h) => h.slug === slug);
 }
 
+export function relatedHotels(slug: string, count = 2): Hotel[] {
+  return HOTELS.filter((h) => h.slug !== slug).slice(0, count);
+}
+
 // The rate every "Check rates" / "Book the best rate" CTA points at.
 export function bestRate(hotel: Hotel): Rate {
   return hotel.rates.find((r) => r.best) ?? hotel.rates[0];
-}
-
-export function relatedHotels(slug: string, count = 2): Hotel[] {
-  return HOTELS.filter((h) => h.slug !== slug).slice(0, count);
 }

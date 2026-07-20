@@ -22,7 +22,7 @@ export const HOME_FAQS: Faq[] = [
   {
     question: "Is Bal Harbour expensive?",
     answer:
-      "Bal Harbour is one of the pricier corners of Greater Miami. Oceanfront hotels typically run from about $400 to $1,200+ a night depending on season, and dining and shopping skew high-end. The good news: the beach is free to access and you can wander the Bal Harbour Shops without spending a cent.",
+      "Bal Harbour is one of the pricier corners of Greater Miami, but the range is wider than people expect: the independent Sea View Hotel starts around $208 a night while the St. Regis runs $687 to well past $1,200 in season. Dining and shopping skew high-end. The good news: the beach is free and you can wander the Bal Harbour Shops without spending a cent.",
   },
   {
     question: "How far is Bal Harbour from Miami and the airport?",
@@ -32,12 +32,12 @@ export const HOME_FAQS: Faq[] = [
   {
     question: "Where should I stay in Bal Harbour?",
     answer:
-      "Stay oceanfront on Collins Avenue if you can. For low-key luxury and couples our top pick is The Grande Oceanfront; families do well at Casa Palma Resort with its two pools and kids' club; and adults-mostly travelers love the quiet, 30-room Salt House. All three are walkable to the Bal Harbour Shops and the beach.",
+      "The village has exactly three hotels, all on Collins Avenue. Our top pick is The St. Regis Bal Harbour — all 216 rooms face the ocean and it sits directly across from the Shops (from about $687). The independent Sea View Hotel is the old-school value play on the same beach (from about $208). The boutique Ritz-Carlton Bal Harbour at the inlet end is closed for renovation until January 2027.",
   },
   {
     question: "Is Bal Harbour Beach public?",
     answer:
-      "Yes. Bal Harbour Beach is open to the public, with a paved beach path — the Bal Harbour Jetty Walk — connecting south toward Haulover Park. Some sand directly in front of the resorts is reserved for hotel guests, but there is public access with nearby permit and metered parking.",
+      "Yes. Bal Harbour Beach is open to the public — the main public access is at 96th Street and Collins Avenue, with metered parking, restrooms and an outdoor shower by the path, and lifeguards on duty daily from 9am to 5pm. A paved beachwalk runs the length of the village to the Jetty Walk at Haulover Inlet. Sand directly in front of the resorts is serviced for hotel guests, but the beach itself is free.",
   },
   {
     question: "Is Bal Harbour a good place to live?",

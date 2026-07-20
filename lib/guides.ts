@@ -64,7 +64,7 @@ export const GUIDES: Guide[] = [
       },
       {
         type: "p",
-        text: "We rank every Bal Harbour property on [our hotels page](/hotels) — we've slept in all of them. The short version: [The Grande Oceanfront](/hotels/the-grande-oceanfront) is the classic pick, [Casa Palma](/hotels/casa-palma-resort) wins for families, and [The Salt House](/hotels/the-salt-house) is the grown-ups' boutique.",
+        text: "We rank all three Bal Harbour properties on [our hotels page](/hotels). The short version: [The St. Regis](/hotels/st-regis-bal-harbour) is the flagship — 216 rooms, every one facing the ocean; the independent [Sea View Hotel](/hotels/sea-view-hotel) is the old-school value play from about $208; and the boutique [Ritz-Carlton](/hotels/ritz-carlton-bal-harbour) at the inlet is closed for renovation until January 2027. Surfside's headliner is the Four Seasons Surf Club, the 1930s landmark where Thomas Keller runs his Michelin-starred Surf Club Restaurant.",
       },
       { type: "h2", text: "Where should I eat — and does it matter which village?" },
       {
@@ -73,7 +73,7 @@ export const GUIDES: Guide[] = [
       },
       {
         type: "p",
-        text: "Our rule: breakfast in Surfside, long lunch wherever you already are, date night in Bal Harbour. The [14 tables we actually love](/eat) covers both sides of 96th Street — no pay-to-play, we've paid every bill ourselves.",
+        text: "Our rule: breakfast at Sant Ambroeus, long lunch wherever you already are, date night at Makoto or — for the once-a-year table — Keller's Surf Club Restaurant. The [seven tables we actually love](/eat) covers both sides of 96th Street, every one verified open.",
       },
       { type: "h2", text: "Is the beach different?" },
       {
@@ -112,7 +112,7 @@ export const GUIDES: Guide[] = [
       {
         question: "Which is better for families, Bal Harbour or Surfside?",
         answer:
-          "Both work well. Surfside feels more residential and casual; Bal Harbour's family pick is Casa Palma Resort, which has two pools and a real kids' club. For toddlers and strollers, Surfside's quieter streets edge it.",
+          "Both work well. Surfside feels more residential and casual; in Bal Harbour, families do best at the St. Regis (yes, really — kids are genuinely welcome) or the budget-friendlier Sea View Hotel. For toddlers and strollers, Surfside's quieter streets edge it.",
       },
       {
         question: "Is Bal Harbour more expensive than Surfside?",
@@ -123,7 +123,7 @@ export const GUIDES: Guide[] = [
     related: [
       { label: "Every Bal Harbour hotel, ranked", href: "/hotels" },
       { label: "The beach guide", href: "/beach" },
-      { label: "14 tables we love", href: "/eat" },
+      { label: "Seven tables we love", href: "/eat" },
     ],
   },
   {
@@ -139,26 +139,26 @@ export const GUIDES: Guide[] = [
     published: "2026-07-03",
     updated: "2026-07-03",
     intro:
-      "The number-one question tourists ask us — usually while standing on Collins Avenue looking suspiciously at a resort gate — is 'can we even get on this beach?' Yes. All Florida beaches are public below the mean high-tide line, and Bal Harbour has real public entrances that don't involve walking through a hotel lobby pretending you're a guest. Here's exactly how it works.",
+      "The number-one question tourists ask us — usually while standing on Collins Avenue looking suspiciously at a resort gate — is 'can we even get on this beach?' Yes. All Florida beaches are public below the mean high-tide line, and Bal Harbour has a proper public entrance — with parking, restrooms and lifeguards — that doesn't involve walking through a hotel lobby pretending you're a guest. Here's exactly how it works.",
     blocks: [
       { type: "h2", text: "Is Bal Harbour Beach public?" },
       {
         type: "answer",
         text: "Yes. The wet sand (below the high-tide line) is public along the entire mile, as everywhere in Florida, and Bal Harbour maintains public access points along Collins Avenue. The cabana rows and lounger setups near the resorts sit on hotel-serviced sand, but you can walk past them and set up your own chair by the water — free.",
       },
-      { type: "h2", text: "Where are the public entrances?" },
+      { type: "h2", text: "Where is the public entrance?" },
       {
         type: "answer",
-        text: "There are three access points along Collins Avenue. The 96th Street entrance, at the Surfside border, is the quiet one — no hotel crowds, and the path comes out near the best sandbar on the strand. The others sit mid-village between the resort properties; look for the dune-crossover paths.",
+        text: "The village's public beach access is at 96th Street and Collins Avenue, right on the Surfside border. It comes equipped: restrooms and an outdoor shower beside the path, a bike-share station on the south side, and the paved beachwalk running north from there along the entire village.",
       },
       {
         type: "p",
-        text: "Our default recommendation is 96th Street: easiest to find, calmest stretch of sand, and you surface next to the sandbar where the water stays waist-deep long enough for kids and nervous swimmers to love it.",
+        text: "One entrance sounds stingy until you realize the whole beach connects — get on at 96th and the beachwalk carries you the full mile north to the Jetty Walk at Haulover Inlet, past every resort, with benches and shade stops along the way.",
       },
       { type: "h2", text: "Where do I park?" },
       {
         type: "answer",
-        text: "Metered street parking along Collins and the side streets near 96th, plus paid lots on the Surfside side. It fills by mid-morning on winter weekends — arrive before 9:30am or after 3pm. If you're staying at a village hotel, walk; nothing on the mile is more than 15 minutes on foot.",
+        text: "Metered parking around 96th and Collins runs roughly $1–2 per hour with a four-hour limit, plus a small public lot on 96th itself. It fills by mid-morning on winter weekends — arrive before 9:30am or after 3pm. If you're staying at a village hotel, just walk; nothing on the mile is more than 15 minutes on foot.",
       },
       {
         type: "tip",
@@ -171,7 +171,7 @@ export const GUIDES: Guide[] = [
       },
       {
         type: "p",
-        text: "If you want the full serviced-sand experience without negotiating, the honest move is staying oceanfront for a night or two — [our hotel rankings](/hotels) flag exactly which properties have the best beach setups. The Grande's lounger spacing is, in our professional opinion, the most civilized on the strand.",
+        text: "If you want the full serviced-sand experience without negotiating, the honest move is staying oceanfront for a night or two — [the St. Regis](/hotels/st-regis-bal-harbour) runs the most polished beach operation on the strand, and the [Sea View](/hotels/sea-view-hotel) puts you on the same sand for a fraction of the rate.",
       },
       { type: "h2", text: "What are the actual rules?" },
       {
@@ -201,9 +201,9 @@ export const GUIDES: Guide[] = [
           "No — beach access is free. You pay only for parking (metered) and anything you rent from a hotel beach club.",
       },
       {
-        question: "Which Bal Harbour beach entrance is best?",
+        question: "Where is the Bal Harbour beach entrance?",
         answer:
-          "The 96th Street entrance at the Surfside border: quietest sand, easiest parking nearby, and it comes out next to the best sandbar for swimming.",
+          "At 96th Street and Collins Avenue, on the Surfside border — with metered parking (about $1\u20132/hr, 4-hour limit), restrooms and an outdoor shower by the path, and a bike-share station on the south side.",
       },
       {
         question: "Can non-guests rent cabanas in Bal Harbour?",
@@ -213,7 +213,7 @@ export const GUIDES: Guide[] = [
       {
         question: "Is Bal Harbour Beach good for kids?",
         answer:
-          "Very — calm surf, a shallow sandbar near the 96th Street entrance, and lifeguarded stretches in season. Mornings before the UV peaks are the sweet spot.",
+          "Very — calm surf, a shallow sandbar near the 96th Street entrance, and lifeguards on duty daily from 9am to 5pm. Mornings before the UV peaks are the sweet spot.",
       },
     ],
     related: [

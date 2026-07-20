@@ -22,14 +22,6 @@ export function expediaSearchUrl(query: string = "Bal Harbour, FL"): string {
   return url.toString();
 }
 
-// Stand-in for each hotel's direct-booking page until the real sites (and
-// any direct partnership links) are wired up.
-export function hotelDirectUrl(hotelName: string): string {
-  const url = new URL("https://www.google.com/search");
-  url.searchParams.set("q", `${hotelName} ${DESTINATION} official site`);
-  return url.toString();
-}
-
 export function openTableSearchUrl(restaurantName: string): string {
   const url = new URL("https://www.opentable.com/s");
   url.searchParams.set("term", `${restaurantName} Bal Harbour`);

@@ -96,6 +96,11 @@ export default function HotelsList({ hotels }: { hotels: Hotel[] }) {
               <p className="font-serif-italic text-[17px] leading-snug text-ink-2">
                 “{hotel.pullQuote}”
               </p>
+              {hotel.notice && (
+                <div className="rounded-[12px] border-[1.5px] border-gold/60 bg-gold/12 px-3.5 py-2 text-[12.5px] leading-snug text-ink">
+                  {hotel.notice}
+                </div>
+              )}
               <div className="flex flex-wrap gap-2 text-[12.5px] font-semibold text-ink-2">
                 {hotel.amenities.map((a) => (
                   <span key={a} className="rounded-full bg-ink/7 px-3 py-1.5">
