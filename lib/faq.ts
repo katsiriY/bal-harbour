@@ -37,7 +37,17 @@ export const HOME_FAQS: Faq[] = [
   {
     question: "Is Bal Harbour Beach public?",
     answer:
-      "Yes. Bal Harbour Beach is open to the public — the main public access is at 96th Street and Collins Avenue, with metered parking, restrooms and an outdoor shower by the path, and lifeguards on duty daily from 9am to 5pm. A paved beachwalk runs the length of the village to the Jetty Walk at Haulover Inlet. Sand directly in front of the resorts is serviced for hotel guests, but the beach itself is free.",
+      "Yes. Bal Harbour Beach is open to the public — the public access is at 96th Street and Collins Avenue, with metered parking, restrooms and an outdoor shower by the path. A paved beachwalk runs the length of the village to the Jetty Walk at Haulover Inlet (the pretty 102nd Street path is residents-only). The village doesn't publish a lifeguard schedule, so swim smart. Sand directly in front of the resorts is serviced for hotel guests, but the beach itself is free.",
+  },
+  {
+    question: "Is Surfside part of Bal Harbour?",
+    answer:
+      "No — Bal Harbour and Surfside are two separate municipalities on the same barrier island, sharing the 33154 ZIP code. The border is 96th Street: Bal Harbour runs north of it to Haulover Inlet, Surfside sits south. For visitors they feel like one walkable destination — same beach, ten minutes on foot between their centers.",
+  },
+  {
+    question: "Is the Ritz-Carlton Bal Harbour open?",
+    answer:
+      "Not right now. The Ritz-Carlton Bal Harbour closed on April 7, 2026 for a full renovation and is scheduled to reopen in January 2027 as an intimate coastal retreat. Until then, the village's open hotels are The St. Regis Bal Harbour (from about $687/night) and the independent Sea View Hotel (from about $208/night).",
   },
   {
     question: "Is Bal Harbour a good place to live?",

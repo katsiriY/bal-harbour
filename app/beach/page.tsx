@@ -17,7 +17,7 @@ const INFO_CARDS = [
   {
     eyebrow: "GETTING ON",
     title: "The 96th Street access",
-    body: "The village's public entrance is at 96th & Collins, on the Surfside border — metered parking (about $1–2/hr, 4-hour limit), restrooms and an outdoor shower by the path, and a bike-share station on the south side.",
+    body: "The village's public entrance is at 96th & Collins, on the Surfside border — metered parking (about $1–2/hr, 4-hour limit), restrooms and an outdoor shower by the path, and a bike-share station on the south side. (The pretty 102nd Street path is residents-only.)",
   },
   {
     eyebrow: "SITTING DOWN",
@@ -26,8 +26,8 @@ const INFO_CARDS = [
   },
   {
     eyebrow: "TIMING IT",
-    title: "Light, tides & lifeguards",
-    body: "Sunrise is the show — the beach faces due east. Lifeguards are on daily 9am–5pm. Low tide mid-morning leaves a wide, firm walking strand; for sunset, walk the Jetty Walk at the inlet.",
+    title: "Light, tides & swim smarts",
+    body: "Sunrise is the show — the beach faces due east. Low tide mid-morning leaves a wide, firm walking strand; for sunset, walk the Jetty Walk at the inlet. The village publishes no lifeguard schedule, so treat the water as unguarded unless you see a staffed tower.",
   },
 ];
 
@@ -68,7 +68,7 @@ export default function BeachPage() {
             Usually calm surf
           </div>
           <div className="rounded-full bg-ivory/92 px-4 py-2.5 text-[13px] font-semibold text-ink">
-            Lifeguards 9am–5pm daily
+            Public access at 96th St
           </div>
         </div>
       </div>

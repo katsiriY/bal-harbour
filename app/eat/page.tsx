@@ -36,6 +36,42 @@ export default function DiningPage() {
 
       <DiningList />
 
+      {/* The full picture — everything else that serves food nearby, honestly
+          labeled. Kept as one-liners; only verified claims get full cards. */}
+      <div className="relative mx-6 mb-14 flex flex-col gap-3 rounded-[24px] bg-white/70 px-6 py-7 md:mx-11 md:px-9">
+        <h2 className="text-xl font-bold tracking-tight text-ink">
+          Also in (and around) the village
+        </h2>
+        <ul className="flex max-w-[720px] list-none flex-col gap-2 text-[14px] leading-relaxed text-ink-3">
+          <li>
+            <strong className="text-ink">Inside the hotels:</strong> the St.
+            Regis also runs its lobby bar and poolside dining beyond
+            Atlantikós; the Sea View keeps its own beachfront café for
+            guests.
+          </li>
+          <li>
+            <strong className="text-ink">Keeping kosher?</strong> Surfside&apos;s
+            Harding Avenue, five minutes south, is the area&apos;s kosher
+            dining hub — the local synagogue maintains{" "}
+            <a
+              href="https://www.yicbh.org/visitors/kosher-restaurants"
+              target="_blank"
+              rel="noopener"
+              className="font-semibold text-gold-deep underline decoration-gold/50 underline-offset-2"
+            >
+              an updated list
+            </a>
+            .
+          </li>
+          <li>
+            <strong className="text-ink">Recently closed</strong> (so you can
+            stop looking): Le Zoo and Aba, both gone from the Shops in
+            2025–26 — Slim&apos;s now lives in that space. Artisan Beach
+            House is dark until the Ritz-Carlton reopens in January 2027.
+          </li>
+        </ul>
+      </div>
+
       <Footer />
 
       <JsonLd data={restaurantsItemListJsonLd(RESTAURANTS)} />

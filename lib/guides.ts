@@ -41,7 +41,7 @@ export const GUIDES: Guide[] = [
     heroImage: "/img/beach-path.jpg",
     heroAlt: "The beach path between Bal Harbour and Surfside, Florida",
     published: "2026-07-03",
-    updated: "2026-07-03",
+    updated: "2026-08-06",
     intro:
       "They share a beach, a ZIP-code prefix and a wall of gorgeous Atlantic sunrise. The border is literally one street — 96th. And yet Bal Harbour and Surfside are different animals, and picking the wrong one for your kind of trip is the most common mistake we see visitors make. Here's the honest version, from people who walk both every week.",
     blocks: [
@@ -115,6 +115,16 @@ export const GUIDES: Guide[] = [
           "Both work well. Surfside feels more residential and casual; in Bal Harbour, families do best at the St. Regis (yes, really — kids are genuinely welcome) or the budget-friendlier Sea View Hotel. For toddlers and strollers, Surfside's quieter streets edge it.",
       },
       {
+        question: "Is Surfside part of Bal Harbour?",
+        answer:
+          "No — they are two separate municipalities that share the same barrier island and even the same 33154 ZIP code. The Village of Bal Harbour runs from 96th Street north to Haulover Inlet; the Town of Surfside sits immediately south. Each has its own government, police and beach rules, but for visitors they function as one walkable destination.",
+      },
+      {
+        question: "How big are Bal Harbour and Surfside?",
+        answer:
+          "Tiny, both of them. Bal Harbour is about 0.4 square miles with roughly 3,100 residents (2020 census); Surfside is about half a square mile with roughly 5,700. Bal Harbour is the smaller and quieter of the two — a village of ~3,100 people hosting one of the most famous luxury malls in the world.",
+      },
+      {
         question: "Is Bal Harbour more expensive than Surfside?",
         answer:
           "Generally yes for hotels — roughly 30–60% higher for comparable oceanfront stays in season. Dining and beach costs are similar, and the Bal Harbour Shops cost nothing to browse.",
@@ -137,9 +147,9 @@ export const GUIDES: Guide[] = [
     heroImage: "/img/ocean-horizon.jpg",
     heroAlt: "Wide Atlantic Ocean horizon from Bal Harbour Beach at sunrise",
     published: "2026-07-03",
-    updated: "2026-07-03",
+    updated: "2026-08-06",
     intro:
-      "The number-one question tourists ask us — usually while standing on Collins Avenue looking suspiciously at a resort gate — is 'can we even get on this beach?' Yes. All Florida beaches are public below the mean high-tide line, and Bal Harbour has a proper public entrance — with parking, restrooms and lifeguards — that doesn't involve walking through a hotel lobby pretending you're a guest. Here's exactly how it works.",
+      "The number-one question tourists ask us — usually while standing on Collins Avenue looking suspiciously at a resort gate — is 'can we even get on this beach?' Yes. All Florida beaches are public below the mean high-tide line, and Bal Harbour has a proper public entrance — with parking, restrooms and a shower — that doesn't involve walking through a hotel lobby pretending you're a guest. Here's exactly how it works.",
     blocks: [
       { type: "h2", text: "Is Bal Harbour Beach public?" },
       {
@@ -154,6 +164,10 @@ export const GUIDES: Guide[] = [
       {
         type: "p",
         text: "One entrance sounds stingy until you realize the whole beach connects — get on at 96th and the beachwalk carries you the full mile north to the Jetty Walk at Haulover Inlet, past every resort, with benches and shade stops along the way.",
+      },
+      {
+        type: "tip",
+        text: "Spotted the gorgeous paver path with the wood benches at 102nd Street? That's the village's Enzo Enea–designed access path — and its gates open only with a resident All Access Card. Admire it, then use 96th like the rest of us.",
       },
       { type: "h2", text: "Where do I park?" },
       {
@@ -213,7 +227,7 @@ export const GUIDES: Guide[] = [
       {
         question: "Is Bal Harbour Beach good for kids?",
         answer:
-          "Very — calm surf, a shallow sandbar near the 96th Street entrance, and lifeguards on duty daily from 9am to 5pm. Mornings before the UV peaks are the sweet spot.",
+          "Very — calm surf and a shallow sandbar near the 96th Street entrance. One honest caveat: the village doesn\u2019t publish a lifeguard schedule, so treat it as an unguarded beach unless you see a staffed tower, and keep kids near other swimmers. Mornings before the UV peaks are the sweet spot.",
       },
     ],
     related: [
@@ -233,7 +247,7 @@ export const GUIDES: Guide[] = [
     heroImage: "/img/terrace-golden.jpg",
     heroAlt: "Golden hour light over a Bal Harbour oceanfront terrace",
     published: "2026-07-03",
-    updated: "2026-07-03",
+    updated: "2026-08-06",
     intro:
       "Everyone asks 'when's the best time to visit?' expecting a month. The real answer is a question back: best for what — weather, prices, quiet, or the scene? Bal Harbour has four different 'best times' depending on which one you're optimizing. Here's the whole calendar, with the trade-offs stated out loud.",
     blocks: [
