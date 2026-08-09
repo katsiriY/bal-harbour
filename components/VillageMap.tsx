@@ -1,17 +1,18 @@
 import { HOTELS } from "@/lib/hotels";
 import { RESTAURANTS } from "@/lib/restaurants";
 
-// Schematic-but-true map of the village: every pin is projected from its
-// real latitude/longitude (equirectangular over the village's bounding
-// box), so relative positions match reality — Shops at the southwest
-// corner, St. Regis across Collins, Sea View mid-mile, Ritz at the inlet.
+// Schematic-but-true map of the village and its neighbors: every pin is
+// projected from its real latitude/longitude (equirectangular over the
+// area's bounding box), so relative positions match reality — Shops at
+// 96th & Collins, St. Regis across the street, Sea View mid-mile, Ritz at
+// the inlet, Bay Harbor Islands due west across the Kane Concourse bridge.
 const BOUNDS = {
   north: 25.9065,
   south: 25.877,
-  west: -80.1315,
+  west: -80.1405,
   east: -80.1145,
 };
-const W = 720;
+const W = 860;
 const H = 520;
 
 function project(lat: number, lng: number): { x: number; y: number } {
@@ -54,50 +55,79 @@ export default function VillageMap() {
         <svg
           viewBox={`0 0 ${W} ${H}`}
           role="img"
-          aria-label="Schematic map of Bal Harbour: the Shops at 96th and Collins, the St. Regis across the street, the Sea View mid-village, the Ritz-Carlton at the Haulover Inlet, and the public beach access at 96th Street"
+          aria-label="Schematic map of the Bal Harbour area: the Shops at 96th and Collins, the St. Regis across the street, the Sea View mid-village, the Ritz-Carlton at Haulover Inlet, the public beach access at 96th Street, and Bay Harbor Islands across the Kane Concourse bridge to the west"
           className="block h-auto w-full"
         >
           {/* Water: Biscayne Bay (west), Atlantic (east), Haulover Inlet (north) */}
           <rect x="0" y="0" width={W} height={H} fill="#dbe7dd" />
-          {/* Land mass */}
+          {/* Barrier-island land mass */}
           <path
-            d={`M 235 ${H} L 258 380 L 270 240 L 292 90 L 318 34 L 560 34 L 560 60 L 540 ${H} Z`}
+            d={`M 479 ${H} L 497 380 L 507 240 L 524 90 L 544 34 L 731 34 L 731 60 L 715 ${H} Z`}
             fill="#efede6"
           />
           {/* Haulover Park (north of the inlet) */}
-          <path d="M 310 0 L 700 0 L 700 8 L 320 8 Z" fill="#dfe9db" />
-          <text x="500" y="24" fontSize="11" fill="#7d8378" fontStyle="italic" textAnchor="middle">
+          <path d="M 537 0 L 860 0 L 860 8 L 545 8 Z" fill="#dfe9db" />
+          <text x="684" y="24" fontSize="11" fill="#7d8378" fontStyle="italic" textAnchor="middle">
             Haulover Park · kite beach &amp; marina
           </text>
           {/* Inlet channel */}
-          <path d="M 300 10 L 700 10 L 700 30 L 310 32 Z" fill="#cfe0d3" />
-          <text x="620" y="46" fontSize="11" fill="#4c7a68" fontStyle="italic" textAnchor="end">
+          <path d="M 530 10 L 860 10 L 860 30 L 537 32 Z" fill="#cfe0d3" />
+          <text x="777" y="46" fontSize="11" fill="#4c7a68" fontStyle="italic" textAnchor="end">
             Haulover Inlet
           </text>
           {/* Beach strip along the ocean */}
-          <path d={`M 560 60 L 540 ${H} L 508 ${H} L 528 60 Z`} fill="#eaddba" opacity="0.85" />
+          <path d={`M 731 60 L 715 ${H} L 691 ${H} L 706 60 Z`} fill="#eaddba" opacity="0.85" />
           {/* Ocean */}
-          <path d={`M 560 60 L 700 60 L 700 ${H} L 540 ${H} Z`} fill="#cfe0d3" />
-          <text x="640" y="300" fontSize="12" fill="#4c7a68" fontStyle="italic" textAnchor="middle">
+          <path d={`M 731 60 L 860 60 L 860 ${H} L 715 ${H} Z`} fill="#cfe0d3" />
+          <text x="793" y="300" fontSize="12" fill="#4c7a68" fontStyle="italic" textAnchor="middle">
             Atlantic Ocean
           </text>
-          <text x="90" y="300" fontSize="12" fill="#4c7a68" fontStyle="italic" textAnchor="middle">
+          <text x="150" y="140" fontSize="12" fill="#4c7a68" fontStyle="italic" textAnchor="middle">
             Biscayne Bay
           </text>
+
+          {/* Bay Harbor Islands — the residential name-twin across the bay.
+              Whole group links to our guide. */}
+          <a href="/guides/bay-harbor-islands">
+            <ellipse cx="132" cy="326" rx="58" ry="66" fill="#efede6" />
+            <ellipse cx="298" cy="317" rx="52" ry="58" fill="#efede6" />
+            {/* Kane Concourse — 96th St's continuation across the bay */}
+            <path
+              d="M 46 331 L 497 331"
+              fill="none"
+              stroke="#0d2f25"
+              strokeOpacity="0.18"
+              strokeWidth="5"
+            />
+            <text x="150" y="348" fontSize="9.5" fill="#7d8378">
+              Kane Concourse
+            </text>
+            <text x="215" y="290" fontSize="12.5" fontWeight="700" fill="#0d2f25" textAnchor="middle">
+              Bay Harbor Islands
+            </text>
+            {/* The Kane strip — verified local breakfast cluster */}
+            <circle cx="283" cy="331" r="4.5" fill="#b5975a" stroke="#ffffff" strokeWidth="1.2" />
+            <circle cx="300" cy="331" r="4.5" fill="#b5975a" stroke="#ffffff" strokeWidth="1.2" />
+            <circle cx="316" cy="331" r="4.5" fill="#b5975a" stroke="#ffffff" strokeWidth="1.2" />
+            <text x="300" y="352" fontSize="10" fontStyle="italic" fill="#8a6f3c" textAnchor="middle">
+              the Kane strip →
+            </text>
+          </a>
+
           {/* Collins Avenue */}
           <path
-            d={`M 468 ${H} C 470 380 478 200 500 34`}
+            d={`M 660 ${H} C 661 380 668 200 685 34`}
             fill="none"
             stroke="#0d2f25"
             strokeOpacity="0.18"
             strokeWidth="7"
           />
-          <text x="452" y="200" fontSize="10" fill="#7d8378" transform="rotate(-84 452 200)">
+          <text x="647" y="200" fontSize="10" fill="#7d8378" transform="rotate(-84 647 200)">
             Collins Ave
           </text>
           {/* Beachwalk */}
           <path
-            d={`M 524 ${H - 10} C 528 380 536 200 552 64`}
+            d={`M 703 ${H - 10} C 706 380 712 200 725 64`}
             fill="none"
             stroke="#8a6f3c"
             strokeOpacity="0.55"
@@ -105,11 +135,11 @@ export default function VillageMap() {
             strokeDasharray="6 5"
           />
           {/* 96th St — the Surfside border */}
-          <line x1="250" y1="452" x2="540" y2="452" stroke="#0d2f25" strokeOpacity="0.14" strokeWidth="4" />
-          <text x="262" y="444" fontSize="10" fill="#7d8378">
+          <line x1="491" y1="452" x2="715" y2="452" stroke="#0d2f25" strokeOpacity="0.14" strokeWidth="4" />
+          <text x="500" y="444" fontSize="10" fill="#7d8378">
             96th St · Surfside border
           </text>
-          <text x="390" y={H - 14} fontSize="11" fill="#7d8378" fontStyle="italic">
+          <text x="599" y={H - 14} fontSize="11" fill="#7d8378" fontStyle="italic">
             Surfside ↓
           </text>
 
@@ -169,7 +199,6 @@ export default function VillageMap() {
               </text>
             </a>
           ))}
-
         </svg>
       </div>
 
@@ -184,7 +213,8 @@ export default function VillageMap() {
           <span className="inline-block h-3 w-3 rounded-full border-2 border-[#12463a] bg-white" /> Beach access
         </span>
         <span className="text-muted">
-          Pin positions are projected from real coordinates — tap any pin for directions.
+          Pin positions are projected from real coordinates — tap any pin for
+          directions, or the islands for their guide.
         </span>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DiningList from "@/components/DiningList";
@@ -48,6 +49,19 @@ export default function DiningPage() {
             Regis also runs its lobby bar and poolside dining beyond
             Atlantikós; the Sea View keeps its own beachfront café for
             guests.
+          </li>
+          <li>
+            <strong className="text-ink">The locals&apos; breakfast secret:</strong>{" "}
+            cross the 96th Street bridge to Kane Concourse on Bay Harbor
+            Islands — bakery counters, Cuban cafecito and açaí at
+            neighborhood prices.{" "}
+            <Link
+              href="/guides/bay-harbor-islands"
+              className="font-semibold text-gold-deep underline decoration-gold/50 underline-offset-2"
+            >
+              The dinner-island guide
+            </Link>{" "}
+            has the strip in five stops.
           </li>
           <li>
             <strong className="text-ink">Keeping kosher?</strong> Surfside&apos;s

@@ -40,6 +40,11 @@ export const HOME_FAQS: Faq[] = [
       "Yes. Bal Harbour Beach is open to the public — the public access is at 96th Street and Collins Avenue, with metered parking, restrooms and an outdoor shower by the path. A paved beachwalk runs the length of the village to the Jetty Walk at Haulover Inlet (the pretty 102nd Street path is residents-only). The village doesn't publish a lifeguard schedule, so swim smart. Sand directly in front of the resorts is serviced for hotel guests, but the beach itself is free.",
   },
   {
+    question: "Are Bal Harbour and Bay Harbor Islands the same place?",
+    answer:
+      "No — despite the nearly identical names, they're two different municipalities. Bal Harbour (spelled with a 'u') is the oceanfront village with the Shops, the hotels and the beach; Bay Harbor Islands (no 'u') is a residential two-island town in Biscayne Bay just west, connected by the 96th Street bridge. Locals treat them as one neighborhood: sleep by the ocean, cross the bridge for breakfast on Kane Concourse.",
+  },
+  {
     question: "Is Surfside part of Bal Harbour?",
     answer:
       "No — Bal Harbour and Surfside are two separate municipalities on the same barrier island, sharing the 33154 ZIP code. The border is 96th Street: Bal Harbour runs north of it to Haulover Inlet, Surfside sits south. For visitors they feel like one walkable destination — same beach, ten minutes on foot between their centers.",

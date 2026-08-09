@@ -318,6 +318,156 @@ export const GUIDES: Guide[] = [
       { label: "Bal Harbour vs Surfside", href: "/guides/bal-harbour-vs-surfside" },
     ],
   },
+  {
+    slug: "bay-harbor-islands",
+    title: "Bay Harbor Islands:",
+    titleAccent: "the dinner island next door.",
+    seoTitle:
+      "Bay Harbor Islands vs Bal Harbour — Yes, They're Different Places (Local's Guide)",
+    description:
+      "Bal Harbour and Bay Harbor Islands: nearly identical names, two different municipalities, one short bridge apart. What the islands actually are, the Kane Concourse strip where locals eat, and why you sleep by the ocean but cross the bridge for breakfast.",
+    eyebrow: "THE NAME-TWIN NEXT DOOR",
+    heroImage: "/img/bal-harbour-skyline.jpg",
+    heroAlt:
+      "The Bal Harbour skyline seen across Biscayne Bay, near Bay Harbor Islands",
+    published: "2026-08-07",
+    updated: "2026-08-07",
+    intro:
+      "Type 'Bal Harbour' into a map and you'll see its near-twin floating right there in the bay: Bay Harbor Islands. One letter of difference ('Harbour' with a u, 'Harbor' without), two entirely separate towns, and a short bridge between them at 96th Street. Tourists mix them up daily. Locals use them as one neighborhood — ocean on one side, breakfast on the other. Here's how the islands actually work.",
+    blocks: [
+      {
+        type: "h2",
+        text: "Is Bay Harbor Islands the same place as Bal Harbour?",
+      },
+      {
+        type: "answer",
+        text: "No. The Village of Bal Harbour sits on the oceanfront barrier island; the Town of Bay Harbor Islands is two islands in Biscayne Bay just west of it, connected by the 96th Street bridge (Kane Concourse). Different governments, different vibe — and mind the spelling: Bal Harbour keeps the 'u', Bay Harbor drops it.",
+      },
+      {
+        type: "p",
+        text: "The islands themselves are almost entirely residential — a town of roughly 5,900 people (2020 census) on two leafy man-made islands, incorporated back in 1947, with a beloved K-8 school and zero oceanfront. What they do have is the area's most local-feeling commercial strip: Kane Concourse.",
+      },
+      { type: "h2", text: "Why would a visitor cross the bridge?" },
+      {
+        type: "answer",
+        text: "To eat where the neighborhood eats. Kane Concourse — the continuation of 96th Street across the bay — is a five-minute walk from the Bal Harbour Shops and runs on cafecito, fresh bakeries and unhurried breakfasts at a third of resort prices.",
+      },
+      {
+        type: "list",
+        items: [
+          "**Bay Harbor Bistro & Bakery** (1023 Kane) — the neighborhood breakfast institution: pancakes, omelets, proper pastry case.",
+          "**Bay Harbor Cafe** (1048 Kane) — Cuban sandwiches and cafecito, with keto/vegan/gluten-free corners for the yoga crowd.",
+          "**Pura Vida** (1001 Kane) — the açaí-bowl and smoothie stop after the beach path.",
+          "**PAON Eatery** (1076 Kane) — the newer all-day spot locals are quietly protective of.",
+        ],
+      },
+      { type: "h2", text: "Should I stay on Bay Harbor Islands instead?" },
+      {
+        type: "answer",
+        text: "For most visitors, no — the islands are residential and have no beach of their own. The play is: sleep by the ocean at one of [Bal Harbour's three hotels](/hotels), then cross the bridge for breakfast. Ten minutes on foot from the Shops and you're at the bakery counter.",
+      },
+      {
+        type: "tip",
+        text: "Bal Harbour faces east, so it owns sunrise — but the 96th Street bridge faces west over the bay, and it's the area's best free sunset. Grab a cortadito at [the Kane strip](/eat), walk back across at golden hour, thank us later.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Are Bal Harbour and Bay Harbor Islands the same place?",
+        answer:
+          "No — they're separate municipalities with confusingly similar names. Bal Harbour (with a 'u') is the oceanfront village with the Shops and the hotels; Bay Harbor Islands (no 'u') is the residential two-island town in Biscayne Bay just west, across the 96th Street bridge.",
+      },
+      {
+        question: "Can you walk from Bal Harbour to Bay Harbor Islands?",
+        answer:
+          "Easily — it's about ten flat minutes from the Bal Harbour Shops across the 96th Street bridge (Kane Concourse) to the east island's café strip.",
+      },
+      {
+        question: "Does Bay Harbor Islands have a beach?",
+        answer:
+          "No — the islands sit in Biscayne Bay and have no ocean beach. The nearest sand is Bal Harbour Beach, via the public access at 96th Street and Collins Avenue.",
+      },
+    ],
+    related: [
+      { label: "Where to stay (the ocean side)", href: "/hotels" },
+      { label: "Seven tables we love", href: "/eat" },
+      { label: "The beach guide", href: "/beach" },
+    ],
+  },
+  {
+    slug: "haulover-park",
+    title: "Haulover Park:",
+    titleAccent: "the wild beach next door.",
+    seoTitle:
+      "Haulover Park Guide — Sandbar, Kite Beach, Marina & the Famous North End",
+    description:
+      "Across the inlet from polished Bal Harbour sits its opposite: Haulover Park — 1.5 miles of wide county beach, the famous boat-only sandbar, a kite field, a marina, and yes, the clothing-optional north end. A local's honest guide.",
+    eyebrow: "ACROSS THE INLET",
+    heroImage: "/img/haulover-inlet.jpg",
+    heroAlt: "Haulover Park greenery across the inlet from Bal Harbour",
+    published: "2026-08-07",
+    updated: "2026-08-07",
+    intro:
+      "Stand at the end of Bal Harbour's Jetty Walk and look north: everything on the other side of the inlet is Haulover Park. It is the village's perfect opposite — county-run where Bal Harbour is manicured, big where the village is tiny, gloriously unbothered where the Shops are polished. Locals use both. Here's how.",
+    blocks: [
+      { type: "h2", text: "What is Haulover Park, exactly?" },
+      {
+        type: "answer",
+        text: "A Miami-Dade county park directly across Haulover Inlet from Bal Harbour: about 1.5 miles of wide Atlantic beach backed by dunes, plus the Bill Bird Marina, a kite field, a dog park, a pump track and picnic pavilions with grills. It's the biggest stretch of unbuilt beachfront for miles.",
+      },
+      { type: "h2", text: "How do I get there, and what does parking cost?" },
+      {
+        type: "answer",
+        text: "Drive or bike over the A1A bridge from Bal Harbour — it's five minutes. Parking is paid (roughly $7–10 a day), lots open at 8am and close around sunset, and enforcement is real. On busy weekends, going early isn't a tip, it's a requirement.",
+      },
+      { type: "h2", text: "What's the sandbar everyone posts about?" },
+      {
+        type: "answer",
+        text: "The Haulover Sandbar — a shallow flat just inside the inlet where dozens of boats raft up on weekends into South Florida's most famous floating party. It is boat-only: you cannot walk or swim to it, and it has no lifeguards and no facilities. No boat? The show is fully visible (and honestly better) from Bal Harbour's own Jetty Walk.",
+      },
+      { type: "h2", text: "And the famous clothing-optional section?" },
+      {
+        type: "answer",
+        text: "Yes, that Haulover. The north section of the beach has been officially clothing-optional since the early 1990s — it's clearly signposted, long-established and self-contained. If it's not your scene, simply stay at the south end near the marina; the beach is a mile and a half long and the sections don't mix.",
+      },
+      { type: "h2", text: "What's worth it with kids?" },
+      {
+        type: "list",
+        items: [
+          "**The kite field** — at the southeast corner of the marina lot, open 10am to sunset; on breezy weekends the sky over Haulover is its own attraction.",
+          "**The marina** — watch charter boats come in and fishers clean the catch at Bill Bird Marina.",
+          "**The pump track** — bring the bikes or the skateboard.",
+          "**Grills and pavilions** — the picnic infrastructure Bal Harbour is far too chic to build.",
+        ],
+      },
+      {
+        type: "tip",
+        text: "The perfect local day: sunrise on [Bal Harbour Beach](/beach), morning at Haulover while the light is soft, then back across the bridge for a late lunch at [one of the seven tables](/eat). Wide wild beach and polished village, five minutes apart — that's the whole magic of this corner of the coast.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can you walk from Bal Harbour to Haulover Park?",
+        answer:
+          "It's a short hop over the A1A bridge across Haulover Inlet — quick by bike or car, walkable if you don't mind the bridge stretch. Most villagers drive or ride the five minutes.",
+      },
+      {
+        question: "Can you walk to the Haulover Sandbar?",
+        answer:
+          "No — the sandbar is a boat-only anchorage inside the inlet, not reachable on foot or by swimming. Watch it instead from Bal Harbour's Jetty Walk, which has the best land view of the raft-up.",
+      },
+      {
+        question: "How much is parking at Haulover Park?",
+        answer:
+          "Roughly $7–10 per day in the county lots. Lots open at 8am and close around sunset (earlier gates on weekends), and paid-parking enforcement is active.",
+      },
+    ],
+    related: [
+      { label: "The beach guide", href: "/beach" },
+      { label: "Beach access, explained", href: "/guides/beach-access" },
+      { label: "Lunch after", href: "/eat" },
+    ],
+  },
 ];
 
 export function getGuideBySlug(slug: string): Guide | undefined {
