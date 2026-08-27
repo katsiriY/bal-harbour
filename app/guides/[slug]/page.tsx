@@ -70,11 +70,24 @@ function renderInline(text: string): ReactNode[] {
   });
 }
 
+// Anchor ids for the sticky table of contents (and shareable #links).
+function slugifyHeading(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "-")
+    .slice(0, 60);
+}
+
 function Block({ block }: { block: GuideBlock }) {
   switch (block.type) {
     case "h2":
       return (
-        <h2 className="mt-4 max-w-[640px] text-2xl font-bold leading-snug tracking-tight text-ink md:text-[27px]">
+        <h2
+          id={slugifyHeading(block.text)}
+          className="mt-4 max-w-[640px] scroll-mt-24 text-2xl font-bold leading-snug tracking-tight text-ink md:text-[27px]"
+        >
           {block.text}
         </h2>
       );
@@ -138,13 +151,16 @@ export default async function GuidePage({
   if (!guide) notFound();
 
   const related = relatedGuides(guide.slug);
+  const toc = guide.blocks
+    .filter((b): b is Extract<GuideBlock, { type: "h2" }> => b.type === "h2")
+    .map((b) => ({ id: slugifyHeading(b.text), text: b.text }));
 
   return (
     <div className="bg-inner-wash relative w-full font-sans">
       <Header />
 
       <article>
-        <div className="relative flex flex-col gap-3 px-6 pb-1.5 pt-7 md:px-11 md:pt-9">
+        <div className="relative mx-auto flex max-w-[1120px] flex-col gap-3 px-6 pb-1.5 pt-7 md:px-11 md:pt-9">
           <div className="flex items-center gap-2 text-[13px] text-muted">
             <Link
               href="/guides"
@@ -166,76 +182,143 @@ export default async function GuidePage({
           </div>
         </div>
 
-        <div className="relative mx-6 mt-5 h-[240px] overflow-hidden rounded-[28px] md:mx-11 md:h-[320px]">
-          <Image
-            src={guide.heroImage}
-            alt={guide.heroAlt}
-            fill
-            sizes="(max-width: 768px) 100vw, 1160px"
-            className="object-cover"
-            priority
-          />
+        <div className="relative mx-auto mt-5 max-w-[1120px] px-6 md:px-11">
+          <div className="relative h-[240px] overflow-hidden rounded-[28px] md:h-[320px]">
+            <Image
+              src={guide.heroImage}
+              alt={guide.heroAlt}
+              fill
+              sizes="(max-width: 768px) 100vw, 1032px"
+              className="object-cover"
+              priority
+            />
+          </div>
         </div>
 
-        <div className="relative flex flex-col gap-5 px-6 pb-10 pt-7 md:px-11">
-          <p className="max-w-[640px] text-[17px] leading-[1.75] text-ink-2">
-            {guide.intro}
-          </p>
-          {guide.blocks.map((block, i) => (
-            <Block key={i} block={block} />
-          ))}
-        </div>
+        {/* Desktop: centered article column + sticky rail (TOC, related, CTA).
+            Mobile/tablet: single column, rail hidden, bottom links instead. */}
+        <div className="relative mx-auto max-w-[1120px] px-6 pb-14 pt-7 md:px-11 lg:grid lg:grid-cols-[minmax(0,1fr)_290px] lg:items-start lg:gap-12">
+          <div className="flex flex-col gap-5">
+            <p className="max-w-[640px] text-[17px] leading-[1.75] text-ink-2">
+              {guide.intro}
+            </p>
+            {guide.blocks.map((block, i) => (
+              <Block key={i} block={block} />
+            ))}
 
-        {guide.faqs && guide.faqs.length > 0 && (
-          <div className="relative flex flex-col gap-4 px-6 pb-10 md:px-11">
-            <h2 className="text-2xl font-bold tracking-tight text-ink">
-              Quick answers
-            </h2>
-            <div className="flex max-w-[720px] flex-col gap-3">
-              {guide.faqs.map((faq) => (
-                <details
-                  key={faq.question}
-                  className="group rounded-[18px] bg-white px-5 py-4 shadow-small"
-                >
-                  <summary className="cursor-pointer list-none text-[15px] font-bold text-ink [&::-webkit-details-marker]:hidden">
-                    {faq.question}
-                    <span className="float-right pl-3 text-gold transition-transform group-open:rotate-45">
-                      +
-                    </span>
-                  </summary>
-                  <p className="pt-2.5 text-[14.5px] leading-[1.7] text-ink-3">
-                    {faq.answer}
-                  </p>
-                </details>
-              ))}
+            {guide.faqs && guide.faqs.length > 0 && (
+              <div className="flex flex-col gap-4 pt-5">
+                <h2 className="text-2xl font-bold tracking-tight text-ink">
+                  Quick answers
+                </h2>
+                <div className="flex max-w-[680px] flex-col gap-3">
+                  {guide.faqs.map((faq) => (
+                    <details
+                      key={faq.question}
+                      className="group rounded-[18px] bg-white px-5 py-4 shadow-small"
+                    >
+                      <summary className="cursor-pointer list-none text-[15px] font-bold text-ink [&::-webkit-details-marker]:hidden">
+                        {faq.question}
+                        <span className="float-right pl-3 text-gold transition-transform group-open:rotate-45">
+                          +
+                        </span>
+                      </summary>
+                      <p className="pt-2.5 text-[14.5px] leading-[1.7] text-ink-3">
+                        {faq.answer}
+                      </p>
+                    </details>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Mobile/tablet fallback for the rail's links */}
+            <div className="flex flex-col gap-4 pt-4 lg:hidden">
+              <h2 className="text-xl font-bold text-ink">
+                Keep <em className="font-serif-italic text-gold">going</em>
+              </h2>
+              <div className="flex flex-wrap gap-2.5">
+                {guide.related.map((r) => (
+                  <Link
+                    key={r.href}
+                    href={r.href}
+                    className="rounded-full border-[1.5px] border-ink/25 px-4.5 py-2.5 text-[13.5px] font-semibold text-ink no-underline transition-colors hover:bg-ink/5"
+                  >
+                    {r.label} →
+                  </Link>
+                ))}
+                {related.map((g) => (
+                  <Link
+                    key={g.slug}
+                    href={`/guides/${g.slug}`}
+                    className="rounded-full border-[1.5px] border-gold/50 bg-gold/10 px-4.5 py-2.5 text-[13.5px] font-semibold text-gold-deep no-underline transition-colors hover:bg-gold/20"
+                  >
+                    {g.title} {g.titleAccent} →
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
-        )}
 
-        <div className="relative flex flex-col gap-4 px-6 pb-14 md:px-11">
-          <h2 className="text-xl font-bold text-ink">
-            Keep <em className="font-serif-italic text-gold">going</em>
-          </h2>
-          <div className="flex flex-wrap gap-2.5">
-            {guide.related.map((r) => (
+          <aside className="sticky top-6 hidden flex-col gap-4 lg:flex">
+            <nav
+              aria-label="In this guide"
+              className="flex flex-col gap-2.5 rounded-[20px] bg-white p-5 shadow-small"
+            >
+              <div className="text-[11px] font-bold tracking-[0.14em] text-gold-deep">
+                IN THIS GUIDE
+              </div>
+              {toc.map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className="text-[13.5px] leading-snug text-ink-3 no-underline transition-colors hover:text-ink"
+                >
+                  {item.text}
+                </a>
+              ))}
+            </nav>
+
+            <div className="flex flex-col gap-2.5 rounded-[20px] bg-white p-5 shadow-small">
+              <div className="text-[11px] font-bold tracking-[0.14em] text-gold-deep">
+                KEEP GOING
+              </div>
+              {guide.related.map((r) => (
+                <Link
+                  key={r.href}
+                  href={r.href}
+                  className="text-[13.5px] font-semibold leading-snug text-ink no-underline hover:text-gold-deep"
+                >
+                  {r.label} →
+                </Link>
+              ))}
+              {related.map((g) => (
+                <Link
+                  key={g.slug}
+                  href={`/guides/${g.slug}`}
+                  className="text-[13.5px] font-semibold leading-snug text-gold-deep no-underline hover:underline"
+                >
+                  {g.title} {g.titleAccent} →
+                </Link>
+              ))}
+            </div>
+
+            <div className="bg-hero-panel flex flex-col gap-2.5 rounded-[20px] p-5">
+              <div className="text-[11px] font-bold tracking-[0.14em] text-gold-light">
+                PLANNING THE TRIP?
+              </div>
+              <p className="text-[13.5px] leading-relaxed text-ivory/85">
+                The village has exactly three hotels — we&apos;ve ranked all
+                of them, honestly.
+              </p>
               <Link
-                key={r.href}
-                href={r.href}
-                className="rounded-full border-[1.5px] border-ink/25 px-4.5 py-2.5 text-[13.5px] font-semibold text-ink no-underline transition-colors hover:bg-ink/5"
+                href="/hotels"
+                className="btn-gold mt-1 self-start rounded-full px-4 py-2 text-[12.5px] font-semibold text-ink no-underline"
               >
-                {r.label} →
+                The hotels, ranked →
               </Link>
-            ))}
-            {related.map((g) => (
-              <Link
-                key={g.slug}
-                href={`/guides/${g.slug}`}
-                className="rounded-full border-[1.5px] border-gold/50 bg-gold/10 px-4.5 py-2.5 text-[13.5px] font-semibold text-gold-deep no-underline transition-colors hover:bg-gold/20"
-              >
-                {g.title} {g.titleAccent} →
-              </Link>
-            ))}
-          </div>
+            </div>
+          </aside>
         </div>
       </article>
 

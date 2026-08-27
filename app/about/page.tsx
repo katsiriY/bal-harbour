@@ -36,7 +36,7 @@ export default function AboutPage() {
     <div className="bg-inner-wash relative w-full font-sans">
       <Header />
 
-      <div className="relative flex flex-col gap-3.5 px-6 pb-2 pt-8 md:px-11 md:pt-11">
+      <div className="relative mx-auto flex w-full max-w-[1120px] flex-col gap-3.5 px-6 pb-2 pt-8 md:px-11 md:pt-11">
         <div className="text-[13px] font-semibold tracking-[0.16em] text-gold-deep">
           ABOUT · THE PEOPLE BEHIND THE GUIDE
         </div>
@@ -52,7 +52,7 @@ export default function AboutPage() {
         </p>
       </div>
 
-      <div className="relative mx-6 mt-7 h-[240px] overflow-hidden rounded-[28px] md:mx-11 md:h-[300px]">
+      <div className="relative mx-6 mt-7 h-[240px] overflow-hidden rounded-[28px] md:mx-11 md:h-[300px] lg:mx-auto lg:w-full lg:max-w-[1032px]">
         <Image
           src="/img/palms-surf.jpg"
           alt="Palms over the surf at Bal Harbour — the view from the neighborhood"
@@ -63,7 +63,7 @@ export default function AboutPage() {
         />
       </div>
 
-      <div className="relative flex flex-col gap-5 px-6 pb-4 pt-8 md:px-11">
+      <div className="relative mx-auto flex w-full max-w-[1120px] flex-col gap-5 px-6 pb-4 pt-8 md:px-11">
         <h2 className="text-2xl font-bold tracking-tight text-ink md:text-[28px]">
           Who&apos;s <em className="font-serif-italic text-gold">behind this?</em>
         </h2>
@@ -81,7 +81,7 @@ export default function AboutPage() {
         </p>
       </div>
 
-      <div className="relative grid grid-cols-1 gap-5 px-6 py-8 sm:grid-cols-3 md:px-11">
+      <div className="relative mx-auto grid w-full max-w-[1120px] grid-cols-1 gap-5 px-6 py-8 sm:grid-cols-3 md:px-11">
         {PRINCIPLES.map((p) => (
           <div
             key={p.n}
@@ -94,7 +94,7 @@ export default function AboutPage() {
         ))}
       </div>
 
-      <div className="relative flex flex-col gap-5 px-6 pb-4 pt-2 md:px-11">
+      <div className="relative mx-auto flex w-full max-w-[1120px] flex-col gap-5 px-6 pb-4 pt-2 md:px-11">
         <h2 className="text-2xl font-bold tracking-tight text-ink md:text-[28px]">
           How the site <em className="font-serif-italic text-gold">makes money</em>
         </h2>
@@ -113,7 +113,7 @@ export default function AboutPage() {
         </p>
       </div>
 
-      <div className="bg-gold-tile relative mx-6 my-8 flex flex-col items-start gap-5 rounded-[24px] px-6 py-8 sm:flex-row sm:items-center sm:justify-between md:mx-11 md:px-9">
+      <div className="bg-gold-tile relative mx-6 my-8 flex flex-col items-start gap-5 rounded-[24px] px-6 py-8 sm:flex-row sm:items-center sm:justify-between md:mx-11 md:px-9 lg:mx-auto lg:w-full lg:max-w-[1032px]">
         <div className="flex flex-col gap-1.5">
           <div className="text-xl font-bold text-ink">
             Spotted something wrong?
@@ -131,7 +131,7 @@ export default function AboutPage() {
         </a>
       </div>
 
-      <div className="relative flex flex-col gap-2 px-6 pb-12 md:px-11">
+      <div className="relative mx-auto flex w-full max-w-[1120px] flex-col gap-2 px-6 pb-12 md:px-11">
         <h2 className="text-lg font-bold text-ink">Photo credits</h2>
         <p className="max-w-[680px] text-[13px] leading-relaxed text-muted">
           Real-place photography via Wikimedia Commons: St. Regis Bal Harbour

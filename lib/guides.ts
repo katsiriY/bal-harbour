@@ -139,15 +139,15 @@ export const GUIDES: Guide[] = [
   {
     slug: "beach-access",
     title: "Bal Harbour beach access,",
-    titleAccent: "every entrance explained.",
-    seoTitle: "Bal Harbour Beach Access — Every Public Entrance, Parking & Rules (2026)",
+    titleAccent: "how to get on, explained.",
+    seoTitle: "Bal Harbour Beach Access (2026) — The Public Entrance, Parking & Rules",
     description:
-      "Yes, Bal Harbour Beach is public. Where the entrances are (96th Street is the quiet one), where to park, what the cabana rows mean, and the rules nobody posts — a local's complete access guide.",
+      "Yes, Bal Harbour Beach is public. The one public entrance at 96th & Collins, where to park, the pretty-but-residents-only 102nd Street path, cabana etiquette and the rules nobody posts — a local's complete access guide.",
     eyebrow: "THE PRACTICAL ONE",
     heroImage: "/img/ocean-horizon.jpg",
     heroAlt: "Wide Atlantic Ocean horizon from Bal Harbour Beach at sunrise",
     published: "2026-07-03",
-    updated: "2026-08-06",
+    updated: "2026-08-24",
     intro:
       "The number-one question tourists ask us — usually while standing on Collins Avenue looking suspiciously at a resort gate — is 'can we even get on this beach?' Yes. All Florida beaches are public below the mean high-tide line, and Bal Harbour has a proper public entrance — with parking, restrooms and a shower — that doesn't involve walking through a hotel lobby pretending you're a guest. Here's exactly how it works.",
     blocks: [
