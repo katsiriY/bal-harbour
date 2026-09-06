@@ -1,4 +1,4 @@
-import { bookingSearchUrl, expediaSearchUrl } from "@/lib/affiliates";
+import { bookingSearchUrl, expediaSearchUrl, marriottUrl } from "@/lib/affiliates";
 
 export type FilterTag =
   | "Oceanfront"
@@ -102,14 +102,18 @@ export const HOTELS: Hotel[] = [
       },
       {
         site: "Expedia",
-        price: 687,
-        best: true,
+        price: 699,
         url: expediaSearchUrl("The St. Regis Bal Harbour Resort"),
       },
       {
+        // Direct usually IS the floor once member rates apply — and it's
+        // the rate our Marriott partnership tracks.
         site: "Hotel direct",
-        price: 720,
-        url: "https://www.marriott.com/en-us/hotels/miaxr-the-st-regis-bal-harbour-resort/overview/",
+        price: 687,
+        best: true,
+        url: marriottUrl(
+          "https://www.marriott.com/en-us/hotels/miaxr-the-st-regis-bal-harbour-resort/overview/",
+        ),
       },
     ],
   },
@@ -237,10 +241,15 @@ export const HOTELS: Hotel[] = [
         url: expediaSearchUrl("The Ritz-Carlton Bal Harbour"),
       },
       {
+        // Booked through the marriott.com page for the same hotel so the
+        // Marriott affiliate tracking applies (ritzcarlton.com stays the
+        // clean canonical in officialUrl / sameAs).
         site: "Hotel direct",
         price: 480,
         best: true,
-        url: "https://www.ritzcarlton.com/en/hotels/miazl-the-ritz-carlton-bal-harbour-miami/overview/",
+        url: marriottUrl(
+          "https://www.marriott.com/en-us/hotels/miazl-the-ritz-carlton-bal-harbour-miami/overview/",
+        ),
       },
     ],
   },

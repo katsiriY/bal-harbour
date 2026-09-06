@@ -5,6 +5,11 @@
 const BOOKING_AID = process.env.NEXT_PUBLIC_BOOKING_AID;
 const EXPEDIA_CAMREF = process.env.NEXT_PUBLIC_EXPEDIA_CAMREF;
 const OPENTABLE_REF = process.env.NEXT_PUBLIC_OPENTABLE_REF;
+// Marriott Bonvoy affiliate program (runs on Partnerize). The camref is the
+// publisher campaign reference from the Partnerize dashboard — one id covers
+// every Bonvoy brand, so it monetizes both the St. Regis and the
+// Ritz-Carlton pages.
+const MARRIOTT_CAMREF = process.env.NEXT_PUBLIC_MARRIOTT_CAMREF;
 
 const DESTINATION = "Bal Harbour, Florida";
 
@@ -20,6 +25,15 @@ export function expediaSearchUrl(query: string = "Bal Harbour, FL"): string {
   url.searchParams.set("destination", query);
   if (EXPEDIA_CAMREF) url.searchParams.set("camref", EXPEDIA_CAMREF);
   return url.toString();
+}
+
+// Wraps a marriott.com destination in a Partnerize tracking click URL
+// (standard format: prf.hn/click/camref:X/destination:URL). Falls back to
+// the clean direct link until NEXT_PUBLIC_MARRIOTT_CAMREF is configured,
+// so nothing breaks while the affiliate approval is pending.
+export function marriottUrl(destination: string): string {
+  if (!MARRIOTT_CAMREF) return destination;
+  return `https://prf.hn/click/camref:${MARRIOTT_CAMREF}/destination:${encodeURIComponent(destination)}`;
 }
 
 export function openTableSearchUrl(restaurantName: string): string {
