@@ -64,16 +64,25 @@ export default function DiningPage() {
             has the strip in five stops.
           </li>
           <li>
-            <strong className="text-ink">Keeping kosher?</strong> Surfside&apos;s
-            Harding Avenue, five minutes south, is the area&apos;s kosher
-            dining hub — the local synagogue maintains{" "}
+            <strong className="text-ink">Keeping kosher, or just hungry in Surfside?</strong>{" "}
+            Harding Avenue, five minutes south, is the area&apos;s real
+            restaurant strip — Josh&apos;s Deli (Michelin Guide, Glatt
+            Kosher) and The Harbour Grill anchor it, alongside Neya and
+            Sushi Republic.{" "}
+            <Link
+              href="/guides/surfside"
+              className="font-semibold text-gold-deep underline decoration-gold/50 underline-offset-2"
+            >
+              The full Surfside guide
+            </Link>{" "}
+            has the whole strip, plus the local synagogue&apos;s{" "}
             <a
               href="https://www.yicbh.org/visitors/kosher-restaurants"
               target="_blank"
               rel="noopener"
               className="font-semibold text-gold-deep underline decoration-gold/50 underline-offset-2"
             >
-              an updated list
+              updated kosher list
             </a>
             .
           </li>

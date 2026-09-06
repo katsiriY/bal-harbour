@@ -131,8 +131,8 @@ export const GUIDES: Guide[] = [
       },
     ],
     related: [
+      { label: "The full Surfside guide", href: "/guides/surfside" },
       { label: "Every Bal Harbour hotel, ranked", href: "/hotels" },
-      { label: "The beach guide", href: "/beach" },
       { label: "Seven tables we love", href: "/eat" },
     ],
   },
@@ -325,13 +325,13 @@ export const GUIDES: Guide[] = [
     seoTitle:
       "Bay Harbor Islands vs Bal Harbour — Yes, They're Different Places (Local's Guide)",
     description:
-      "Bal Harbour and Bay Harbor Islands: nearly identical names, two different municipalities, one short bridge apart. What the islands actually are, the Kane Concourse strip where locals eat, and why you sleep by the ocean but cross the bridge for breakfast.",
+      "Bal Harbour and Bay Harbor Islands: nearly identical names, two different municipalities, one short bridge apart. What the islands actually are, the Kane Concourse strip where locals eat breakfast through dinner, and why you sleep by the ocean but cross the bridge to eat.",
     eyebrow: "THE NAME-TWIN NEXT DOOR",
     heroImage: "/img/bal-harbour-skyline.jpg",
     heroAlt:
       "The Bal Harbour skyline seen across Biscayne Bay, near Bay Harbor Islands",
     published: "2026-08-07",
-    updated: "2026-08-07",
+    updated: "2026-09-06",
     intro:
       "Type 'Bal Harbour' into a map and you'll see its near-twin floating right there in the bay: Bay Harbor Islands. One letter of difference ('Harbour' with a u, 'Harbor' without), two entirely separate towns, and a short bridge between them at 96th Street. Tourists mix them up daily. Locals use them as one neighborhood — ocean on one side, breakfast on the other. Here's how the islands actually work.",
     blocks: [
@@ -350,7 +350,7 @@ export const GUIDES: Guide[] = [
       { type: "h2", text: "Why would a visitor cross the bridge?" },
       {
         type: "answer",
-        text: "To eat where the neighborhood eats. Kane Concourse — the continuation of 96th Street across the bay — is a five-minute walk from the Bal Harbour Shops and runs on cafecito, fresh bakeries and unhurried breakfasts at a third of resort prices.",
+        text: "To eat where the neighborhood eats, breakfast through dinner. Kane Concourse — the continuation of 96th Street across the bay — is a five-minute walk from the Bal Harbour Shops and runs on cafecito, fresh bakeries and unhurried mornings at a third of resort prices; by evening it turns into a genuine dinner strip.",
       },
       {
         type: "list",
@@ -359,6 +359,18 @@ export const GUIDES: Guide[] = [
           "**Bay Harbor Cafe** (1048 Kane) — Cuban sandwiches and cafecito, with keto/vegan/gluten-free corners for the yoga crowd.",
           "**Pura Vida** (1001 Kane) — the açaí-bowl and smoothie stop after the beach path.",
           "**PAON Eatery** (1076 Kane) — the newer all-day spot locals are quietly protective of.",
+        ],
+      },
+      { type: "h2", text: "And for dinner — this really is 'the dinner island,' right?" },
+      {
+        type: "answer",
+        text: "Right. Once the sun sets, Kane Concourse holds two of the area's better dinner tables: Meat Bar, a high-end kosher steakhouse, and Emilio's Trattoria, an old-school Italian room locals have been ordering the same pasta at for years.",
+      },
+      {
+        type: "list",
+        items: [
+          "**Meat Bar** (1009 Kane) — glatt kosher steakhouse, elegant and pricey ($50+ entrées); open evenings, Saturday after sundown.",
+          "**Emilio's Trattoria** (Kane Concourse) — traditional Italian, excellent salads and pasta, a fairly priced wine list and the kind of unhurried service a neighborhood spot earns after decades.",
         ],
       },
       { type: "h2", text: "Should I stay on Bay Harbor Islands instead?" },
@@ -466,6 +478,107 @@ export const GUIDES: Guide[] = [
       { label: "The beach guide", href: "/beach" },
       { label: "Beach access, explained", href: "/guides/beach-access" },
       { label: "Lunch after", href: "/eat" },
+    ],
+  },
+  {
+    slug: "surfside",
+    title: "Surfside:",
+    titleAccent: "the neighbor with the Michelin star.",
+    seoTitle:
+      "Surfside, FL Guide (2026) — Hotels, Harding Avenue Restaurants & the Beach",
+    description:
+      "Five minutes south of Bal Harbour, Surfside quietly punches above its weight: a Michelin-Key hotel in a reimagined 1930s beach club, a Michelin Guide deli, and its own string of beach access points on the same Atlantic sand. A local's complete guide.",
+    eyebrow: "THE FULL NEIGHBOR GUIDE",
+    heroImage: "/img/sun-harbour-surfside.jpg",
+    heroAlt:
+      "Sun Harbour Boutique Hotel on Collins Avenue at the Surfside–Bal Harbour line",
+    published: "2026-09-06",
+    updated: "2026-09-06",
+    intro:
+      "We already sent you south of 96th for breakfast and for Thomas Keller's dining room. Here's the rest of Surfside — its own hotels, its own restaurant strip on Harding Avenue, and its own stretch of the same beach, with its own rules. It's five minutes from the Shops and different enough to be worth the walk on its own merits.",
+    blocks: [
+      { type: "h2", text: "Where should I stay in Surfside?" },
+      {
+        type: "answer",
+        text: "The headline stay is the Four Seasons Hotel at The Surf Club — the restored 1930s Surf Club, now a 77-room hotel carrying two Michelin Keys and a spot on the World's 50 Best Hotels list. For more rooms and a lower rate, Grand Beach Hotel Surfside sits at 9449 Collins with direct beach access and an adults-only rooftop pool.",
+      },
+      {
+        type: "list",
+        items: [
+          "**Four Seasons Hotel at The Surf Club** (9101 Collins Ave) — 77 rooms in new buildings around the original 1930s clubhouse; two Michelin Keys, World's 50 Best Hotels. The splurge, and the reason design and food people know Surfside's name at all.",
+          "**Grand Beach Hotel Surfside** (9449 Collins Ave) — two connected properties: Surfside East is oceanfront with a 200-foot private beach and adults-only rooftop pool; Surfside West sits across Collins, a short walk to the sand at a gentler rate.",
+          "**Residence Inn by Marriott Miami Beach Surfside** (9200 Collins Ave) — the extended-stay option, useful if you're here a week or more and want a kitchen.",
+          "**Sun Harbour Boutique Hotel** (9576 Collins Ave) — a two-story Italian-villa-style property with 19 suites, one block off the beach, right at the Bal Harbour line — the small, quiet, independent option.",
+        ],
+      },
+      {
+        type: "tip",
+        text: "The Four Seasons Surf Club is often just called 'the Surf Club' or lumped into 'Bal Harbour' in casual conversation and even some travel write-ups — it is not in the village. It's in Surfside, about five minutes south on Collins.",
+      },
+      { type: "h2", text: "Where do locals actually eat on Harding Avenue?" },
+      {
+        type: "answer",
+        text: "Harding Avenue, one block off Collins, is Surfside's real commercial spine — delis, a kosher steakhouse, sushi and an Israeli kitchen, mostly between 94th and 96th Streets. It's the anti-resort dining scene: counter service, regulars, no valet required.",
+      },
+      {
+        type: "list",
+        items: [
+          "**Josh's Deli** (9517 Harding) — a Glatt Kosher deli in the Michelin Guide, reworking classics (a Cuban-Jewish 'Jewban,' latkes topped with spicy tuna). Breakfast through dinner.",
+          "**The Harbour Grill** (9415 Harding) — Glatt Kosher steakhouse, dry-aged steaks and house charcuterie, the fine-dining anchor of the strip.",
+          "**Neya Restaurant** — modern Israeli and Mediterranean, an open kitchen and a full tasting menu for the occasion-worthy night.",
+          "**Sushi Republic** (9583 Harding) — the neighborhood's established Japanese room: sushi, sashimi, tempura, katsu.",
+          "**Flanigan's** (9516 Harding) — the casual American fallback, wings and a full bar, for when nobody wants to decide.",
+          "**Morelia Ice Cream Paletas** — Mexican-style ice pops, water- and milk-based, the walk-off-dinner stop.",
+        ],
+      },
+      {
+        type: "p",
+        text: "For the fine-dining night out, Keller's [Surf Club Restaurant](/eat) at the Four Seasons is still the one to book ahead — Harding Avenue is where you eat on the nights you don't have a reservation, and often the better decision anyway.",
+      },
+      { type: "h2", text: "Is Surfside's beach different from Bal Harbour's?" },
+      {
+        type: "answer",
+        text: "Same sand and ocean, very different access model. Bal Harbour funnels everyone through one public entrance at 96th Street; Surfside spreads visitors across multiple marked access points along Collins Avenue, so it feels less like 'finding the entrance' and more like just walking toward the water from wherever you are.",
+      },
+      {
+        type: "list",
+        items: [
+          "**Parking:** on-street meters run $5/hour with a 3-hour maximum (steeper than Bal Harbour's roughly $1–2/hour) — or use one of the town's six municipal lots (Abbott Ave at 95th; both sides of 95th St; 94th & Harding; 93rd St; 93rd & Collins), open 24/7.",
+          "**Accessibility:** wheelchair-accessible beach entrances are at 88th Street and 96th Street; a loaner beach wheelchair is based at 93rd Street for residents and Surfside hotel guests.",
+          "**Vibe:** quieter and more residential than the resort-cabana rows up in the village — bring your own chair, or ask your hotel about beach service.",
+        ],
+      },
+      {
+        type: "tip",
+        text: "Doing both towns in a day? Park once — either in Bal Harbour or Surfside — and just walk the beach between them. It's the same continuous strand; the only thing that changes is which street sign is above your beach towel.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is the Four Seasons Surf Club in Bal Harbour?",
+        answer:
+          "No — it's in Surfside, about five minutes south of the Bal Harbour village line on Collins Avenue (9101 Collins Ave). It's easy to conflate the two since they share the same beach and a five-minute walk, but they're separate municipalities.",
+      },
+      {
+        question: "What is the best hotel in Surfside?",
+        answer:
+          "The Four Seasons Hotel at The Surf Club is the headline property — 77 rooms, two Michelin Keys, a World's 50 Best Hotels listing, built around the restored 1930s Surf Club. For a lower rate with direct beach access, Grand Beach Hotel Surfside is the practical alternative.",
+      },
+      {
+        question: "Where should I eat on Harding Avenue in Surfside?",
+        answer:
+          "Josh's Deli (Michelin Guide-listed, Glatt Kosher) and The Harbour Grill (Glatt Kosher steakhouse) anchor the strip, with Neya for modern Israeli, Sushi Republic for Japanese, and Flanigan's for an easy, casual American fallback.",
+      },
+      {
+        question: "Does Surfside have more beach access than Bal Harbour?",
+        answer:
+          "Yes, structurally — Surfside spreads access across multiple points along Collins Avenue rather than one funnel, with wheelchair-accessible entrances specifically at 88th and 96th Streets. Bal Harbour, by contrast, routes everyone through a single public entrance at 96th Street. Same beach, different access model.",
+      },
+    ],
+    related: [
+      { label: "Bal Harbour vs Surfside", href: "/guides/bal-harbour-vs-surfside" },
+      { label: "Where to stay in Bal Harbour", href: "/hotels" },
+      { label: "Seven tables we love", href: "/eat" },
     ],
   },
 ];

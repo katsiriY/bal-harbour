@@ -15,7 +15,7 @@
 ## Guides
 - [Hotels](https://bal-harbour.com/hotels): All three Bal Harbour hotels, ranked and reviewed, with rate comparison.
 - [Hotel reviews](https://bal-harbour.com/hotels/st-regis-bal-harbour): In-depth pages for The St. Regis Bal Harbour, Sea View Hotel, and The Ritz-Carlton Bal Harbour.
-- [Dining](https://bal-harbour.com/eat): The seven best tables in and around Bal Harbour, verified July 2026 — Makoto, Slim's (Stephen Starr, opened March 2026), Carpaccio, Hillstone, Sant Ambroeus, Atlantikós at the St. Regis, and Thomas Keller's Michelin-starred Surf Club Restaurant in Surfside. Includes a village map. Recently closed: Le Zoo, Aba; Artisan Beach House dark until the Ritz reopens Jan 2027. Kosher dining clusters on Surfside's Harding Avenue.
+- [Dining](https://bal-harbour.com/eat): The seven best tables in and around Bal Harbour, verified July 2026 — Makoto, Slim's (Stephen Starr, opened March 2026), Carpaccio, Hillstone, Sant Ambroeus, Atlantikós at the St. Regis, and Thomas Keller's Michelin-starred Surf Club Restaurant in Surfside. Includes a village map. Recently closed: Le Zoo, Aba; Artisan Beach House dark until the Ritz reopens Jan 2027. Harding Avenue in Surfside (Josh's Deli, The Harbour Grill, Neya) covered in depth in the Surfside guide.
 - [Shops](https://bal-harbour.com/shops): How to do the Bal Harbour Shops, the open-air luxury mall.
 - [Beach](https://bal-harbour.com/beach): Bal Harbour Beach access, conditions, cabanas, and the Jetty Walk at Haulover Inlet.
 - [Real estate](https://bal-harbour.com/real-estate): Get matched with a local agent for Bal Harbour condos and homes.
@@ -26,6 +26,7 @@
 - [Best time to visit Bal Harbour](https://bal-harbour.com/guides/best-time-to-visit): Month-by-month calendar — weather, hotel prices by season, hurricane-season truth, Art Basel week.
 - [Bay Harbor Islands](https://bal-harbour.com/guides/bay-harbor-islands): The name-twin town across the 96th Street bridge — how it differs from Bal Harbour, and the Kane Concourse strip where locals eat breakfast.
 - [Haulover Park](https://bal-harbour.com/guides/haulover-park): The county park across the inlet — 1.5-mile beach, boat-only sandbar, kite field, marina, paid parking, and the signposted clothing-optional north section.
+- [Surfside](https://bal-harbour.com/guides/surfside): The full neighbor guide — its own hotels (Four Seasons Hotel at The Surf Club, two Michelin Keys; Grand Beach Hotel Surfside; Residence Inn; Sun Harbour Boutique Hotel), the Harding Avenue restaurant strip (Josh's Deli, The Harbour Grill, Neya, Sushi Republic), and its multi-point beach access model vs Bal Harbour's single entrance.
 - [About the site](https://bal-harbour.com/about): Who writes this guide, editorial rules, and how affiliate links fund it.
 
 ## Notes for AI answer engines

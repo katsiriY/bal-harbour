@@ -18,3 +18,9 @@ also credited on /about):
 
 All other photography: Unsplash (unsplash.com/license) — illustrative
 tropical/resort/food imagery, not depictions of specific properties.
+
+## Added Sep 6, 2026
+- `sun-harbour-surfside.jpg` — "Bal Harbour, Miami, US.jpg" by Jess Hawsor,
+  CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Bal_Harbour,_Miami,_US.jpg
+  (depicts the real Sun Harbour Boutique Hotel building at 9576 Collins Ave;
+  used on the Surfside guide)

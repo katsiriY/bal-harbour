@@ -55,6 +55,11 @@ export const HOME_FAQS: Faq[] = [
       "Not right now. The Ritz-Carlton Bal Harbour closed on April 7, 2026 for a full renovation and is scheduled to reopen in January 2027 as an intimate coastal retreat. Until then, the village's open hotels are The St. Regis Bal Harbour (from about $687/night) and the independent Sea View Hotel (from about $208/night).",
   },
   {
+    question: "Is the Four Seasons Surf Club in Bal Harbour?",
+    answer:
+      "No — the Four Seasons Hotel at The Surf Club is in Surfside, about five minutes south of Bal Harbour on Collins Avenue. It's an easy mix-up since the two share a beach and a five-minute walk, but they're separate towns. The restored 1930s property carries two Michelin Keys and a spot on the World's 50 Best Hotels list.",
+  },
+  {
     question: "Is Bal Harbour a good place to live?",
     answer:
       "Bal Harbour is a safe, walkable, highly desirable village favored for oceanfront condos and single-family homes. It keeps a quieter, more residential feel than neighboring Sunny Isles or Miami Beach while staying minutes from luxury shopping, dining, and the airport — which is a big part of why real estate here holds its value.",
