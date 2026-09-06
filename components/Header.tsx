@@ -70,33 +70,40 @@ export default function Header() {
         </button>
       </div>
 
-      {open && (
-        <div className="absolute left-0 right-0 top-full mx-4 mt-2 flex flex-col gap-1 rounded-2xl bg-white p-3 shadow-elevated md:hidden">
-          {NAV_LINKS.map((link) => {
-            const active = link.key === activeKey;
-            return (
-              <Link
-                key={link.key}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className={[
-                  "rounded-xl px-4 py-3 text-sm font-medium no-underline",
-                  active ? "bg-ink text-ivory" : "text-ink hover:bg-black/5",
-                ].join(" ")}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
-          <Link
-            href="/hotels"
-            onClick={() => setOpen(false)}
-            className="btn-dark mt-1 rounded-xl px-4 py-3 text-center text-sm font-semibold text-ivory no-underline"
-          >
-            Book a stay
-          </Link>
-        </div>
-      )}
+      {/* Always mounted (not conditionally rendered) so open/close can
+          transition — a conditional {open && ...} mount snaps instantly with
+          no way to animate the exit. inert removes it from tab order and the
+          accessibility tree while closed; origin-top-right anchors the scale
+          to the hamburger button rather than the panel's own center. */}
+      <div
+        data-state={open ? "open" : "closed"}
+        inert={!open}
+        className="absolute left-0 right-0 top-full mx-4 mt-2 flex origin-top-right flex-col gap-1 rounded-2xl bg-white p-3 shadow-elevated transition-[transform,opacity] duration-200 ease-out data-[state=closed]:scale-95 data-[state=closed]:opacity-0 data-[state=open]:scale-100 data-[state=open]:opacity-100 md:hidden"
+      >
+        {NAV_LINKS.map((link) => {
+          const active = link.key === activeKey;
+          return (
+            <Link
+              key={link.key}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              className={[
+                "rounded-xl px-4 py-3 text-sm font-medium no-underline",
+                active ? "bg-ink text-ivory" : "text-ink hover:bg-black/5",
+              ].join(" ")}
+            >
+              {link.label}
+            </Link>
+          );
+        })}
+        <Link
+          href="/hotels"
+          onClick={() => setOpen(false)}
+          className="btn-dark mt-1 rounded-xl px-4 py-3 text-center text-sm font-semibold text-ivory no-underline"
+        >
+          Book a stay
+        </Link>
+      </div>
     </div>
   );
 }

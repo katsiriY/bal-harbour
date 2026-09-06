@@ -36,6 +36,14 @@
   --shadow-card: 0 6px 22px rgba(13, 47, 37, 0.1);
   --shadow-elevated: 0 10px 32px rgba(13, 47, 37, 0.12);
   --shadow-small: 0 4px 16px rgba(13, 47, 37, 0.07);
+
+  /* Stronger easing curves — the built-in CSS ease-out/ease-in-out read as
+     weak and don't give entering/moving UI the snap that reads as
+     intentional. Overriding the theme keys means every ease-out /
+     ease-in-out utility site-wide (existing and future) picks this up. */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 html {
@@ -155,6 +163,32 @@ body {
   }
 }
 
+/* Ken Burns: a slow, continuous zoom drift on the hero photo — a real
+   cinematic technique (not AI-generated), so it can never misrepresent
+   what's actually in the photo. Scale only (never top/left/width), kept
+   under 10% so nothing outside the already-covering image is ever
+   exposed. Long duration + ease-in-out because this is ambient/marketing
+   motion, not a UI transition — the 150-300ms UI rules don't apply here. */
+@keyframes ken-burns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.09);
+  }
+}
+
+.ken-burns {
+  animation: ken-burns 26s var(--ease-in-out) infinite alternate;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ken-burns {
+    animation: none;
+  }
+}
+
 .sun-glow-top {
   background: radial-gradient(
     circle,
@@ -188,8 +222,8 @@ body {
 
 .hover-lift {
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    transform 0.2s var(--ease-out),
+    box-shadow 0.2s var(--ease-out);
 }
 
 .hover-lift:hover {
@@ -197,9 +231,20 @@ body {
   box-shadow: 0 14px 34px rgba(13, 47, 37, 0.16);
 }
 
+.hover-lift:active {
+  transform: translateY(-1px) scale(0.99);
+  transition-duration: 0.1s;
+}
+
+.btn-gold,
+.btn-dark {
+  transition:
+    background-color 0.15s ease,
+    transform 0.12s var(--ease-out);
+}
+
 .btn-gold {
   background: #b5975a;
-  transition: background-color 0.15s ease;
 }
 
 .btn-gold:hover {
@@ -208,9 +253,26 @@ body {
 
 .btn-dark {
   background: #0d2f25;
-  transition: background-color 0.15s ease;
 }
 
 .btn-dark:hover {
   background: #133d30;
+}
+
+.btn-gold:active,
+.btn-dark:active {
+  transform: scale(0.97);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hover-lift,
+  .hover-lift:hover,
+  .hover-lift:active,
+  .btn-gold,
+  .btn-dark,
+  .btn-gold:active,
+  .btn-dark:active {
+    transition-duration: 0.01ms !important;
+    transform: none !important;
+  }
 }

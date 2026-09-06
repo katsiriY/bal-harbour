@@ -49,7 +49,7 @@ export default function Home() {
             alt="Palm trees over the surf at Bal Harbour"
             fill
             sizes="(max-width: 768px) 100vw, 64vw"
-            className="object-cover"
+            className="ken-burns object-cover"
             style={{ objectPosition: "65% center" }}
             priority
           />

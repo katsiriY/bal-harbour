@@ -90,8 +90,12 @@ export default function LeadForm() {
   }
 
   if (status === "success") {
+    // This is the site's one conversion moment — worth a deliberate fade
+    // rather than the instant snap of one subtree replacing another.
+    // Blur-during-transition masks the fact that the incoming content has
+    // a different shape/height than the form it replaced.
     return (
-      <div className="flex flex-col gap-4 rounded-[28px] bg-white p-8 text-center shadow-elevated md:p-10">
+      <div className="flex flex-col gap-4 rounded-[28px] bg-white p-8 text-center shadow-elevated transition-[opacity,filter] duration-500 ease-out starting:opacity-0 starting:blur-sm md:p-10">
         <div className="text-2xl font-bold text-ink">You&apos;re all set, {firstName}.</div>
         <p className="text-[15px] leading-relaxed text-ink-4">
           We&apos;re matching you with a Bal Harbour agent now — expect a call

@@ -19,23 +19,31 @@ export default function ImageCarousel({
   children?: React.ReactNode;
 }) {
   const [index, setIndex] = useState(0);
+  // The just-left photo, kept mounted only long enough to fade out on top of
+  // the new one underneath — an instant src swap otherwise reads as broken.
+  const [prevIndex, setPrevIndex] = useState<number | null>(null);
+
+  function changeTo(newIndex: number) {
+    setPrevIndex((current) => (newIndex === index ? current : index));
+    setIndex(newIndex);
+  }
 
   function prev(e: React.MouseEvent) {
     e.preventDefault();
     e.stopPropagation();
-    setIndex((i) => (i - 1 + images.length) % images.length);
+    changeTo((index - 1 + images.length) % images.length);
   }
 
   function next(e: React.MouseEvent) {
     e.preventDefault();
     e.stopPropagation();
-    setIndex((i) => (i + 1) % images.length);
+    changeTo((index + 1) % images.length);
   }
 
   function goTo(e: React.MouseEvent, i: number) {
     e.preventDefault();
     e.stopPropagation();
-    setIndex(i);
+    changeTo(i);
   }
 
   return (
@@ -48,6 +56,18 @@ export default function ImageCarousel({
         priority={priority}
         className="object-cover"
       />
+      {prevIndex !== null && prevIndex !== index && (
+        <Image
+          key={prevIndex}
+          src={images[prevIndex]}
+          alt=""
+          aria-hidden
+          fill
+          sizes={sizes}
+          className="object-cover opacity-0 starting:opacity-100 transition-opacity duration-300 ease-out"
+          onTransitionEnd={() => setPrevIndex(null)}
+        />
+      )}
       {children}
       {images.length > 1 && (
         <>
@@ -55,7 +75,7 @@ export default function ImageCarousel({
             type="button"
             aria-label="Previous photo"
             onClick={prev}
-            className="absolute left-3 top-1/2 flex h-[34px] w-[34px] -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-ink shadow-[0_2px_8px_rgba(13,47,37,0.2)] transition-opacity hover:bg-white"
+            className="absolute left-3 top-1/2 flex h-[34px] w-[34px] -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-ink shadow-[0_2px_8px_rgba(13,47,37,0.2)] transition-[opacity,transform] duration-150 ease-out hover:bg-white active:scale-90"
           >
             ‹
           </button>
@@ -63,7 +83,7 @@ export default function ImageCarousel({
             type="button"
             aria-label="Next photo"
             onClick={next}
-            className="absolute right-3 top-1/2 flex h-[34px] w-[34px] -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-ink shadow-[0_2px_8px_rgba(13,47,37,0.2)] transition-opacity hover:bg-white"
+            className="absolute right-3 top-1/2 flex h-[34px] w-[34px] -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-ink shadow-[0_2px_8px_rgba(13,47,37,0.2)] transition-[opacity,transform] duration-150 ease-out hover:bg-white active:scale-90"
           >
             ›
           </button>
@@ -74,8 +94,8 @@ export default function ImageCarousel({
                 type="button"
                 aria-label={`Go to photo ${i + 1}`}
                 onClick={(e) => goTo(e, i)}
-                className={`h-1.5 w-1.5 rounded-full ${
-                  i === index ? "bg-ivory" : "bg-ivory/45"
+                className={`h-1.5 w-1.5 rounded-full transition-colors duration-200 ${
+                  i === index ? "bg-ivory" : "bg-ivory/45 hover:bg-ivory/70"
                 }`}
               />
             ))}
