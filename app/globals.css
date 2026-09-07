@@ -94,84 +94,65 @@ body {
   background: linear-gradient(135deg, #c3a366 0%, #b5975a 100%);
 }
 
-/* Homepage hero: seamless photo-to-green blend (recipe from Home.dc.html).
-   The photo itself is masked so it fades in from the green side, and a
-   green tint overlay carries the panel color across the transition. */
+/* Homepage hero: the video now covers the FULL panel at every breakpoint
+   (previously masked down to a partial strip) — .hero-tint is what keeps
+   the text legible, as a scrim that's strongest behind the copy and
+   clears toward the edges so the footage still reads clearly there. */
 .hero-photo {
   position: absolute;
   inset: 0;
-  /* Mobile: photo fades in from the top down. */
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(0, 0, 0, 0.15) 22%,
-    rgba(0, 0, 0, 0.55) 44%,
-    #000 72%
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgba(0, 0, 0, 0.15) 22%,
-    rgba(0, 0, 0, 0.55) 44%,
-    #000 72%
-  );
 }
 
 .hero-tint {
   position: absolute;
   inset: 0;
-  /* Mobile: green wash strongest at the top, clearing downward. */
+  /* Mobile: strong wash behind the top copy, clearing toward the bottom. */
   background: linear-gradient(
-    to bottom,
-    rgba(11, 42, 33, 0.55) 0%,
-    rgba(11, 42, 33, 0.15) 38%,
-    rgba(11, 42, 33, 0) 62%
+    180deg,
+    rgba(11, 42, 33, 0.82) 0%,
+    rgba(11, 42, 33, 0.6) 42%,
+    rgba(11, 42, 33, 0.38) 70%,
+    rgba(11, 42, 33, 0.28) 100%
   );
 }
 
 @media (min-width: 768px) {
-  .hero-photo {
-    left: auto;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 64%;
-    /* Desktop: photo occupies the right 64%, fading in from its left edge. */
-    -webkit-mask-image: linear-gradient(
-      90deg,
-      transparent 0%,
-      rgba(0, 0, 0, 0.15) 30%,
-      rgba(0, 0, 0, 0.55) 55%,
-      #000 80%
-    );
-    mask-image: linear-gradient(
-      90deg,
-      transparent 0%,
-      rgba(0, 0, 0, 0.15) 30%,
-      rgba(0, 0, 0, 0.55) 55%,
-      #000 80%
-    );
-  }
-
   .hero-tint {
+    /* Desktop: strong wash behind the left text column, clearing toward
+       the right so the video reads clearly there. */
     background: linear-gradient(
       90deg,
-      rgba(11, 42, 33, 0.55) 0%,
-      rgba(11, 42, 33, 0.15) 38%,
-      rgba(11, 42, 33, 0) 60%
+      rgba(11, 42, 33, 0.85) 0%,
+      rgba(11, 42, 33, 0.72) 32%,
+      rgba(11, 42, 33, 0.34) 60%,
+      rgba(11, 42, 33, 0.14) 100%
     );
   }
 }
 
-/* Color grade for the hero video: the raw footage is a flat, neutral
-   midday-blue-sky shot, which clashes with the site's warm gold/green
-   "sunset dive" palette used everywhere else. A light sepia + saturation
-   + reduced brightness pushes it toward that same warm, slightly moody
-   grade instead of looking like an unprocessed real-estate photo — the
-   difference between "cinematic" and "raw camera footage". */
+/* Golden-hour treatment for the hero video. The raw footage is neutral
+   midday light — flat blue sky, documentary color. That's not just "a
+   bit cool"; it's a different TIME OF DAY than the site's whole identity
+   ("sunset dive": warm light fading into deep green, "Sun's out" as the
+   headline). A CSS filter alone can't manufacture that — it can shift
+   hue but not add the warm directional light golden hour actually has.
+   So: a strong grade AND a multiply-blended warm gradient (like a real
+   graduated filter over the lens) doing the actual heavy lifting. */
 .hero-video-grade {
-  filter: sepia(0.22) saturate(1.35) contrast(1.08) brightness(0.88)
-    hue-rotate(-6deg);
+  filter: sepia(0.4) saturate(1.5) contrast(1.15) brightness(0.8)
+    hue-rotate(-14deg);
+}
+
+.hero-video-warmth {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    195deg,
+    rgba(232, 178, 96, 0.55) 0%,
+    rgba(196, 132, 74, 0.28) 32%,
+    rgba(20, 48, 38, 0.1) 70%
+  );
+  mix-blend-mode: multiply;
 }
 
 /* Ken Burns: a slow, continuous zoom drift on the hero photo — a real

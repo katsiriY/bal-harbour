@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type CSSProperties } from "react";
 
 /**
  * The homepage hero background: a real, muted, looping video (not AI —
@@ -12,9 +12,11 @@ import { useEffect, useRef } from "react";
 export default function HeroVideo({
   poster,
   className = "",
+  style,
 }: {
   poster: string;
   className?: string;
+  style?: CSSProperties;
 }) {
   const ref = useRef<HTMLVideoElement>(null);
 
@@ -36,6 +38,7 @@ export default function HeroVideo({
     <video
       ref={ref}
       className={className}
+      style={style}
       poster={poster}
       muted
       loop

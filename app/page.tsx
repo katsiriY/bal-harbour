@@ -52,14 +52,16 @@ export default function Home() {
           <HeroVideo
             poster="/img/hero-drone-poster.jpg"
             className="hero-video-grade absolute inset-0 h-full w-full object-cover"
+            style={{ objectPosition: "center 68%" }}
           />
+          <div aria-hidden className="hero-video-warmth" />
         </div>
         <div aria-hidden className="hero-tint" />
         <div
           aria-hidden
           className="sun-glow-panel pointer-events-none absolute -top-[120px] right-[24%] z-10 hidden h-[340px] w-[340px] rounded-full md:block"
         />
-        <div className="relative z-10 flex flex-col gap-5 px-6 pb-16 pt-10 md:max-w-[560px] md:px-14 md:pb-[200px] md:pt-[76px]">
+        <div className="relative z-10 flex flex-col gap-5 px-6 pb-16 pt-10 md:max-w-[620px] md:px-14 md:pb-[195px] md:pt-[56px]">
           <div className="hero-in-1 text-[13px] font-semibold tracking-[0.2em] text-gold-light">
             BAL HARBOUR, FLORIDA · LOCAL TRAVEL GUIDE
           </div>
@@ -82,7 +84,7 @@ export default function Home() {
         <form
           action="/hotels"
           method="GET"
-          className="hero-in-4 relative z-10 mx-6 mb-6 flex flex-col gap-3 rounded-[28px] bg-ivory p-4 shadow-[0_12px_32px_rgba(0,0,0,0.25)] sm:flex-row sm:items-center sm:rounded-full sm:py-2.5 sm:pl-6 sm:pr-2.5 md:absolute md:inset-x-14 md:bottom-12 md:mx-0 md:mb-0 md:mr-[calc(38%+40px)]"
+          className="hero-in-4 relative z-10 mx-6 mb-6 flex flex-col gap-3 rounded-[28px] bg-ivory p-4 shadow-[0_12px_32px_rgba(0,0,0,0.25)] sm:flex-row sm:items-center sm:rounded-full sm:py-2.5 sm:pl-6 sm:pr-2.5 md:absolute md:inset-x-14 md:bottom-12 md:mx-0 md:mb-0 md:mr-[calc(36%+40px)]"
         >
           <input
             type="text"
