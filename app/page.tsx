@@ -4,6 +4,8 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
+import Reveal from "@/components/Reveal";
+import HeroVideo from "@/components/HeroVideo";
 import { HOTELS, bestRate } from "@/lib/hotels";
 import { HOME_FAQS } from "@/lib/faq";
 import {
@@ -39,19 +41,17 @@ export default function Home() {
 
       <Header />
 
-      {/* Hero panel — photo masked to fade into the green, plus a green
-          tint overlay, so the photo blends seamlessly (recipe from
-          Home.dc.html). */}
+      {/* Hero panel — a real, muted, looping video of the actual Bal
+          Harbour skyline across Biscayne Bay (frame-checked during
+          production, not AI-invented content), masked to fade into the
+          green, plus a green tint overlay, so it blends seamlessly
+          (recipe from Home.dc.html). Poster frame is a real still from
+          the same clip, so there's never a moment showing anything else. */}
       <div className="bg-hero-panel relative mx-4 mt-4 min-h-[420px] overflow-hidden rounded-[28px] md:mx-11 md:mt-6">
         <div aria-hidden className="hero-photo">
-          <Image
-            src="/img/palms-surf.jpg"
-            alt="Palm trees over the surf at Bal Harbour"
-            fill
-            sizes="(max-width: 768px) 100vw, 64vw"
-            className="ken-burns object-cover"
-            style={{ objectPosition: "65% center" }}
-            priority
+          <HeroVideo
+            poster="/img/hero-drone-poster.jpg"
+            className="absolute inset-0 h-full w-full object-cover"
           />
         </div>
         <div aria-hidden className="hero-tint" />
@@ -59,18 +59,18 @@ export default function Home() {
           aria-hidden
           className="sun-glow-panel pointer-events-none absolute -top-[120px] right-[24%] z-10 hidden h-[340px] w-[340px] rounded-full md:block"
         />
-        <div className="relative z-10 flex flex-col gap-5 px-6 pb-16 pt-10 md:max-w-[520px] md:px-14 md:pb-[190px] md:pt-[70px]">
-          <div className="text-[13px] font-semibold tracking-[0.16em] text-gold-light">
+        <div className="relative z-10 flex flex-col gap-5 px-6 pb-16 pt-10 md:max-w-[560px] md:px-14 md:pb-[200px] md:pt-[76px]">
+          <div className="hero-in-1 text-[13px] font-semibold tracking-[0.2em] text-gold-light">
             BAL HARBOUR, FLORIDA · LOCAL TRAVEL GUIDE
           </div>
-          <h1 className="text-4xl font-bold leading-[1.08] tracking-tight text-ivory md:text-[54px]">
+          <h1 className="hero-in-2 text-[2.75rem] font-bold leading-[1.02] tracking-tight text-ivory md:text-[64px]">
             Sun&apos;s out. We know{" "}
             <em className="font-serif-italic text-gold-light">
               the good spots
             </em>{" "}
             in Bal Harbour.
           </h1>
-          <p className="max-w-[470px] text-base leading-relaxed text-ivory/75">
+          <p className="hero-in-3 max-w-[470px] text-base leading-relaxed text-ivory/75 md:text-[17px]">
             Your friendly local guide to Bal Harbour, Florida — the fanciest
             little village in Miami Beach. We live here, and we&apos;ll point
             you to the best oceanfront hotels, restaurants, beach days, and the
@@ -82,7 +82,7 @@ export default function Home() {
         <form
           action="/hotels"
           method="GET"
-          className="relative z-10 mx-6 mb-6 flex flex-col gap-3 rounded-[28px] bg-ivory p-4 shadow-[0_12px_32px_rgba(0,0,0,0.25)] sm:flex-row sm:items-center sm:rounded-full sm:py-2.5 sm:pl-6 sm:pr-2.5 md:absolute md:inset-x-14 md:bottom-12 md:mx-0 md:mb-0 md:mr-[calc(38%+40px)]"
+          className="hero-in-4 relative z-10 mx-6 mb-6 flex flex-col gap-3 rounded-[28px] bg-ivory p-4 shadow-[0_12px_32px_rgba(0,0,0,0.25)] sm:flex-row sm:items-center sm:rounded-full sm:py-2.5 sm:pl-6 sm:pr-2.5 md:absolute md:inset-x-14 md:bottom-12 md:mx-0 md:mb-0 md:mr-[calc(38%+40px)]"
         >
           <input
             type="text"
@@ -120,106 +120,109 @@ export default function Home() {
       </div>
 
       {/* Intro — quotable definition + quick facts (answer-first for AI) */}
-      <section className="relative px-6 pt-12 md:px-11">
-        <p className="text-xs font-semibold tracking-[0.18em] text-gold-deep">
-          THE SHORT VERSION
-        </p>
-        <h2 className="mt-2.5 max-w-[860px] text-2xl font-semibold leading-[1.35] tracking-tight text-ink md:text-[27px]">
-          Bal Harbour is a small, upscale beachfront village at the north end
-          of Miami Beach — known for the luxury Bal Harbour Shops, oceanfront
-          resorts, and a quiet, public-access Atlantic Ocean beach.
-        </h2>
-        <p className="mt-4 max-w-[720px] text-[15px] leading-relaxed text-body">
-          We actually live here. Below: the hotels we&apos;d book ourselves, the
-          tables worth the reservation, how to do the Shops without wilting,
-          where to lay a towel — and, if you fall for the place, how to move
-          here.
-        </p>
-        <ul className="mt-6 flex flex-wrap gap-2">
-          {QUICK_FACTS.map((fact) => (
-            <li
-              key={fact}
-              className="flex items-center gap-2 rounded-full bg-ink/8 px-3.5 py-2 text-[13px] font-medium text-ink-2"
-            >
-              <span aria-hidden className="text-gold-deep">
-                ◆
-              </span>
-              {fact}
-            </li>
-          ))}
-        </ul>
-      </section>
+      <Reveal>
+        <section className="relative px-6 pt-12 md:px-11">
+          <p className="text-xs font-semibold tracking-[0.18em] text-gold-deep">
+            THE SHORT VERSION
+          </p>
+          <h2 className="mt-2.5 max-w-[860px] text-2xl font-semibold leading-[1.35] tracking-tight text-ink md:text-[27px]">
+            Bal Harbour is a small, upscale beachfront village at the north end
+            of Miami Beach — known for the luxury Bal Harbour Shops, oceanfront
+            resorts, and a quiet, public-access Atlantic Ocean beach.
+          </h2>
+          <p className="mt-4 max-w-[720px] text-[15px] leading-relaxed text-body">
+            We actually live here. Below: the hotels we&apos;d book ourselves, the
+            tables worth the reservation, how to do the Shops without wilting,
+            where to lay a towel — and, if you fall for the place, how to move
+            here.
+          </p>
+          <ul className="mt-6 flex flex-wrap gap-2">
+            {QUICK_FACTS.map((fact) => (
+              <li
+                key={fact}
+                className="flex items-center gap-2 rounded-full bg-ink/8 px-3.5 py-2 text-[13px] font-medium text-ink-2"
+              >
+                <span aria-hidden className="text-gold-deep">
+                  ◆
+                </span>
+                {fact}
+              </li>
+            ))}
+          </ul>
+        </section>
+      </Reveal>
 
       {/* Featured hotels */}
-      <div className="relative flex items-baseline justify-between px-6 pb-5 pt-14 md:px-11">
-        <h2 className="text-2xl font-bold tracking-tight text-ink md:text-[30px]">
-          Where to <em className="font-serif-italic text-gold-deep">stay</em> in
-          Bal Harbour
-        </h2>
-        <Link
-          href="/hotels"
-          className="border-b-2 border-gold pb-0.5 text-sm font-semibold text-ink no-underline"
-        >
-          See all hotels
-        </Link>
-      </div>
-      <div className="relative grid grid-cols-1 gap-5 px-6 pb-12 md:grid-cols-3 md:px-11">
-        {featured.map((hotel) => (
-          <article
-            key={hotel.slug}
-            className="hover-lift relative overflow-hidden rounded-[22px] bg-white shadow-card"
+      <Reveal>
+        <div className="relative flex items-baseline justify-between px-6 pb-5 pt-14 md:px-11">
+          <h2 className="text-2xl font-bold tracking-tight text-ink md:text-[30px]">
+            Where to <em className="font-serif-italic text-gold-deep">stay</em> in
+            Bal Harbour
+          </h2>
+          <Link
+            href="/hotels"
+            className="border-b-2 border-gold pb-0.5 text-sm font-semibold text-ink no-underline"
           >
-            {/* Whole card opens the review; the "Check rates" pill sits above
-                this overlay as a real affiliate link (no nested anchors). */}
-            <Link
-              href={`/hotels/${hotel.slug}`}
-              aria-label={`${hotel.name} — read the full review`}
-              className="absolute inset-0 z-[1]"
-            />
-            <div className="relative h-[180px]">
-              <Image
-                src={hotel.images[0]}
-                alt={`${hotel.name} hotel in Bal Harbour, Florida`}
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover"
+            See all hotels
+          </Link>
+        </div>
+      </Reveal>
+      <div className="relative grid grid-cols-1 gap-5 px-6 pb-12 md:grid-cols-3 md:px-11">
+        {featured.map((hotel, i) => (
+          <Reveal key={hotel.slug} delay={i * 90}>
+            <article className="hover-lift relative overflow-hidden rounded-[22px] bg-white shadow-card">
+              {/* Whole card opens the review; the "Check rates" pill sits above
+                  this overlay as a real affiliate link (no nested anchors). */}
+              <Link
+                href={`/hotels/${hotel.slug}`}
+                aria-label={`${hotel.name} — read the full review`}
+                className="absolute inset-0 z-[1]"
               />
-              <div
-                className={[
-                  "absolute left-3.5 top-3.5 rounded-full px-3 py-1.5 text-xs font-semibold",
-                  hotel.homeBadgeStyle === "dark"
-                    ? "bg-ink text-ivory"
-                    : "bg-ivory text-ink",
-                ].join(" ")}
-              >
-                {hotel.homeBadge}
-              </div>
-            </div>
-            <div className="flex flex-col gap-1.5 px-5 pb-5 pt-4.5">
-              <div className="text-lg font-bold text-ink">{hotel.name}</div>
-              <div className="text-[13.5px] leading-relaxed text-body">
-                {hotel.oneLiner}
-              </div>
-              <div className="mt-1.5 flex items-center justify-between">
-                <div className="text-sm text-ink">
-                  from <strong>${hotel.price}</strong>/nt
-                </div>
-                <a
-                  href={bestRate(hotel).url}
-                  target="_blank"
-                  rel="sponsored noopener"
-                  className="relative z-[2] rounded-full bg-gold/18 px-4 py-2 text-[13px] font-semibold text-gold-deep no-underline transition-colors hover:bg-gold/30"
+              <div className="relative h-[180px] overflow-hidden">
+                <Image
+                  src={hotel.images[0]}
+                  alt={`${hotel.name} hotel in Bal Harbour, Florida`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="img-zoom object-cover"
+                />
+                <div
+                  className={[
+                    "absolute left-3.5 top-3.5 rounded-full px-3 py-1.5 text-xs font-semibold",
+                    hotel.homeBadgeStyle === "dark"
+                      ? "bg-ink text-ivory"
+                      : "bg-ivory text-ink",
+                  ].join(" ")}
                 >
-                  Check rates
-                </a>
+                  {hotel.homeBadge}
+                </div>
               </div>
-            </div>
-          </article>
+              <div className="flex flex-col gap-1.5 px-5 pb-5 pt-4.5">
+                <div className="text-lg font-bold text-ink">{hotel.name}</div>
+                <div className="text-[13.5px] leading-relaxed text-body">
+                  {hotel.oneLiner}
+                </div>
+                <div className="mt-1.5 flex items-center justify-between">
+                  <div className="text-sm text-ink">
+                    from <strong>${hotel.price}</strong>/nt
+                  </div>
+                  <a
+                    href={bestRate(hotel).url}
+                    target="_blank"
+                    rel="sponsored noopener"
+                    className="relative z-[2] rounded-full bg-gold/18 px-4 py-2 text-[13px] font-semibold text-gold-deep no-underline transition-colors hover:bg-gold/30"
+                  >
+                    Check rates
+                  </a>
+                </div>
+              </div>
+            </article>
+          </Reveal>
         ))}
       </div>
 
       {/* Category tiles */}
-      <div className="relative grid grid-cols-2 gap-4.5 px-6 pb-12 md:grid-cols-4 md:px-11">
+      <Reveal className="relative grid grid-cols-2 gap-4.5 px-6 pb-12 md:grid-cols-4 md:px-11">
         <Link
           href="/eat"
           className="glass-tile hover-lift flex flex-col gap-1.5 rounded-[18px] p-6 no-underline"
@@ -256,10 +259,10 @@ export default function Home() {
             Bal Harbour real estate →
           </div>
         </Link>
-      </div>
+      </Reveal>
 
       {/* Real estate teaser */}
-      <div className="relative mx-6 mb-16 grid grid-cols-1 items-center gap-8 md:mx-11 md:grid-cols-[1.2fr_1fr] md:gap-10">
+      <Reveal className="relative mx-6 mb-16 grid grid-cols-1 items-center gap-8 md:mx-11 md:grid-cols-[1.2fr_1fr] md:gap-10">
         <div className="flex flex-col gap-3.5">
           <div className="text-xs font-semibold tracking-[0.18em] text-gold-light">
             BAL HARBOUR REAL ESTATE
@@ -290,11 +293,12 @@ export default function Home() {
             className="object-cover"
           />
         </div>
-      </div>
+      </Reveal>
 
       {/* FAQ — question keywords, answer-first (feeds FAQPage structured data).
           Sits over the dark lower gradient, so it uses light text. */}
-      <section
+      <Reveal
+        as="section"
         className="relative px-6 pb-20 md:px-11"
         aria-labelledby="faq-heading"
       >
@@ -323,7 +327,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
+      </Reveal>
 
       <Footer />
 

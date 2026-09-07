@@ -189,6 +189,83 @@ body {
   }
 }
 
+/* Scroll reveal — sections fade up into place as you scroll to them.
+   Real, visible motion on every homepage visit, no interaction required.
+   Class toggling is IntersectionObserver-driven (Reveal.tsx); the motion
+   itself is a plain transition so it's off the main thread. */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s var(--ease-out),
+    transform 0.7s var(--ease-out);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero on-load entrance — eyebrow, headline, body copy and the search
+   bar stagger in on first paint. "both" fill mode holds each element at
+   its `from` state until its delay elapses (no flash of final content)
+   and holds the `to` state afterward. */
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-in-1 {
+  animation: hero-in 0.8s var(--ease-out) both;
+}
+.hero-in-2 {
+  animation: hero-in 0.8s var(--ease-out) 0.12s both;
+}
+.hero-in-3 {
+  animation: hero-in 0.8s var(--ease-out) 0.24s both;
+}
+.hero-in-4 {
+  animation: hero-in 0.8s var(--ease-out) 0.4s both;
+}
+
+/* Card image zoom-on-hover — pair with a parent that has overflow-hidden
+   and hover-lift; a clear, obvious "this is interactive" signal that
+   doesn't require clicking anything to notice. */
+.img-zoom {
+  transition: transform 0.5s var(--ease-out);
+}
+
+.hover-lift:hover .img-zoom {
+  transform: scale(1.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero-in-1,
+  .hero-in-2,
+  .hero-in-3,
+  .hero-in-4 {
+    animation: none;
+  }
+
+  .img-zoom,
+  .hover-lift:hover .img-zoom {
+    transition: none;
+    transform: none;
+  }
+}
+
 .sun-glow-top {
   background: radial-gradient(
     circle,

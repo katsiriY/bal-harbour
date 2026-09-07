@@ -24,3 +24,15 @@ tropical/resort/food imagery, not depictions of specific properties.
   CC BY-SA 4.0 — https://commons.wikimedia.org/wiki/File:Bal_Harbour,_Miami,_US.jpg
   (depicts the real Sun Harbour Boutique Hotel building at 9576 Collins Ave;
   used on the Surfside guide)
+
+## Added Sep 7, 2026
+- `hero-drone.mp4` / `hero-drone.webm` / `hero-drone-poster.jpg` — AI-assisted
+  video (Higgsfield / Kling v3.0), generated FROM `bal-harbour-skyline.jpg`
+  (itself real, CC-licensed — see above) as a locked first frame, with an
+  explicit "preserve every building/boat, camera-move only" prompt.
+  Verified frame-by-frame during production (0s/1s/2.5s/4s/end) against
+  the source photo before use: same skyline, same boats, same tree line
+  throughout — only water motion and a gentle camera drift were added.
+  Two earlier attempts (from a generic palm/surf stock photo) hallucinated
+  an unrelated Maldives-style resort and were discarded; this is the only
+  AI-video asset that survived verification and made it into the site.
