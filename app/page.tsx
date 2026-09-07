@@ -51,7 +51,7 @@ export default function Home() {
         <div aria-hidden className="hero-photo">
           <HeroVideo
             poster="/img/hero-drone-poster.jpg"
-            className="absolute inset-0 h-full w-full object-cover"
+            className="hero-video-grade absolute inset-0 h-full w-full object-cover"
           />
         </div>
         <div aria-hidden className="hero-tint" />

@@ -163,6 +163,17 @@ body {
   }
 }
 
+/* Color grade for the hero video: the raw footage is a flat, neutral
+   midday-blue-sky shot, which clashes with the site's warm gold/green
+   "sunset dive" palette used everywhere else. A light sepia + saturation
+   + reduced brightness pushes it toward that same warm, slightly moody
+   grade instead of looking like an unprocessed real-estate photo — the
+   difference between "cinematic" and "raw camera footage". */
+.hero-video-grade {
+  filter: sepia(0.22) saturate(1.35) contrast(1.08) brightness(0.88)
+    hue-rotate(-6deg);
+}
+
 /* Ken Burns: a slow, continuous zoom drift on the hero photo — a real
    cinematic technique (not AI-generated), so it can never misrepresent
    what's actually in the photo. Scale only (never top/left/width), kept
