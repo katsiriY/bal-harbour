@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { HOTELS } from "@/lib/hotels";
 import { RESTAURANTS } from "@/lib/restaurants";
 
@@ -88,7 +89,7 @@ export default function VillageMap() {
 
           {/* Bay Harbor Islands — the residential name-twin across the bay.
               Whole group links to our guide. */}
-          <a href="/guides/bay-harbor-islands">
+          <Link href="/guides/bay-harbor-islands">
             <ellipse cx="132" cy="326" rx="58" ry="66" fill="#efede6" />
             <ellipse cx="298" cy="317" rx="52" ry="58" fill="#efede6" />
             {/* Kane Concourse — 96th St's continuation across the bay */}
@@ -112,7 +113,7 @@ export default function VillageMap() {
             <text x="300" y="352" fontSize="10" fontStyle="italic" fill="#8a6f3c" textAnchor="middle">
               the Kane strip →
             </text>
-          </a>
+          </Link>
 
           {/* Collins Avenue */}
           <path

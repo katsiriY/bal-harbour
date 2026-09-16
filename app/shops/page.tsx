@@ -27,7 +27,7 @@ const TIPS = [
   {
     n: "03",
     title: "The refuel",
-    body: "Four real restaurants and a Milanese café hide inside: Makoto's sushi, Slim's steaks, Carpaccio's terrace, Hillstone's burger, Sant Ambroeus espresso.",
+    body: "Three real restaurants and a Milanese café hide inside: Makoto's sushi, Slim's steaks, Carpaccio's terrace, Sant Ambroeus espresso.",
   },
   {
     n: "04",

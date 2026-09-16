@@ -23,9 +23,11 @@ export type Restaurant = {
   reserveUrl?: string;
 };
 
-// Seven real tables, verified open (or newly opened) as of July 2026.
-// Le Zoo and Aba both closed; Artisan Beach House is dark until the
-// Ritz-Carlton reopens in January 2027 — none of them are listed.
+// Six real tables, verified open (or newly opened) as of September 2026.
+// Le Zoo and Aba both closed; Hillstone permanently closed August 10, 2026
+// (lease ended, no warning — verified via multiple local news reports);
+// Artisan Beach House is dark until the Ritz-Carlton reopens in January
+// 2027. None of them are listed.
 export const RESTAURANTS: Restaurant[] = [
   {
     slug: "makoto",
@@ -71,20 +73,6 @@ export const RESTAURANTS: Restaurant[] = [
     geo: { lat: 25.8881, lng: -80.1258 },
     reserveUrl:
       "https://www.opentable.com/r/carpaccio-bal-harbour-shops-bal-harbour",
-  },
-  {
-    slug: "hillstone",
-    name: "Hillstone",
-    category: "American",
-    price: "$$$",
-    blurb:
-      "The dependable one — surgical service, palm-grove views, a burger that outclasses the zip code.",
-    image: "/img/pasta.jpg",
-    imageAlt: "Plated dinner (illustrative)",
-    tags: ["Long lunch", "Drinks"],
-    location: "Bal Harbour Shops",
-    geo: { lat: 25.8878, lng: -80.1255 },
-    reserveUrl: "https://hillstone.com/",
   },
   {
     slug: "sant-ambroeus",

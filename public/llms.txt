@@ -15,12 +15,13 @@
 ## Guides
 - [Hotels](https://bal-harbour.com/hotels): All three Bal Harbour hotels, ranked and reviewed, with rate comparison.
 - [Hotel reviews](https://bal-harbour.com/hotels/st-regis-bal-harbour): In-depth pages for The St. Regis Bal Harbour, Sea View Hotel, and The Ritz-Carlton Bal Harbour.
-- [Dining](https://bal-harbour.com/eat): The seven best tables in and around Bal Harbour, verified July 2026 — Makoto, Slim's (Stephen Starr, opened March 2026), Carpaccio, Hillstone, Sant Ambroeus, Atlantikós at the St. Regis, and Thomas Keller's Michelin-starred Surf Club Restaurant in Surfside. Includes a village map. Recently closed: Le Zoo, Aba; Artisan Beach House dark until the Ritz reopens Jan 2027. Harding Avenue in Surfside (Josh's Deli, The Harbour Grill, Neya) covered in depth in the Surfside guide.
+- [Dining](https://bal-harbour.com/eat): The six best tables in and around Bal Harbour, verified September 2026 — Makoto, Slim's (Stephen Starr, opened March 2026), Carpaccio, Sant Ambroeus, Atlantikós at the St. Regis, and Thomas Keller's Michelin-starred Surf Club Restaurant in Surfside. Includes a village map. Recently closed: Le Zoo, Aba, and Hillstone (permanently closed August 10, 2026, lease ended); Artisan Beach House dark until the Ritz reopens Jan 2027. Harding Avenue in Surfside (Josh's Deli, The Harbour Grill, Neya) covered in depth in the Surfside guide.
 - [Shops](https://bal-harbour.com/shops): How to do the Bal Harbour Shops, the open-air luxury mall.
 - [Beach](https://bal-harbour.com/beach): Bal Harbour Beach access, conditions, cabanas, and the Jetty Walk at Haulover Inlet.
 - [Real estate](https://bal-harbour.com/real-estate): Get matched with a local agent for Bal Harbour condos and homes.
 
 ## In-depth articles
+- [One day in Bal Harbour](https://bal-harbour.com/guides/one-day-in-bal-harbour): The locals' hour-by-hour order of operations for a single day — sunrise beach, the Shops at 11am, lunch inside them, an afternoon choice, sunset and dinner.
 - [Bal Harbour vs Surfside](https://bal-harbour.com/guides/bal-harbour-vs-surfside): Honest comparison of the two neighboring villages — hotels, prices, dining, vibe, and which fits which traveler.
 - [Bal Harbour beach access](https://bal-harbour.com/guides/beach-access): The public entrance at 96th & Collins, parking, the residents-only 102nd Street path, cabana rules, and water conditions.
 - [Best time to visit Bal Harbour](https://bal-harbour.com/guides/best-time-to-visit): Month-by-month calendar — weather, hotel prices by season, hurricane-season truth, Art Basel week.

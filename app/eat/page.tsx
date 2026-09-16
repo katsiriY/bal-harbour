@@ -10,7 +10,7 @@ import { breadcrumbJsonLd, restaurantsItemListJsonLd } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Best Restaurants in Bal Harbour (2026) — Makoto, Slim's & More",
   description:
-    "Where to eat in Bal Harbour, Florida right now: Makoto's sushi, Stephen Starr's new Slim's steakhouse, Carpaccio's terrace, Hillstone, Sant Ambroeus, Atlantikós at the St. Regis, and Thomas Keller's Surf Club Restaurant next door — with a real map of the village.",
+    "Where to eat in Bal Harbour, Florida right now: Makoto's sushi, Stephen Starr's new Slim's steakhouse, Carpaccio's terrace, Sant Ambroeus, Atlantikós at the St. Regis, and Thomas Keller's Surf Club Restaurant next door — with a real map of the village.",
   alternates: { canonical: "/eat" },
 };
 
@@ -21,17 +21,17 @@ export default function DiningPage() {
 
       <div className="relative flex flex-col gap-3.5 px-6 pb-2 pt-8 md:px-11 md:pt-11">
         <div className="text-[13px] font-semibold tracking-[0.16em] text-gold-deep">
-          WHERE TO EAT IN BAL HARBOUR · VERIFIED JULY 2026
+          WHERE TO EAT IN BAL HARBOUR · VERIFIED SEPTEMBER 2026
         </div>
         <h1 className="max-w-[720px] text-4xl font-bold leading-[1.08] tracking-tight text-ink md:text-[46px]">
-          Seven tables{" "}
+          Six tables{" "}
           <em className="font-serif-italic text-gold">we actually love.</em>
         </h1>
         <p className="max-w-[620px] text-base leading-relaxed text-ink-4">
-          Seven is the honest number for a village this size — most of them
+          Six is the honest number for a village this size — most of them
           inside the Shops, one at the St. Regis, one Michelin star five
-          minutes south. Every listing verified open as of July 2026 (RIP Le
-          Zoo and Aba — we checked).
+          minutes south. Every listing verified open as of September 2026
+          (RIP Le Zoo, Aba, and Hillstone — we checked).
         </p>
       </div>
 
@@ -89,8 +89,10 @@ export default function DiningPage() {
           <li>
             <strong className="text-ink">Recently closed</strong> (so you can
             stop looking): Le Zoo and Aba, both gone from the Shops in
-            2025–26 — Slim&apos;s now lives in that space. Artisan Beach
-            House is dark until the Ritz-Carlton reopens in January 2027.
+            2025–26 — Slim&apos;s now lives in that space. Hillstone closed
+            permanently on August 10, 2026, after its lease ended. Artisan
+            Beach House is dark until the Ritz-Carlton reopens in January
+            2027.
           </li>
         </ul>
       </div>

@@ -147,7 +147,7 @@ export const HOTELS: Hotel[] = [
     ],
     address: "9909 Collins Ave, Bal Harbour, FL 33154",
     geo: { lat: 25.8925, lng: -80.1218 },
-    officialUrl: "https://www.seaviewhotelbalharbour.com/",
+    officialUrl: "https://seaview-hotel.com/",
     review: {
       paragraphs: [
         "Every luxury strip needs one holdout that remembers what the neighborhood was, and the Sea View is Bal Harbour's — an independent, European-style beachfront hotel that has been welcoming the same families for generations. Rooms are freshly renovated with ocean or bay views, the pool sits right on the sand, and the service is the personal kind the big brands spend millions trying to imitate.",
@@ -177,7 +177,7 @@ export const HOTELS: Hotel[] = [
         site: "Hotel direct",
         price: 208,
         best: true,
-        url: "https://www.seaviewhotelbalharbour.com/",
+        url: "https://seaview-hotel.com/",
       },
     ],
   },

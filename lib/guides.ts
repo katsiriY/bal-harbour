@@ -73,7 +73,7 @@ export const GUIDES: Guide[] = [
       },
       {
         type: "p",
-        text: "Our rule: breakfast at Sant Ambroeus, long lunch wherever you already are, date night at Makoto or — for the once-a-year table — Keller's Surf Club Restaurant. The [seven tables we actually love](/eat) covers both sides of 96th Street, every one verified open.",
+        text: "Our rule: breakfast at Sant Ambroeus, long lunch wherever you already are, date night at Makoto or — for the once-a-year table — Keller's Surf Club Restaurant. The [six tables we actually love](/eat) covers both sides of 96th Street, every one verified open.",
       },
       { type: "h2", text: "Is the beach different?" },
       {
@@ -133,7 +133,7 @@ export const GUIDES: Guide[] = [
     related: [
       { label: "The full Surfside guide", href: "/guides/surfside" },
       { label: "Every Bal Harbour hotel, ranked", href: "/hotels" },
-      { label: "Seven tables we love", href: "/eat" },
+      { label: "Six tables we love", href: "/eat" },
     ],
   },
   {
@@ -234,6 +234,7 @@ export const GUIDES: Guide[] = [
       { label: "The full beach guide", href: "/beach" },
       { label: "Hotels with the best beach setups", href: "/hotels" },
       { label: "Lunch after the beach", href: "/eat" },
+      { label: "The one-day itinerary", href: "/guides/one-day-in-bal-harbour" },
     ],
   },
   {
@@ -316,6 +317,7 @@ export const GUIDES: Guide[] = [
       { label: "Where to stay when you come", href: "/hotels" },
       { label: "Beach conditions & access", href: "/beach" },
       { label: "Bal Harbour vs Surfside", href: "/guides/bal-harbour-vs-surfside" },
+      { label: "The one-day itinerary", href: "/guides/one-day-in-bal-harbour" },
     ],
   },
   {
@@ -402,7 +404,7 @@ export const GUIDES: Guide[] = [
     ],
     related: [
       { label: "Where to stay (the ocean side)", href: "/hotels" },
-      { label: "Seven tables we love", href: "/eat" },
+      { label: "Six tables we love", href: "/eat" },
       { label: "The beach guide", href: "/beach" },
     ],
   },
@@ -454,7 +456,7 @@ export const GUIDES: Guide[] = [
       },
       {
         type: "tip",
-        text: "The perfect local day: sunrise on [Bal Harbour Beach](/beach), morning at Haulover while the light is soft, then back across the bridge for a late lunch at [one of the seven tables](/eat). Wide wild beach and polished village, five minutes apart — that's the whole magic of this corner of the coast.",
+        text: "The perfect local day: sunrise on [Bal Harbour Beach](/beach), morning at Haulover while the light is soft, then back across the bridge for a late lunch at [one of the six tables](/eat). Wide wild beach and polished village, five minutes apart — that's the whole magic of this corner of the coast.",
       },
     ],
     faqs: [
@@ -578,7 +580,109 @@ export const GUIDES: Guide[] = [
     related: [
       { label: "Bal Harbour vs Surfside", href: "/guides/bal-harbour-vs-surfside" },
       { label: "Where to stay in Bal Harbour", href: "/hotels" },
-      { label: "Seven tables we love", href: "/eat" },
+      { label: "Six tables we love", href: "/eat" },
+    ],
+  },
+  {
+    slug: "one-day-in-bal-harbour",
+    title: "One day in Bal Harbour:",
+    titleAccent: "the locals' order of operations.",
+    seoTitle: "One Perfect Day in Bal Harbour, Florida — A Local's Itinerary (2026)",
+    description:
+      "How to spend one full day in Bal Harbour like a local: sunrise beach, the Shops once they open, lunch inside them, an afternoon choice, then sunset and dinner — hour by hour.",
+    eyebrow: "THE ONE-DAY ITINERARY",
+    heroImage: "/img/rooftop-bar.jpg",
+    heroAlt: "Rooftop bar at sunset, Bal Harbour (illustrative)",
+    published: "2026-09-16",
+    updated: "2026-09-16",
+    intro:
+      "Everyone asks how to 'do' Bal Harbour in a day, and the honest answer is: in order, starting before the Shops open. One day here has a rhythm — beach light first, luxury second, dinner last — and doing it out of sequence is the single most common mistake we watch visitors make. Here's the exact order, hour by hour, from people who've walked it more times than we can count.",
+    blocks: [
+      { type: "h2", text: "What's the ideal order for one day in Bal Harbour?" },
+      {
+        type: "answer",
+        text: "Beach at sunrise, [the Shops](/shops) once they open at 11am, lunch inside them, a slow afternoon choice, then sunset and dinner. The whole village fits inside about one mile of Collins Avenue, so the 'right order' really just follows the light: cool air for the beach, midday shade for shopping, golden hour for the water again.",
+      },
+      { type: "h2", text: "Morning: what time should I actually get to the beach?" },
+      {
+        type: "answer",
+        text: "Sunrise — [around 6:45am in winter, 6:15am in summer](/guides/best-time-to-visit) — at the public entrance at 96th Street & Collins Avenue. This is the one hour the beach belongs to locals and early joggers instead of hotel guests; by 9am the chairs come out and the spell breaks.",
+      },
+      {
+        type: "p",
+        text: "Park at the metered lot right at the entrance, or walk over if you're staying at [The St. Regis](/hotels/st-regis-bal-harbour) or the [Sea View Hotel](/hotels/sea-view-hotel), both a few minutes from the sand. There's no published lifeguard schedule here, so treat the water as unguarded and stay near other swimmers.",
+      },
+      {
+        type: "tip",
+        text: "Bring a coffee instead of buying one — nothing's open at 6:45am. Sant Ambroeus opens for [breakfast](/eat) later and is worth timing your walk back around.",
+      },
+      { type: "h2", text: "Late morning: is the Shops worth it if I'm not buying anything?" },
+      {
+        type: "answer",
+        text: "Yes — [the Bal Harbour Shops](/shops) open at 11am daily and are worth the walk-through empty-handed: koi ponds, banyan-shaded courtyards, and people-watching that's genuinely part of the show. Go right at open on a weekday for the emptiest aisles.",
+      },
+      {
+        type: "p",
+        text: "Give it 60–90 minutes. Chanel, Dior, Gucci and Prada anchor one end, the newly renovated Neiman Marcus and Saks bookend the other, and the whole thing is outdoors, so it never feels like a mall.",
+      },
+      { type: "h2", text: "Where should I eat lunch?" },
+      {
+        type: "answer",
+        text: "Inside the Shops, without leaving: [Makoto](/eat) for sushi and robata, or Carpaccio's courtyard terrace if you'd rather sit outside and watch the morning's shoppers become the afternoon's shoppers. Both take walk-ins most weekdays.",
+      },
+      {
+        type: "p",
+        text: "If today's a special-occasion day, save the big table for dinner instead — lunch here is meant to be quick and social, not the main event.",
+      },
+      { type: "h2", text: "What's the move for the afternoon?" },
+      {
+        type: "answer",
+        text: "Most locals go back to the beach, this time with cabanas and cocktails instead of solitude. For a change of scenery, [Haulover Park](/guides/haulover-park) is a five-minute drive across the inlet — wilder sand, a boat-only sandbar, none of the village's polish.",
+      },
+      {
+        type: "list",
+        items: [
+          "**Back to Bal Harbour Beach:** the same 96th Street entrance, now with the full afternoon scene — cabanas, beach service if your hotel offers it, water in the low-to-mid 80s most of the year.",
+          "**Haulover Park:** bigger, wilder, county-run — bring your own chairs, and note the signposted clothing-optional section at the north end if that's not what you're expecting.",
+          "**Stay dry:** a second lap through [the Shops](/shops) in late-afternoon light, when the crowds thin and the koi ponds catch the sun.",
+        ],
+      },
+      { type: "h2", text: "What's the move for sunset and dinner?" },
+      {
+        type: "answer",
+        text: "Sunset here happens over the bay, not the ocean, so the classic move is a drink in hand about 30 minutes before it actually sets, then dinner right after. [Atlantikós](/eat) at the St. Regis and Slim's both suit a dressed-up last night; for something more special-occasion, book [The Surf Club Restaurant](/eat) in Surfside, five minutes south.",
+      },
+      {
+        type: "p",
+        text: "Reservations matter more at dinner than lunch — Slim's especially books out roughly a month ahead. Deciding same-day? Carpaccio and Sant Ambroeus are the two most likely to seat you without one.",
+      },
+      {
+        type: "tip",
+        text: "The whole day in one line: sunrise beach, late-morning Shops, lunch inside them, an afternoon choice between more beach and Haulover, then sunset and dinner. Wide beach and polished village, inside one mile — that's the whole trick of the order.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Can you really do Bal Harbour in one day?",
+        answer:
+          "Yes — the beach, the Shops and most restaurants sit inside one walkable mile, so a single well-ordered day covers the village's essentials. Add a half-day if you also want to reach Haulover Park or Surfside.",
+      },
+      {
+        question: "Do I need a car to spend a day in Bal Harbour?",
+        answer:
+          "No — the beach, the Shops and most dining sit inside one walkable mile. A car only matters if you're adding Haulover Park or Surfside to the itinerary.",
+      },
+      {
+        question: "What time do the Bal Harbour Shops open and close?",
+        answer:
+          "11am to 9pm, daily. Weekday mornings right at open are the quietest time to browse the 100+ boutiques.",
+      },
+    ],
+    related: [
+      { label: "The full beach guide", href: "/beach" },
+      { label: "How to do the Shops", href: "/shops" },
+      { label: "Where to stay", href: "/hotels" },
+      { label: "Six tables we love", href: "/eat" },
     ],
   },
 ];
