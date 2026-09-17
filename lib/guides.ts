@@ -683,6 +683,78 @@ export const GUIDES: Guide[] = [
       { label: "How to do the Shops", href: "/shops" },
       { label: "Where to stay", href: "/hotels" },
       { label: "Six tables we love", href: "/eat" },
+      { label: "What happened to Hillstone", href: "/guides/hillstone-bal-harbour-closed" },
+    ],
+  },
+  {
+    slug: "hillstone-bal-harbour-closed",
+    title: "Hillstone at Bal Harbour Shops:",
+    titleAccent: "what actually happened.",
+    seoTitle: "What Happened to Hillstone at Bal Harbour Shops? (Closed August 2026)",
+    description:
+      "Hillstone at Bal Harbour Shops closed permanently on August 10, 2026, after 11 years — with no warning to diners. What we know about why, and where we're sending people instead.",
+    eyebrow: "THE CLOSURE, EXPLAINED",
+    heroImage: "/img/pasta.jpg",
+    heroAlt: "Plated dinner (illustrative)",
+    published: "2026-09-16",
+    updated: "2026-09-16",
+    intro:
+      "If you had a reservation at Hillstone this month and got a strange phone call instead of a table, you're not alone and you're not missing something obvious. Here's exactly what happened, in plain terms, and where we're sending people instead.",
+    blocks: [
+      { type: "h2", text: "What happened to Hillstone at Bal Harbour Shops?" },
+      {
+        type: "answer",
+        text: "It closed permanently on August 10, 2026, after 11 years in its second-floor space at the Shops — with no advance warning. Diners who called to confirm reservations that week were told the restaurant had already ceased operations.",
+      },
+      {
+        type: "p",
+        text: "Hillstone occupied a roughly 6,400-square-foot space at 9700 Collins Avenue. The closure wasn't announced ahead of time on the restaurant's own channels; local coverage (Miami New Times, The Real Deal, Axios Miami, Local10 and Hoodline all ran the story within days) pieced it together from diners' accounts and confirmed it with the company.",
+      },
+      { type: "h2", text: "Why did it close?" },
+      {
+        type: "answer",
+        text: "Hillstone hasn't publicly disclosed a reason. Reporting at the time tied the closure to its lease at the Shops ending, not to the brand pulling out of South Florida — its other two area locations stayed open.",
+      },
+      { type: "h2", text: "Can I still eat at a Hillstone nearby?" },
+      {
+        type: "answer",
+        text: "Yes — Hillstone still operates in Coral Gables and North Miami. Reports at the time said diners with Bal Harbour reservations were being redirected to those locations.",
+      },
+      { type: "h2", text: "Is anything replacing it at the Shops?" },
+      {
+        type: "answer",
+        text: "Nothing has been announced as of this writing (September 2026). We'll update this page the moment a new tenant is confirmed for the space.",
+      },
+      { type: "h2", text: "Where should I eat instead, in Bal Harbour itself?" },
+      {
+        type: "answer",
+        text: "[Six other tables](/eat) still cover the village well — Makoto and Carpaccio are the closest substitutes inside the Shops for a similar long-lunch vibe. Planning a whole day around it? [Our one-day itinerary](/guides/one-day-in-bal-harbour) has lunch and dinner both mapped out.",
+      },
+      {
+        type: "tip",
+        text: "Want something closer to what Hillstone did well — dependable, polished, no surprises? Slim's (also inside the Shops) and Atlantikós at the St. Regis are the two closest in spirit for a special-occasion dinner.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Did Hillstone close all of its South Florida locations?",
+        answer:
+          "No — only the Bal Harbour Shops location closed. Its Coral Gables and North Miami restaurants remain open.",
+      },
+      {
+        question: "How long was Hillstone at Bal Harbour Shops?",
+        answer: "11 years, before closing permanently on August 10, 2026.",
+      },
+      {
+        question: "Will a new restaurant open in the old Hillstone space?",
+        answer:
+          "Nothing has been announced yet. This page will be updated as soon as a new tenant is confirmed.",
+      },
+    ],
+    related: [
+      { label: "Six tables we love", href: "/eat" },
+      { label: "The one-day itinerary", href: "/guides/one-day-in-bal-harbour" },
+      { label: "How to do the Shops", href: "/shops" },
     ],
   },
 ];

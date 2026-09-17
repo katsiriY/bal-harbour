@@ -90,9 +90,15 @@ export default function DiningPage() {
             <strong className="text-ink">Recently closed</strong> (so you can
             stop looking): Le Zoo and Aba, both gone from the Shops in
             2025–26 — Slim&apos;s now lives in that space. Hillstone closed
-            permanently on August 10, 2026, after its lease ended. Artisan
-            Beach House is dark until the Ritz-Carlton reopens in January
-            2027.
+            permanently on August 10, 2026, after its lease ended (
+            <Link
+              href="/guides/hillstone-bal-harbour-closed"
+              className="font-semibold text-gold-deep underline decoration-gold/50 underline-offset-2"
+            >
+              the full story
+            </Link>
+            ). Artisan Beach House is dark until the Ritz-Carlton reopens in
+            January 2027.
           </li>
         </ul>
       </div>
