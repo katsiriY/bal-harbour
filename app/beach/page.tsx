@@ -7,9 +7,9 @@ import JsonLd from "@/components/JsonLd";
 import { beachJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Bal Harbour Beach — Public Access, Parking & Local Tips",
+  title: "Is Bal Harbour Beach Public? Access, Parking & Local Tips (2026)",
   description:
-    "Bal Harbour Beach is public and gloriously uncrowded — here's where to get on (the quiet 96th Street entrance), where to park, when the light and tides are best, and how the Jetty Walk works.",
+    "Yes — Bal Harbour Beach is public. Here's the public entrance at 96th Street, where to park, when the light and tides are best, and how the mile-long beachwalk to Haulover works.",
   alternates: { canonical: "/beach" },
 };
 

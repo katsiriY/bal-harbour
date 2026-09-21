@@ -147,7 +147,7 @@ export const GUIDES: Guide[] = [
     heroImage: "/img/ocean-horizon.jpg",
     heroAlt: "Wide Atlantic Ocean horizon from Bal Harbour Beach at sunrise",
     published: "2026-07-03",
-    updated: "2026-08-24",
+    updated: "2026-09-21",
     intro:
       "The number-one question tourists ask us — usually while standing on Collins Avenue looking suspiciously at a resort gate — is 'can we even get on this beach?' Yes. All Florida beaches are public below the mean high-tide line, and Bal Harbour has a proper public entrance — with parking, restrooms and a shower — that doesn't involve walking through a hotel lobby pretending you're a guest. Here's exactly how it works.",
     blocks: [
@@ -223,6 +223,11 @@ export const GUIDES: Guide[] = [
         question: "Can non-guests rent cabanas in Bal Harbour?",
         answer:
           "Sometimes — several resort beach clubs rent cabanas and loungers to non-guests on slower days. Call after 10am and ask; weekdays outside high season are your best odds.",
+      },
+      {
+        question: "Where can I park for Bal Harbour beach?",
+        answer:
+          "Metered street parking around 96th Street and Collins Avenue — about $1–2/hr with a 4-hour limit — plus a small public lot right on 96th itself. It fills by mid-morning on winter weekends, so arrive before 9:30am or after 3pm. Staying at a village hotel? Skip the meter and walk; nothing on the mile is more than 15 minutes on foot.",
       },
       {
         question: "Is Bal Harbour Beach good for kids?",
