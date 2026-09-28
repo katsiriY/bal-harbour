@@ -34,14 +34,14 @@ export const GUIDES: Guide[] = [
     slug: "bal-harbour-vs-surfside",
     title: "Bal Harbour vs Surfside:",
     titleAccent: "which one are you?",
-    seoTitle: "Bal Harbour vs Surfside — Which Should You Choose? (Local's Honest Take)",
+    seoTitle: "Bal Harbour vs Surfside: Which Should You Choose?",
     description:
-      "Bal Harbour and Surfside sit shoulder to shoulder on the same beach, one street apart. A local's honest comparison: hotels, prices, dining, vibe — and which village fits which traveler.",
+      "Bal Harbour and Surfside share a beach, one street apart — but they're different animals. Hotels, prices, dining, and which one actually fits your trip.",
     eyebrow: "THE HONEST COMPARISON",
     heroImage: "/img/beach-path.jpg",
     heroAlt: "The beach path between Bal Harbour and Surfside, Florida",
     published: "2026-07-03",
-    updated: "2026-08-06",
+    updated: "2026-09-28",
     intro:
       "They share a beach, a ZIP-code prefix and a wall of gorgeous Atlantic sunrise. The border is literally one street — 96th. And yet Bal Harbour and Surfside are different animals, and picking the wrong one for your kind of trip is the most common mistake we see visitors make. Here's the honest version, from people who walk both every week.",
     blocks: [

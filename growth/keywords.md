@@ -3,10 +3,10 @@
 Ranked opportunities, refreshed each run. Cross-checked against GSC striking-distance data in gsc-history.md — a query already earning real impressions beats a purely speculative one.
 
 ## High priority (real GSC signal)
-1. **"bal harbour beach parking"** — pos 4.2, 9 impr, 0 clicks. Right at the edge of page 1. Addressed this run: added a dedicated FAQ Q&A on /guides/beach-access answering this almost verbatim.
-2. **"bal harbour beach" (broad)** — driving /beach at pos 17.8 / 51 impr / 0 clicks. Addressed this run: rewrote /beach title+description to lead with "Is Bal Harbour Beach Public?" (the actual #1 question, per our own copy) instead of a generic access/parking/tips label — should lift CTR and, if Google likes the phrase match better, position.
-3. **/guides/bal-harbour-vs-surfside** — pos 7.0, 33 impr, 0 clicks. Same CTR problem as beach-access before this run. Next candidate for a title/meta rewrite if next week's data still shows 0 clicks.
-4. **/hotels/ritz-carlton-bal-harbour** — pos 8.4, 16 impr, 0 clicks. Worth a look once the hotel is closer to its Jan 2027 reopening — reopening-specific queries will likely spike then; for now the page correctly discloses the closure.
+1. **"bal harbour beach parking"** / /guides/beach-access — pos 7.07, 69 impr, 2 clicks (up from 1). The FAQ addition is converting — leave as is, monitor.
+2. **/beach** — position jumped 17.8→7-11 after last run's title/description rewrite (huge ranking win), but CTR hasn't followed yet (still 0 clicks). Give it one more week before touching again; don't re-tweak prematurely.
+3. **/guides/bal-harbour-vs-surfside** — pos 7.74, 31 impr, 0 clicks for two full weeks. Addressed this run (2026-09-28): tightened seoTitle (74→51 chars, was likely getting truncated in SERP) and description (186→~150 chars). Watch next week for a click.
+4. **/hotels/ritz-carlton-bal-harbour** — pos 7.64, 11 impr, 0 clicks. Still holding off — wait until closer to the Jan 2027 reopening; for now the page correctly discloses the closure.
 
 ## Speculative / content backlog (not yet GSC-validated)
 5. "is Bal Harbour beach walkable from the Shops" — question-shaped, ties /shops and /beach together; could be a new FAQ entry on either page rather than a new guide.
