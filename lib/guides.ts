@@ -246,14 +246,14 @@ export const GUIDES: Guide[] = [
     slug: "best-time-to-visit",
     title: "The best time to visit Bal Harbour —",
     titleAccent: "a local's honest calendar.",
-    seoTitle: "Best Time to Visit Bal Harbour, Florida — Month-by-Month Local's Guide",
+    seoTitle: "Best Time to Visit Bal Harbour, FL (Local's Calendar)",
     description:
-      "November through April is the sweet spot — but the honest answer is more interesting. Hotel prices by season, hurricane-season truth, water temperatures, Art Basel week, and the two secret shoulder months locals love.",
+      "November–April is the obvious answer — but two secret shoulder months beat it on value. The full month-by-month price, weather & hurricane guide.",
     eyebrow: "TIMING IS EVERYTHING",
     heroImage: "/img/terrace-golden.jpg",
     heroAlt: "Golden hour light over a Bal Harbour oceanfront terrace",
     published: "2026-07-03",
-    updated: "2026-08-06",
+    updated: "2026-10-05",
     intro:
       "Everyone asks 'when's the best time to visit?' expecting a month. The real answer is a question back: best for what — weather, prices, quiet, or the scene? Bal Harbour has four different 'best times' depending on which one you're optimizing. Here's the whole calendar, with the trade-offs stated out loud.",
     blocks: [

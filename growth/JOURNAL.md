@@ -50,3 +50,33 @@ No new guide this run — same reasoning as last week: a validated, GSC-confirme
 1. Check next week's GSC pull for whether `/guides/bal-harbour-vs-surfside`'s clicks respond to this run's title/description tightening, and whether `/beach`'s strong position gain (17.8→~7-11) finally converts to a click.
 2. Keep watching the apex/www split in page-level GSC data — it should keep shifting toward apex; if it stalls or reverses, that's worth flagging as a possible new infra issue.
 3. Speculative backlog unchanged: a short FAQ on /shops pointing to in-mall dining (Makoto, Carpaccio) — cheap internal link to /eat, no new content needed. See keywords.md #6.
+
+## 2026-10-05
+
+**Infra:** apex↔www redirect still correctly fixed — `curl -I https://bal-harbour.com/` returns 200 direct (HTTP/2, Vercel cache HIT). Sitemap: 200 OK. Build clean.
+
+**GSC (WoW, window 2026-09-05→2026-10-02 vs. last week's 2026-08-29→2026-09-25):** clicks 3→10 (+233%), impressions 1552→1902 (+22.6%), CTR 0.19%→0.53% (nearly 3x), avg position 17.69→15.00 (improved 2.69 places). The best single-week jump yet — all four headline metrics accelerating together. Full tables in gsc-history.md.
+
+**Evidence past tweaks are working:**
+- `/beach` (apex) — the title/description rewrite from two runs ago ("Is Bal Harbour Beach Public?") is now converting hard: pos 6.69, 29 impr, **5 clicks (17.2% CTR)**. The ranking jump 3 weeks ago has fully turned into clicks.
+- `/guides/beach-access` — apex+www combined now 75 impr, 4 clicks (up from 69/2 last week). The parking-FAQ play keeps compounding.
+- `/guides/bal-harbour-vs-surfside` — position kept improving (7.74→5.5 on www) but **still 0 clicks after 3 straight weeks and 2 rounds of title/description tightening**. Diagnosis: the impressions for this page come mostly from generic "bal harbour ___" query variants, not an actual "vs surfside" search — intent mismatch, not a snippet problem. Decided NOT to re-tweak the title a third time (diminishing-returns pattern); logging this and moving on rather than iterating on a fix that isn't the bottleneck.
+
+**Striking distance (acted on):**
+- `/guides/best-time-to-visit` — pos 4.14 (excellent), 7 impr, 0 clicks — a fresh candidate this run. Tightened seoTitle (74→53 chars) and description (217→145 chars) to lead with the "secret shoulder months" hook, same playbook that worked for beach/beach-access. Bumped `updated` to 2026-10-05.
+- `/shops` — speculative backlog item #6 (queued since 2026-09-21): added an inline "Full dining guide →" link from the existing "The refuel" tip card to `/eat`. Cheap internal-linking win, no new content, no FAQ needed — the dining mention was already there, it just didn't link anywhere.
+
+No new guide this run — same reasoning as the last two: a validated striking-distance candidate plus a zero-cost internal-link fix together satisfy the "1-2 highest-impact actions" cap, and a new guide would be lower leverage this week.
+
+**AI-engine proxy (WebSearch battery, 10 fixed queries vs. last run):** No change in outcome — bal-harbour.com still wins exactly one query outright: "is Bal Harbour beach public" (homepage cited, AI answer phrasing tracks our copy). "Bal Harbour Shops tips" and "best restaurants in Bal Harbour" results included no bal-harbour.com citation. All comparison queries (vs Surfside, vs Bay Harbor Islands) are now dominated by a cluster of individual real-estate-agent blogs (millionluxury.com, kimrodstein.com, marielahopen.com, jelenakhurana.com, jgsellingmiami.com, makrealty.com) rather than OTAs — a new competitive pattern worth noting, though our own vs-surfside guide still ranks well in classic Google (see GSC above), just not in the AI-summary box. No regressions.
+
+**Freshness sweep:** WebSearch-verified — Ritz-Carlton Bal Harbour renovation timeline unchanged (closed through Dec 7 2026, reopening Jan 2027; today is Oct 5 2026, so still mid-closure). No drift to correct.
+
+**Link health:** curl-checked all outbound hotel/restaurant links. `marriott.com` St. Regis page now returns a clean 200 with a browser user-agent (previously 403-blocked — Akamai easing up, or just this request got through); ritzcarlton.com, surfclubrestaurant.com, resy.com all clean. `opentable.com` again timed out at the connection level (000, third run in a row) — same inconclusive pattern as before, not treated as a dead link.
+
+**Shipped:** 1 commit to main — `lib/guides.ts` (best-time-to-visit seoTitle/description tightening + updated date) and `app/shops/page.tsx` (new /eat link on the refuel tip). Build passed (`npm run build`, TypeScript + all 28 static pages generated OK).
+
+**Next 3 priorities:**
+1. Check whether `/guides/best-time-to-visit`'s click-through responds to this run's title/description tightening (pos 4.14 is already excellent — this is a pure CTR test).
+2. Stop iterating on `/guides/bal-harbour-vs-surfside`'s title/description — 2 rounds done, position improving but clicks flat, likely a query-intent mismatch rather than a snippet problem. Just monitor; don't spend a third action there unless something changes.
+3. Apex/www consolidation has plateaued around ~52% apex on homepage impressions rather than continuing to climb — watch next week; if it stalls again or reverses, flag as a possible new infra issue rather than assuming it'll keep self-correcting.

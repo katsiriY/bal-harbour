@@ -13,7 +13,13 @@ export const metadata: Metadata = {
   alternates: { canonical: "/shops" },
 };
 
-const TIPS = [
+const TIPS: {
+  n: string;
+  title: string;
+  body: string;
+  linkHref?: string;
+  linkLabel?: string;
+}[] = [
   {
     n: "01",
     title: "The big houses",
@@ -28,6 +34,8 @@ const TIPS = [
     n: "03",
     title: "The refuel",
     body: "Three real restaurants and a Milanese café hide inside: Makoto's sushi, Slim's steaks, Carpaccio's terrace, Sant Ambroeus espresso.",
+    linkHref: "/eat",
+    linkLabel: "Full dining guide →",
   },
   {
     n: "04",
@@ -94,6 +102,14 @@ export default function ShopsPage() {
             <div className="font-serif-italic text-[22px] text-gold">{tip.n}</div>
             <div className="text-[17px] font-bold text-ink">{tip.title}</div>
             <p className="text-[13.5px] leading-snug text-body">{tip.body}</p>
+            {tip.linkHref && (
+              <Link
+                href={tip.linkHref}
+                className="text-[13px] font-semibold text-gold-deep no-underline hover:underline"
+              >
+                {tip.linkLabel}
+              </Link>
+            )}
           </div>
         ))}
       </div>

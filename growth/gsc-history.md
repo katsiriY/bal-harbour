@@ -79,3 +79,48 @@ Note: nearly every indexed page still shows as `www.bal-harbour.com/*` in GSC ev
 - apex/beach — pos 7.0, impr 9, 0 clicks
 
 Apex/www split: apex now carries a real, growing share (438 of 1269 homepage impressions, 33%) vs. near-zero two weeks ago — Google is gradually consolidating onto the canonical apex following the Vercel redirect fix. Expect this to keep shifting.
+
+## 2026-10-05 (window: 2026-09-05 to 2026-10-02)
+
+**Totals:** clicks 10, impressions 1902, CTR 0.526%, avg position 15.00.
+
+**WoW deltas vs 2026-09-28 block:** clicks +7 (3→10, +233%), impressions +350 (+22.6%), CTR +0.34pp (0.19%→0.53%, nearly 3x), avg position improved 2.69 places (17.69→15.00). Biggest single-week jump yet — all four headline metrics accelerating.
+
+**Top pages by impressions (apex + www):**
+| Page | Impr | Pos | Clicks |
+|---|---|---|---|
+| www/ (homepage) | 766 | 16.31 | 0 |
+| apex/ (homepage) | 831 | 13.42 | 1 |
+| www/guides/beach-access | 58 | 7.10 | 2 |
+| www/shops | 51 | 34.35 | 0 |
+| apex/beach | 29 | 6.69 | 5 |
+| www/beach | 29 | 8.34 | 0 |
+| www/guides/bal-harbour-vs-surfside | 26 | 5.5 | 0 |
+| apex/guides/bal-harbour-vs-surfside | 19 | 20.37 | 0 |
+| apex/shops | 18 | 36.67 | 0 |
+| apex/guides/beach-access | 17 | 3.82 | 2 |
+| apex/hotels | 10 | 44.9 | 0 |
+| www/hotels/ritz-carlton-bal-harbour | 7 | 6.43 | 0 |
+| www/best-time-to-visit | 7 | 4.14 | 0 |
+
+**Top queries by impressions:**
+| Query | Impr | Pos |
+|---|---|---|
+| bal harbour | 1159 | 11.89 (was 12.50) |
+| bal harbor miami | 18 | 26.0 |
+| bal harbour miami | 28 | 22.07 |
+| bal harbour shops | 14 | 39.14 |
+| bal harbor | 28 | 15.75 |
+| bal harbour beach parking | 10 | 4.2 |
+
+**Striking distance (position 5–20, impr ≥ 3), sorted by impressions:**
+- apex/ (homepage) — pos 13.42, impr 831, 1 click — branded/domain-authority play
+- www/ (homepage) — pos 16.31, impr 766, 0 clicks — same
+- www/guides/beach-access — pos 7.10, impr 58, 2 clicks — converting well (combined w/ apex: 75 impr, 4 clicks)
+- apex/beach — pos 6.69, impr 29, **5 clicks, 17.2% CTR** — the title/description rewrite from two runs ago is now converting strongly
+- www/guides/bal-harbour-vs-surfside — pos 5.5 (improved from 7.74), impr 26, still 0 clicks after 3 straight weeks and 2 rounds of title/description tightening
+- apex/guides/beach-access — pos 3.82, impr 17, 2 clicks
+- www/hotels/ritz-carlton-bal-harbour — pos 6.43, impr 7, 0 clicks — holding off per keywords.md
+- **www/best-time-to-visit — pos 4.14, impr 7, 0 clicks ← NEW candidate, acted on this run**
+
+Apex/www split holding steady (~52% apex on homepage impressions) — consolidation plateauing rather than continuing to accelerate; worth watching but not yet a concern.
