@@ -147,7 +147,7 @@ export const GUIDES: Guide[] = [
     heroImage: "/img/ocean-horizon.jpg",
     heroAlt: "Wide Atlantic Ocean horizon from Bal Harbour Beach at sunrise",
     published: "2026-07-03",
-    updated: "2026-09-21",
+    updated: "2026-10-12",
     intro:
       "The number-one question tourists ask us — usually while standing on Collins Avenue looking suspiciously at a resort gate — is 'can we even get on this beach?' Yes. All Florida beaches are public below the mean high-tide line, and Bal Harbour has a proper public entrance — with parking, restrooms and a shower — that doesn't involve walking through a hotel lobby pretending you're a guest. Here's exactly how it works.",
     blocks: [
@@ -233,6 +233,11 @@ export const GUIDES: Guide[] = [
         question: "Is Bal Harbour Beach good for kids?",
         answer:
           "Very — calm surf and a shallow sandbar near the 96th Street entrance. One honest caveat: the village doesn\u2019t publish a lifeguard schedule, so treat it as an unguarded beach unless you see a staffed tower, and keep kids near other swimmers. Mornings before the UV peaks are the sweet spot.",
+      },
+      {
+        question: "Is the beach walkable from the Bal Harbour Shops?",
+        answer:
+          "Yes — about two minutes on foot. Exit the Shops toward Collins Avenue and cross to the 96th Street beach access; no need to drive or move your car between shopping and the sand.",
       },
     ],
     related: [

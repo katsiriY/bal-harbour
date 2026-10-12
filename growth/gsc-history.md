@@ -124,3 +124,46 @@ Apex/www split: apex now carries a real, growing share (438 of 1269 homepage imp
 - **www/best-time-to-visit — pos 4.14, impr 7, 0 clicks ← NEW candidate, acted on this run**
 
 Apex/www split holding steady (~52% apex on homepage impressions) — consolidation plateauing rather than continuing to accelerate; worth watching but not yet a concern.
+
+## 2026-10-12 (window: 2026-09-12 to 2026-10-09)
+
+**Totals:** clicks 13, impressions 2158, CTR 0.602%, avg position 14.00.
+
+**WoW deltas vs 2026-10-05 block:** clicks +3 (10→13, +30%), impressions +256 (+13.5%), CTR +0.076pp (0.526%→0.602%), avg position improved 1.00 place (15.00→14.00). Fourth straight week of improvement on all four headline metrics, though this week's jump is smaller than the prior two — growth is still real but decelerating from the 2026-10-05 spike.
+
+**Top pages by impressions (apex + www combined):**
+| Page | Impr | Pos | Clicks |
+|---|---|---|---|
+| / (homepage) | 1870 | ~13.9 | 2 |
+| /guides/beach-access | 65 | ~6.0 | 5 |
+| /beach | 64 | ~6.7 | 6 |
+| /shops | 55 | ~32.9 | 0 |
+| /guides/bal-harbour-vs-surfside | 40 | ~12.9 | 0 |
+| /eat | 32 | ~14.0 | 0 |
+| /hotels/ritz-carlton-bal-harbour | 17 | ~8.5 | 0 |
+| /hotels | 13 | ~38 | 0 |
+| /guides | 10 | ~9.2 | 0 |
+| /guides/best-time-to-visit | 9 | ~4.3 | 0 |
+
+**Top queries by impressions:**
+| Query | Impr | Pos |
+|---|---|---|
+| bal harbour | 1395 | 11.32 (was 11.89) |
+| bal harbor miami | 18 | 33.56 |
+| bal harbour miami | 26 | 16.12 |
+| bal.harbour | 22 | 11.82 |
+| bal harbor | 27 | 14.85 |
+| bal harbour beach | 12 | 29.0 |
+| bal harbour florida | 11 | 43.73 |
+
+**Striking distance (position 5–20, impr ≥ 3), sorted by impr:**
+- / (homepage) — pos ~13.9, impr 1870, 2 clicks — branded/domain-authority play, not a quick fix
+- /guides/beach-access — pos ~6.0, impr 65, **5 clicks** — still the best-converting page after the homepage
+- /beach — pos ~6.7, impr 64, **6 clicks** — converting strongly, no action needed
+- /guides/bal-harbour-vs-surfside — pos ~12.9, impr 40, 0 clicks — 4th straight week at 0 clicks; confirmed intent-mismatch diagnosis from last run, not touched again
+- **/eat — pos ~14.0, impr 32, 0 clicks ← NEW candidate, acted on this run** (meta description was 252 chars, way over display limit — tightened to 140 chars)
+- /hotels/ritz-carlton-bal-harbour — pos ~8.5, impr 17, 0 clicks — holding off per keywords.md until closer to Jan 2027 reopening
+- /guides (index) — pos ~9.2, impr 10, 0 clicks — low actionability (index page), not acted on
+- /guides/best-time-to-visit — pos ~4.3, impr 9, 0 clicks — tightened last run (2026-10-05); one week of data isn't enough yet, give it more time before any further change
+
+Apex/www split: homepage apex 1293 impr / www 577 impr this window — apex now carries the clear majority (~69%) vs ~52% two runs ago; consolidation resumed after last run's plateau note.

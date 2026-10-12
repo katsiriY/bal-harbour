@@ -10,7 +10,7 @@ import { breadcrumbJsonLd, restaurantsItemListJsonLd } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Best Restaurants in Bal Harbour (2026) — Makoto, Slim's & More",
   description:
-    "Where to eat in Bal Harbour, Florida right now: Makoto's sushi, Stephen Starr's new Slim's steakhouse, Carpaccio's terrace, Sant Ambroeus, Atlantikós at the St. Regis, and Thomas Keller's Surf Club Restaurant next door — with a real map of the village.",
+    "Our 6 favorite tables in Bal Harbour right now: Makoto's sushi, Slim's steakhouse, and Thomas Keller's Michelin-starred Surf Club next door.",
   alternates: { canonical: "/eat" },
 };
 

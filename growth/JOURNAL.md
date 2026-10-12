@@ -80,3 +80,33 @@ No new guide this run — same reasoning as the last two: a validated striking-d
 1. Check whether `/guides/best-time-to-visit`'s click-through responds to this run's title/description tightening (pos 4.14 is already excellent — this is a pure CTR test).
 2. Stop iterating on `/guides/bal-harbour-vs-surfside`'s title/description — 2 rounds done, position improving but clicks flat, likely a query-intent mismatch rather than a snippet problem. Just monitor; don't spend a third action there unless something changes.
 3. Apex/www consolidation has plateaued around ~52% apex on homepage impressions rather than continuing to climb — watch next week; if it stalls again or reverses, flag as a possible new infra issue rather than assuming it'll keep self-correcting.
+
+## 2026-10-12
+
+**Infra:** apex↔www redirect still correctly fixed — `curl -I https://bal-harbour.com/` returns HTTP/2 200 direct (Vercel cache HIT, `x-nextjs-prerender: 1`). Sitemap: 200 OK, valid URL list. Build clean.
+
+**GSC (WoW, window 2026-09-12→2026-10-09 vs. last week's 2026-09-05→2026-10-02):** clicks 10→13 (+30%), impressions 1902→2158 (+13.5%), CTR 0.526%→0.602% (+0.076pp), avg position 15.00→14.00 (improved 1 place). Fourth straight week of improvement on all four metrics, though smaller than last week's spike — growth continuing but decelerating. Apex/www split resumed consolidating: apex now carries ~69% of homepage impressions (1293/1870), up from ~52% two runs ago, after last week's plateau. Full tables in gsc-history.md.
+
+**Evidence past tweaks are working:**
+- `/beach` and `/guides/beach-access` — both still converting well (6 and 5 clicks respectively this window), no action needed.
+- `/guides/bal-harbour-vs-surfside` — 4th straight week at 0 clicks despite pos ~12.9 (combined apex+www). Per last run's decision, did not re-tweak a third time — confirmed intent-mismatch, not a snippet problem.
+- `/guides/best-time-to-visit` — tightened last run (2026-10-05); still 0 clicks, but only one week of data (9 impressions) — too small a sample to judge yet, holding off another round.
+
+**Striking distance (acted on):**
+- `/eat` — pos ~14.0 (apex+www combined), 32 impressions, 0 clicks, never previously touched. Diagnosed the same failure mode that worked on 3 earlier pages: the meta description was 252 characters, far past Google's ~155-char display limit, so it was being truncated mid-sentence. Rewrote to 140 chars leading with the "6 favorite tables" hook (`app/eat/page.tsx`).
+- `/guides/beach-access` — added a new FAQ entry, "Is the beach walkable from the Bal Harbour Shops?" (keywords.md backlog item #5, queued since 2026-09-21). The "two-minute walk" fact was already verified in the guide's intro prose; this just promotes it to an explicit Q&A for the snippet/PAA box, same playbook as the parking-FAQ win from three runs ago. Bumped `updated` to 2026-10-12.
+
+No new guide this run — same reasoning as the last three: a validated striking-distance candidate plus a zero-cost FAQ addition satisfy the "1–2 highest-impact actions" cap at lower cost than new content.
+
+**AI-engine proxy (WebSearch battery, 10 fixed queries + site: vs. last run):** Regression to flag — bal-harbour.com did not appear as a cited source in ANY of the 10 AI-generated summaries this run, including "is Bal Harbour beach public," which had been our one reliable win for three straight runs. The `site:bal-harbour.com` proxy query also returned zero results from our own domain (only third-party real-estate/directory sites), vs. previous runs where at least the homepage or /shops surfaced. Hotels/restaurants/comparison queries remain dominated by OTAs (Expedia, Hotels.com, Fodor's), aggregators (OpenTable, Resy), and real-estate blogs (manhattanmiami.com, condoblackbook.com) — consistent with prior runs. This may be noise in a single WebSearch pull rather than a real citation loss (GSC classic-search metrics are unambiguously up this week), but it's the first run where we lost our only AI-citation win, so it's worth re-checking next run before concluding it's a trend.
+
+**Freshness sweep:** WebSearch-verified — Ritz-Carlton Bal Harbour renovation timeline unchanged (ritzcarlton.com/BalHarbour confirms reopening January 2027). No drift to correct.
+
+**Link health:** curl-checked all outbound hotel/restaurant links with a browser user-agent. `marriott.com` Ritz-Carlton page alternated 403/404 across two consecutive requests — consistent with the known Akamai bot-blocking pattern (not a real break); `officialUrl` for this hotel already points to the clean ritzcarlton.com page, so no change made. `seaview-hotel.com`, `ritzcarlton.com`, `surfclubrestaurant.com`, `resy.com` all clean 200s. `opentable.com` timed out at the connection level again (000) — fourth run in a row with the same inconclusive pattern; not treated as a dead link.
+
+**Shipped:** 1 commit to main — `app/eat/page.tsx` (meta description tightening) and `lib/guides.ts` (new FAQ entry + updated date on beach-access), plus this journal/gsc-history/keywords update. Build passed (`npm run build`, TypeScript + all 28 static pages generated OK).
+
+**Next 3 priorities:**
+1. Check whether `/eat`'s click-through responds to this run's meta description fix (pos ~14 is mediocre but workable — this is testing whether the truncated-description theory holds for a fourth page).
+2. Re-run the AI-engine proxy battery next week and specifically re-check "is Bal Harbour beach public" — if bal-harbour.com is still absent from AI summaries two runs running, treat it as a real citation loss rather than single-pull noise and consider a content refresh on `/beach` or the beach-access guide aimed at that query.
+3. `/guides/best-time-to-visit` has too little data (9 impressions) one week after its CTR tweak — give it one more week before deciding whether to revisit.
