@@ -9,17 +9,24 @@ A Composio MCP connector is attached to this routine with an ACTIVE google_searc
 5. Compute "striking distance" rows: position 5–20 with impressions ≥ 3, sorted by impressions. These are the single highest-leverage targets — a page already gets found for that query, it just needs a nudge (title tag, first-paragraph phrasing, an added FAQ entry) to climb, which is cheaper than a whole new guide. Prioritize acting on 1–2 of these over writing new content when good candidates exist.
 6. GSC only covers classic Google Search. Still run the WebSearch fixed-query battery below as the AI-engine-visibility proxy (ChatGPT/Perplexity/AI Overviews citation signal) — the two measurements are complementary, not redundant.
 
-## Keyword research tools (new — already available, no setup needed)
-Two extra signals beyond GSC/WebSearch, both callable through the same Composio connector with no extra connection step:
-1. **Google Trends** (via the `composio_search` toolkit — no auth required): call `COMPOSIO_MULTI_EXECUTE_TOOL` with tool_slug `COMPOSIO_SEARCH_TRENDS`. Two uses each run:
-   - `data_type: "RELATED_QUERIES"`, `query: "Bal Harbour"` — real related-search terms (has already surfaced genuine ones: "bal harbour hours", "bal harbour apartments", "hillstone", "bal harbour mall", "bal harbour village"). Cross-reference against growth/keywords.md before adding anything.
-   - `data_type: "TIMESERIES"`, `query: "Bal Harbour"`, `date: "today 12-m"` — seasonal interest curve. Useful for timing content pushes and for sanity-checking the "best time to visit" seasonal claims already in the guide.
-   Values are a normalized 0–100 relative index, NOT absolute search volume — report them as relative/seasonal signal only, never as real numbers in the journal.
-2. **Bing Webmaster Tools keyword research** (already connected, account "dmvmaster-bing"): tool_slug `BING_WEBMASTER_TOOLS_RESEARCH_KEYWORDS`, with `country: "us"`, `language: "en-US"` (exact form — plain "en" is rejected), and a `start_date`/`end_date` ISO-8601-with-UTC-offset window (e.g. `"2026-09-12T00:00:00Z"`) matching the GSC window.
+## Bing Webmaster Tools access (new — already connected, nothing to set up)
+There are now TWO separate bing_webmaster_tools Composio accounts on this connector — do not mix them up:
+- **"bal-harbour-bing"** — the one to use for everything in this routine. It is the user's personal Bing Webmaster account and it manages **11 verified sites**, not just bal-harbour.com (also aasoccerrecruiting.com, alicemind.co, bestguysmovers.com, cannabismiami.com, evictionusa.org, floodguardfl.com, israelbitcoin.com, ramatpoleg.co.il, startbuildwithai.com, usproperties.com — all the user's other projects). **Always pass `account: "bal-harbour-bing"` explicitly on every Bing tool call, and always pass `site_url: "https://bal-harbour.com/"` explicitly on every site-scoped call** — never omit either, since an omitted/wrong site_url could silently return another project's data.
+- **"dmvmaster-bing"** — a different, unrelated project (dmvmaster.org). Never use this account for anything in this routine.
+
+Use the "bal-harbour-bing" account for:
+1. **Real Bing search performance** (the Bing equivalent of the GSC pull above): tool_slug `BING_WEBMASTER_TOOLS_GET_SEARCH_PERFORMANCE` with `site_url: "https://bal-harbour.com/"`, report `"daily_totals"`, `"top_queries"`, and `"top_pages"`. Log the totals (clicks, impressions, CTR) alongside the GSC numbers in the journal each run as a secondary cross-check — Bing's absolute volume is much smaller than Google's, so treat it as a sanity-check signal, not a second full history table.
+2. **Keyword research**: tool_slug `BING_WEBMASTER_TOOLS_RESEARCH_KEYWORDS`, with `country: "us"`, `language: "en-US"` (exact form — plain "en" is rejected), and a `start_date`/`end_date` ISO-8601-with-UTC-offset window (e.g. `"2026-09-12T00:00:00Z"`) matching the GSC window.
    - `report: "impressions"` on an exact query (e.g. "bal harbour") gives a real Bing impression count for that window — a second-source cross-check against the GSC "bal harbour" query row.
    - `report: "related"` is noisy — Bing tokenizes multi-word queries, so "bal harbour" also returns unrelated "bal"/"harbor" matches (Baltimore Ravens, the medical abbreviation BAL, a Byredo perfume). Filter to rows whose query string actually contains "harbour"/"harbor" before using anything.
 
-Use both as directional research input for growth/keywords.md, same as the WebSearch battery — they don't replace GSC's real click/impression/position data as the primary measurement.
+## Google Trends (new — no auth needed)
+Callable through the same Composio connector with no connection step at all (the `composio_search` toolkit requires no auth): call `COMPOSIO_MULTI_EXECUTE_TOOL` with tool_slug `COMPOSIO_SEARCH_TRENDS`. Two uses each run:
+- `data_type: "RELATED_QUERIES"`, `query: "Bal Harbour"` — real related-search terms (has already surfaced genuine ones: "bal harbour hours", "bal harbour apartments", "hillstone", "bal harbour mall", "bal harbour village"). Cross-reference against growth/keywords.md before adding anything.
+- `data_type: "TIMESERIES"`, `query: "Bal Harbour"`, `date: "today 12-m"` — seasonal interest curve. Useful for timing content pushes and for sanity-checking the "best time to visit" seasonal claims already in the guide.
+Values are a normalized 0–100 relative index, NOT absolute search volume — report them as relative/seasonal signal only, never as real numbers in the journal.
+
+Use Google Trends and Bing keyword research as directional research input for growth/keywords.md, same as the WebSearch battery — they don't replace GSC's real click/impression/position data as the primary measurement.
 
 **NOT connected — ask the user first:** real Google Ads keyword volume/CPC/competition data (the Keyword Planner equivalent) is available via the `dataforseo` toolkit, but it has no active connection. Setting one up needs the user's own DataForSEO account/API credentials (a paid third-party service) — never attempt to connect it yourself; flag it to the user and let them decide.
 
@@ -39,7 +46,7 @@ apex https://bal-harbour.com currently 308-redirects to https://www.bal-harbour.
 2. MEASURE (see GSC access above for the primary step) and additionally:
    - Site health: fetch https://bal-harbour.com/sitemap.xml (expect 200 with URLs) and one page. curl -I the apex to check the known redirect issue above.
    - AI-engine proxy: WebSearch `site:bal-harbour.com`, plus the fixed query battery (compare to previous runs): "best hotels in Bal Harbour", "where to stay in Bal Harbour", "best restaurants in Bal Harbour", "is Bal Harbour beach public", "Bal Harbour vs Surfside", "best time to visit Bal Harbour", "Bay Harbor Islands vs Bal Harbour", "is the Ritz-Carlton Bal Harbour open", "Bal Harbour Shops tips", "Haulover sandbar". For each: does bal-harbour.com appear, and who wins today?
-3. RESEARCH: mine 2–3 topics for real question-shaped queries people ask — use the Google Trends and Bing keyword-research calls above as inputs — and update growth/keywords.md as a ranked backlog with a one-line opportunity note each. Cross-reference against this week's GSC striking-distance list — a query already earning real impressions beats a purely speculative one.
+3. RESEARCH: mine 2–3 topics for real question-shaped queries people ask — use the Bing search performance pull, Google Trends, and Bing keyword-research calls above as inputs — and update growth/keywords.md as a ranked backlog with a one-line opportunity note each. Cross-reference against this week's GSC striking-distance list — a query already earning real impressions beats a purely speculative one.
 4. IMPROVE — pick the 1–2 highest-impact actions this run, not everything:
    - Striking-distance on-page tweak (see GSC access step 5) when a good candidate exists — usually the cheapest, fastest win.
    - AT MOST one new guide, from the top of the backlog, matching the Guide type and the house voice exactly (warm, opinionated, first-person-local "we"; never corporate). Answer-first blocks that AI engines can quote; FAQs; internal links as [text](/path); a related array. 700–1100 words. published/updated = today. heroImage MUST be an existing file under public/img (list the directory; never invent paths or hotlink).
