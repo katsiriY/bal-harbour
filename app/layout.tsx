@@ -4,6 +4,7 @@ import "./globals.css";
 import { SITE } from "@/lib/site";
 import JsonLd from "@/components/JsonLd";
 import { websiteJsonLd, organizationJsonLd } from "@/lib/seo";
+import { Analytics } from "@vercel/analytics/next";
 
 const instrumentSans = Instrument_Sans({
   variable: "--font-instrument-sans",
@@ -82,6 +83,7 @@ export default function RootLayout({
         {children}
         <JsonLd data={websiteJsonLd()} />
         <JsonLd data={organizationJsonLd()} />
+        <Analytics />
       </body>
     </html>
   );
