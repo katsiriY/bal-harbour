@@ -110,3 +110,38 @@ No new guide this run — same reasoning as the last three: a validated striking
 1. Check whether `/eat`'s click-through responds to this run's meta description fix (pos ~14 is mediocre but workable — this is testing whether the truncated-description theory holds for a fourth page).
 2. Re-run the AI-engine proxy battery next week and specifically re-check "is Bal Harbour beach public" — if bal-harbour.com is still absent from AI summaries two runs running, treat it as a real citation loss rather than single-pull noise and consider a content refresh on `/beach` or the beach-access guide aimed at that query.
 3. `/guides/best-time-to-visit` has too little data (9 impressions) one week after its CTR tweak — give it one more week before deciding whether to revisit.
+
+## 2026-10-19
+
+**Infra:** apex↔www redirect still correctly fixed — `curl -I https://bal-harbour.com/` returns HTTP/2 200 direct (Vercel cache HIT). `curl -I https://www.bal-harbour.com/` still 308s to apex. Sitemap: 200 OK. Build clean.
+
+Also fixed this run: this session's local git clone had a stale cache of `origin/main` (showing the repo 5 commits behind) until an explicit `git fetch origin main` refreshed it — at that point local HEAD and GitHub's real main matched exactly at `546d08b`. **All of last week's work (and the Vercel Web Analytics PR) is confirmed live on origin/main — no silent push failure this run,** despite the standing instruction to double-check this. Re-verified after this run's own commit below.
+
+**GSC (WoW, window 2026-09-19→2026-10-16 vs. last week's 2026-09-12→2026-10-09):** clicks 13→19 (+46%), impressions 2158→2236 (+3.6%), CTR 0.602%→0.850% (+0.248pp), avg position 14.00→13.46 (improved 0.54 places). Fifth straight week of improvement on all four headline metrics. Apex/www consolidation is essentially done: apex now carries 1856 of 1908 homepage impressions (97%), up from ~69% last run. Full tables in gsc-history.md.
+
+**Bing (secondary cross-check, same 28-day window, `bal-harbour-bing` account):** 3 clicks, 363 impressions — small absolute volume as expected, but same growing-trend direction as GSC. Bing keyword research confirms real demand for the exact phrase "bal harbour": 284 exact impressions / 1139 broad impressions this window.
+
+**Evidence past tweaks are working:**
+- `/beach` and `/guides/beach-access` — still the two best-converting pages (6 and 8 combined clicks this window), no action needed.
+- `/guides/bal-harbour-vs-surfside` — got its **first click ever** this window (1 click, combined apex+www 39 impr) after 5 straight weeks at zero. The intent-mismatch diagnosis from two runs ago may have been too pessimistic, or this is just the long tail finally converting — either way, no further action, just keep watching.
+- `/hotels/ritz-carlton-bal-harbour` — also got its first click (1 click, 19 impr, pos 9.1), still untouched per the "wait for the Jan 2027 reopening" call in keywords.md.
+- `/eat` — meta description fix from 2026-10-12 has had its first full week of data: still 0 clicks (25 combined impr). Hold — one more week before concluding the fix isn't enough.
+
+**Striking distance (acted on):**
+- `/guides/haulover-park` — pos 7.24, 17 impressions, 0 clicks, never previously touched. Same failure mode as four earlier pages: description was 229 characters (Google's display limit is ~155), and the seoTitle at 72 chars was borderline-long too. Tightened seoTitle (72→50 chars) and description (229→145 chars) to lead with "sandbar, kite field & the north end." Bumped `updated` to 2026-10-19.
+- Query-level candidate, new this run: the alternate spelling **"bal harbor"** (no 'u') is pulling real, growing volume — 49 impressions this window at pos 12.9 (striking distance), on top of "bal habour" (15 impr) and other typo variants. This isn't a single page's problem — it's a disambiguation gap. Added a homepage FAQ, "Is it spelled Bal Harbour or Bal Harbor?", stating the Village's official spelling and naming the no-'u' version as a common misspelling — genuinely useful for anyone who typed it wrong, and gives Google's snippet/PAA system a direct answer to match against.
+
+No new guide this run — two cheap, GSC-validated fixes (one page-level, one query-level) satisfy the "1–2 highest-impact actions" cap at lower cost than new content, same reasoning as the last four runs.
+
+**AI-engine proxy (WebSearch battery, 10 fixed queries + site: vs. last run):** bal-harbour.com was absent from all 10 AI-generated summaries again, including "is Bal Harbour beach public" — this is now the **second straight run** with zero AI citations, after three earlier runs where that query was a reliable win. The `site:bal-harbour.com` proxy query also returned zero results from our own domain for the second straight run (only third-party real-estate/directory/localwiki pages). Flagging this as a real two-run trend rather than single-pull noise, though it's worth noting classic Google search (GSC above) shows no corresponding drop — if anything the opposite. Hotels/restaurants/comparison queries remain dominated by OTAs (Expedia, Hotels.com), aggregators (OpenTable, Resy), and real-estate/marketing blogs (manhattanmiami.com in multiple languages, condoblackbook.com) — consistent with prior runs.
+
+**Freshness sweep:** WebSearch-verified — Ritz-Carlton Bal Harbour renovation timeline unchanged (ritzcarlton.com/BalHarbour confirms reopening January 2027; closed since April 7, 2026). No drift to correct. (Third-party "Bal Harbour Shops tips" results still list the closed Hillstone and Le Zoo as current dining — their content, not ours; already correctly marked closed in our own /eat page and the Hillstone explainer guide.)
+
+**Link health:** curl-checked all outbound hotel/restaurant links with a browser user-agent, following redirects. `marriott.com` (St. Regis officialUrl) returned 403 — consistent Akamai bot-blocking pattern, not a dead link. `ritzcarlton.com`, `seaview-hotel.com`, `surfclubrestaurant.com`, `resy.com` all clean 200s (following their redirects). `opentable.com` timed out at the connection level again (000) — sixth run in a row with the same inconclusive pattern; still not treated as a dead link.
+
+**Shipped:** 1 commit to main — `lib/guides.ts` (haulover-park seoTitle/description tightening + updated date) and `lib/faq.ts` (new homepage FAQ on the Bal Harbour/Bal Harbor spelling), plus this journal/gsc-history/keywords update. Build passed (`npm run build`, TypeScript + all 28 static pages generated OK). **Push to origin/main verified** by comparing `git rev-parse HEAD` against `git rev-parse origin/main` after pushing (see note at top of this entry re: this run's git-sync scare).
+
+**Next 3 priorities:**
+1. Check whether `/guides/haulover-park`'s CTR responds to this run's title/description tightening (pos 7.24 is already good — pure CTR test, same playbook that's worked 4 times now).
+2. Check whether the new homepage spelling-FAQ does anything for the "bal harbor" (no-u) query's position/CTR — this is a different kind of intervention (disambiguation content, not a title/meta tweak) so give it 2 weeks of data before judging.
+3. The AI-engine-citation regression is now 2 runs old (both the fixed "is Bal Harbour beach public" win and the site: operator). If a third straight run shows the same zero, treat it as a real pattern worth a content response (e.g., refresh /beach or beach-access with clearer answer-first phrasing) rather than noise.

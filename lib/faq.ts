@@ -64,4 +64,9 @@ export const HOME_FAQS: Faq[] = [
     answer:
       "Bal Harbour is a safe, walkable, highly desirable village favored for oceanfront condos and single-family homes. It keeps a quieter, more residential feel than neighboring Sunny Isles or Miami Beach while staying minutes from luxury shopping, dining, and the airport — which is a big part of why real estate here holds its value.",
   },
+  {
+    question: "Is it spelled Bal Harbour or Bal Harbor?",
+    answer:
+      "Bal Harbour, with the 'u' — that's the Village's official name and what's on its street signs and government seal. \"Bal Harbor\" (no 'u') is just a common misspelling, likely from autocorrect or muscle memory from other U.S. place names; both spellings point to the same village at the north end of Miami Beach.",
+  },
 ];

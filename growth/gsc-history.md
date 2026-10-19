@@ -167,3 +167,49 @@ Apex/www split holding steady (~52% apex on homepage impressions) — consolidat
 - /guides/best-time-to-visit — pos ~4.3, impr 9, 0 clicks — tightened last run (2026-10-05); one week of data isn't enough yet, give it more time before any further change
 
 Apex/www split: homepage apex 1293 impr / www 577 impr this window — apex now carries the clear majority (~69%) vs ~52% two runs ago; consolidation resumed after last run's plateau note.
+
+## 2026-10-19 (window: 2026-09-19 to 2026-10-16)
+
+**Totals:** clicks 19, impressions 2236, CTR 0.850%, avg position 13.46.
+
+**WoW deltas vs 2026-10-12 block:** clicks +6 (13→19, +46%), impressions +78 (2158→2236, +3.6%), CTR +0.248pp (0.602%→0.850%), avg position improved 0.54 places (14.00→13.46). Fifth straight week of improvement on all four headline metrics.
+
+**Top pages by impressions (apex + www combined):**
+| Page | Impr | Pos | Clicks |
+|---|---|---|---|
+| / (homepage) | 1908 | ~13.4 | 3 |
+| /guides/beach-access | 67 | ~5.1 | 8 |
+| /beach | 85 | ~7.0 | 6 |
+| /shops | 60 | ~26.5 | 0 |
+| /guides/bal-harbour-vs-surfside | 39 | ~12.5 | 1 |
+| /eat | 25 | ~12.5 | 0 |
+| /hotels/ritz-carlton-bal-harbour | 19 | 9.1 | 1 |
+| /hotels | 20 | 45.95 | 0 |
+| /guides/haulover-park | 17 | 7.24 | 0 |
+| /guides (index) | 10 | 6.5 | 0 |
+| /guides/best-time-to-visit | 9 | ~4.3 | 0 |
+
+**Top queries by impressions:**
+| Query | Impr | Pos |
+|---|---|---|
+| bal harbour | 1373 | 10.90 (was 11.32) |
+| bal harbour miami | 29 | 15.55 |
+| bal harbor | 49 | 12.92 (new — alt spelling, no 'u') |
+| bal harbor miami | 20 | 26.75 |
+| bal harbour beach | 18 | 21.28 |
+| bal habour | 15 | 13.13 (typo) |
+| bal harbour beach access | 10 | 21.7 |
+
+**Striking distance (position 5–20, impr ≥ 3), sorted by impr:**
+- / (homepage) — pos ~13.4, impr 1908, 3 clicks — branded/domain-authority play, not a quick fix
+- /guides/beach-access — pos ~5.1, impr 67, **8 clicks** — still the best-converting page after the homepage
+- /beach — pos ~7.0, impr 85, **6 clicks** — converting strongly, no action needed
+- /guides/bal-harbour-vs-surfside — pos ~12.5, impr 39, **1 click (first ever)** after 5 straight weeks at zero
+- /eat — pos ~12.5, impr 25, 0 clicks — first full week since the 10-12 meta fix, still 0; hold one more week
+- /hotels/ritz-carlton-bal-harbour — pos 9.1, impr 19, **1 click (first ever)** — still holding off per keywords.md
+- **/guides/haulover-park — pos 7.24, impr 17, 0 clicks ← NEW candidate, acted on this run** (description was 229 chars, over display limit — tightened to 145 chars, same playbook as 4 earlier pages)
+- /guides (index) — pos 6.5, impr 10, 0 clicks — low actionability (index page), not acted on
+- query "bal harbor" (no 'u') — pos 12.92, impr 49 ← NEW query-level candidate, acted on this run via a homepage disambiguation FAQ rather than a single page tweak
+- /guides/best-time-to-visit — pos ~4.3, impr 9, 0 clicks — still too little data two weeks after its tweak; give it more time
+
+Apex/www split: homepage apex 1856 impr / www 52 impr this window (~97% apex) — consolidation is essentially complete, up sharply from ~69% last run.

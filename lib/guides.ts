@@ -422,15 +422,14 @@ export const GUIDES: Guide[] = [
     slug: "haulover-park",
     title: "Haulover Park:",
     titleAccent: "the wild beach next door.",
-    seoTitle:
-      "Haulover Park Guide — Sandbar, Kite Beach, Marina & the Famous North End",
+    seoTitle: "Haulover Park: Sandbar, Kite Field & the North End",
     description:
-      "Across the inlet from polished Bal Harbour sits its opposite: Haulover Park — 1.5 miles of wide county beach, the famous boat-only sandbar, a kite field, a marina, and yes, the clothing-optional north end. A local's honest guide.",
+      "The county beach next to Bal Harbour: the famous boat-only sandbar, a kite field, marina parking, and the signposted clothing-optional north end.",
     eyebrow: "ACROSS THE INLET",
     heroImage: "/img/haulover-inlet.jpg",
     heroAlt: "Haulover Park greenery across the inlet from Bal Harbour",
     published: "2026-08-07",
-    updated: "2026-08-07",
+    updated: "2026-10-19",
     intro:
       "Stand at the end of Bal Harbour's Jetty Walk and look north: everything on the other side of the inlet is Haulover Park. It is the village's perfect opposite — county-run where Bal Harbour is manicured, big where the village is tiny, gloriously unbothered where the Shops are polished. Locals use both. Here's how.",
     blocks: [
