@@ -29,7 +29,7 @@ export default function Home() {
   const featured = HOTELS;
 
   return (
-    <div className="bg-sunset-dive relative w-full overflow-hidden font-sans">
+    <div className="bg-home-wash relative w-full overflow-hidden font-sans">
       <div
         aria-hidden
         className="sun-glow-top pointer-events-none absolute left-1/2 top-9 hidden h-[560px] w-[560px] -translate-x-1/2 rounded-full md:block"
@@ -92,7 +92,9 @@ export default function Home() {
             placeholder="Try “rooftop dinner” or “beachfront suite”…"
             className="flex-1 border-none bg-transparent text-[15px] text-ink placeholder:text-muted focus:outline-none"
           />
-          <div className="flex flex-wrap gap-1.5 text-xs font-semibold text-ink">
+          {/* Hidden at md–lg, where the floating bar is too narrow and the
+              chips were collapsing into a vertical stack. */}
+          <div className="flex flex-wrap gap-1.5 text-xs font-semibold text-ink md:hidden lg:flex lg:shrink-0 lg:flex-nowrap">
             <Link
               href="/hotels"
               className="rounded-full bg-ink/8 px-3.5 py-2 no-underline hover:bg-ink/14"
@@ -263,6 +265,7 @@ export default function Home() {
         </Link>
       </Reveal>
 
+      <div className="bg-home-deep relative pt-36 md:pt-[170px]">
       {/* Real estate teaser */}
       <Reveal className="relative mx-6 mb-16 grid grid-cols-1 items-center gap-8 md:mx-11 md:grid-cols-[1.2fr_1fr] md:gap-10">
         <div className="flex flex-col gap-3.5">
@@ -314,22 +317,41 @@ export default function Home() {
           Bal Harbour,{" "}
           <em className="font-serif-italic text-gold-light">answered</em>
         </h2>
-        <div className="mt-7 grid gap-x-12 md:grid-cols-2">
-          {HOME_FAQS.map((faq) => (
-            <div
-              key={faq.question}
-              className="border-t border-ivory/15 py-5"
-            >
-              <h3 className="text-[17px] font-semibold leading-snug text-ivory">
-                {faq.question}
-              </h3>
-              <p className="mt-2 text-[14.5px] leading-relaxed text-ivory/72">
-                {faq.answer}
-              </p>
+        {/* Two independent columns so opening one answer only pushes its own
+            column. Answers stay in the DOM when collapsed, so the visible
+            text still matches the FAQPage JSON-LD. */}
+        <div className="mt-7 grid items-start gap-x-12 md:grid-cols-2">
+          {[
+            HOME_FAQS.slice(0, Math.ceil(HOME_FAQS.length / 2)),
+            HOME_FAQS.slice(Math.ceil(HOME_FAQS.length / 2)),
+          ].map((column, ci) => (
+            <div key={ci} className="flex flex-col">
+              {column.map((faq) => (
+                <details
+                  key={faq.question}
+                  className="faq-item group border-t border-ivory/15"
+                >
+                  <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-5 text-ivory transition-colors hover:text-gold-light [&::-webkit-details-marker]:hidden">
+                    <h3 className="text-[17px] font-semibold leading-snug">
+                      {faq.question}
+                    </h3>
+                    <span
+                      aria-hidden
+                      className="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-full border border-ivory/25 text-[15px] leading-none text-gold-light transition-transform duration-300 ease-out group-open:rotate-45"
+                    >
+                      +
+                    </span>
+                  </summary>
+                  <p className="max-w-[560px] pb-5 text-[14.5px] leading-relaxed text-ivory/72">
+                    {faq.answer}
+                  </p>
+                </details>
+              ))}
             </div>
           ))}
         </div>
       </Reveal>
+      </div>
 
       <Footer />
 

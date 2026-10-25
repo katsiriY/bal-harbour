@@ -62,16 +62,53 @@ body {
   font-weight: 400;
 }
 
-.bg-sunset-dive {
+/* Homepage background, in two halves with pixel (not %) stops. A single
+   page-height % gradient drifted as the FAQ grew, sliding light text onto
+   the pale part of the gradient. Now the light top and the dark lower
+   section are independent, so content length can't move the colors. */
+.bg-home-wash {
   background: linear-gradient(
     180deg,
-    #f3f1e6 0%,
-    #e9efe7 26%,
-    #cfe0d3 48%,
-    #5f8a75 72%,
-    #16453a 88%,
-    #0b2a21 100%
+    #f3f1e6 0,
+    #e9efe7 700px,
+    #dfe9e1 1400px,
+    #cfe0d3 1900px
   );
+}
+
+.bg-home-deep {
+  background: linear-gradient(
+    180deg,
+    #cfe0d3 0,
+    #5f8a75 90px,
+    #16453a 190px,
+    #0b2a21 380px
+  );
+  background-color: #0b2a21;
+}
+
+/* Smooth open/close for the FAQ accordion where the browser supports
+   animating to `height: auto`; elsewhere it simply snaps open. */
+.faq-item {
+  interpolate-size: allow-keywords;
+}
+
+.faq-item::details-content {
+  height: 0;
+  overflow: clip;
+  transition:
+    height 0.3s var(--ease-out),
+    content-visibility 0.3s allow-discrete;
+}
+
+.faq-item[open]::details-content {
+  height: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-item::details-content {
+    transition: none;
+  }
 }
 
 .bg-inner-wash {
