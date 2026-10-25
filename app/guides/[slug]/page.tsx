@@ -6,6 +6,9 @@ import type { ReactNode } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
+import OutboundLink from "@/components/OutboundLink";
+import { HOTELS, checkRatesUrl } from "@/lib/hotels";
+import { hotelSearchUrl, toursUrl } from "@/lib/affiliates";
 import {
   GUIDES,
   getGuideBySlug,
@@ -80,7 +83,10 @@ function slugifyHeading(text: string): string {
     .slice(0, 60);
 }
 
-function Block({ block }: { block: GuideBlock }) {
+const DISCLOSURE =
+  "We may earn a commission if you book through these links — the price you pay is the same.";
+
+function Block({ block, slug }: { block: GuideBlock; slug: string }) {
   switch (block.type) {
     case "h2":
       return (
@@ -128,6 +134,74 @@ function Block({ block }: { block: GuideBlock }) {
             <strong className="pr-1">Local tip:</strong>
             {renderInline(block.text)}
           </p>
+        </div>
+      );
+    case "hotels":
+      return (
+        <div className="flex max-w-[640px] flex-col gap-3 rounded-[20px] bg-white p-5 shadow-small">
+          <div className="text-[11px] font-bold tracking-[0.14em] text-gold-deep">
+            WHERE TO STAY IN THE VILLAGE
+          </div>
+          {HOTELS.map((h) => (
+            <div
+              key={h.slug}
+              className="flex items-center justify-between gap-4 border-t border-ink/8 pt-3 first-of-type:border-t-0 first-of-type:pt-0"
+            >
+              <div className="min-w-0">
+                <Link
+                  href={`/hotels/${h.slug}`}
+                  className="text-[15px] font-bold text-ink no-underline hover:text-gold-deep"
+                >
+                  {h.name}
+                </Link>
+                <div className="text-[13px] text-muted">
+                  {h.notice ? "Reopens January 2027" : `from $${h.price}/night`} ·{" "}
+                  {h.category}
+                </div>
+              </div>
+              <OutboundLink
+                href={checkRatesUrl(h)}
+                placement={`guide_${slug}`}
+                item={h.slug}
+                className="btn-gold shrink-0 rounded-full px-4 py-2 text-[13px] font-semibold text-ink no-underline"
+              >
+                Check rates ↗
+              </OutboundLink>
+            </div>
+          ))}
+          <p className="text-[11.5px] text-muted-2">{DISCLOSURE}</p>
+        </div>
+      );
+    case "book":
+      return (
+        <div className="flex max-w-[640px] flex-col gap-3 rounded-[20px] bg-white p-5 shadow-small">
+          <div className="text-[11px] font-bold tracking-[0.14em] text-gold-deep">
+            {block.title.toUpperCase()}
+          </div>
+          {block.items.map((item) => (
+            <div
+              key={item.name}
+              className="flex items-center justify-between gap-4 border-t border-ink/8 pt-3 first-of-type:border-t-0 first-of-type:pt-0"
+            >
+              <div className="min-w-0">
+                <div className="text-[15px] font-bold text-ink">{item.name}</div>
+                <div className="text-[13px] leading-snug text-muted">{item.note}</div>
+              </div>
+              <OutboundLink
+                href={
+                  item.kind === "tour"
+                    ? toursUrl(item.address)
+                    : hotelSearchUrl(item.name, item.address)
+                }
+                placement={`guide_${slug}`}
+                item={item.name}
+                className="btn-gold shrink-0 rounded-full px-4 py-2 text-[13px] font-semibold text-ink no-underline"
+              >
+                {item.kind === "tour" ? "See trips ↗" : "Check rates ↗"}
+              </OutboundLink>
+            </div>
+          ))}
+          <p className="text-[11.5px] text-muted-2">{DISCLOSURE}</p>
         </div>
       );
   }
@@ -203,7 +277,7 @@ export default async function GuidePage({
               {guide.intro}
             </p>
             {guide.blocks.map((block, i) => (
-              <Block key={i} block={block} />
+              <Block key={i} block={block} slug={guide.slug} />
             ))}
 
             {guide.faqs && guide.faqs.length > 0 && (
@@ -231,6 +305,23 @@ export default async function GuidePage({
                 </div>
               </div>
             )}
+
+            {/* Mobile/tablet fallback for the rail's planning CTA */}
+            <div className="bg-hero-panel flex flex-col gap-2.5 rounded-[20px] p-5 lg:hidden">
+              <div className="text-[11px] font-bold tracking-[0.14em] text-gold-light">
+                PLANNING THE TRIP?
+              </div>
+              <p className="text-[14px] leading-relaxed text-ivory/85">
+                The village has exactly three hotels — we&apos;ve ranked all
+                of them, honestly.
+              </p>
+              <Link
+                href="/hotels"
+                className="btn-gold mt-1 self-start rounded-full px-4 py-2 text-[13px] font-semibold text-ink no-underline"
+              >
+                The hotels, ranked →
+              </Link>
+            </div>
 
             {/* Mobile/tablet fallback for the rail's links */}
             <div className="flex flex-col gap-4 pt-4 lg:hidden">

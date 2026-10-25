@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import { DINING_TAGS, RESTAURANTS, type DiningTag, type Restaurant } from "@/lib/restaurants";
 import { openTableSearchUrl } from "@/lib/affiliates";
 import VillageMap from "@/components/VillageMap";
+import OutboundLink from "@/components/OutboundLink";
 
 const FILTERS: ("All" | DiningTag)[] = ["All", ...DINING_TAGS];
 
@@ -28,14 +29,14 @@ function RestaurantCard({ r, imageHeight = "h-[140px]" }: { r: Restaurant; image
         <p className="text-[13.5px] leading-snug text-body">{r.blurb}</p>
         <div className="mt-1 flex items-center justify-between gap-2">
           <span className="text-xs text-muted">{r.location}</span>
-          <a
+          <OutboundLink
             href={reserveHref(r)}
-            target="_blank"
-            rel="sponsored noopener"
+            placement="eat_card"
+            item={r.slug}
             className="text-[13px] font-semibold text-gold-deep no-underline hover:underline"
           >
             Reserve ↗
-          </a>
+          </OutboundLink>
         </div>
       </div>
     </div>
@@ -75,10 +76,10 @@ export default function DiningList() {
       {filter === "All" ? (
         <>
           <div className="relative grid grid-cols-1 gap-5 px-6 md:grid-cols-[1.5fr_1fr] md:px-11">
-            <a
+            <OutboundLink
               href={reserveHref(featured)}
-              target="_blank"
-              rel="sponsored noopener"
+              placement="eat_featured"
+              item={featured.slug}
               className="hover-lift relative block min-h-[420px] overflow-hidden rounded-[24px] no-underline"
             >
               <Image
@@ -110,7 +111,7 @@ export default function DiningList() {
                   </span>
                 </div>
               </div>
-            </a>
+            </OutboundLink>
 
             <div className="flex flex-col gap-5">
               {secondary.map((r) => (

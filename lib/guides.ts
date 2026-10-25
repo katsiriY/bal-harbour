@@ -10,7 +10,20 @@ export type GuideBlock =
   | { type: "answer"; text: string }
   | { type: "p"; text: string }
   | { type: "list"; items: string[] }
-  | { type: "tip"; text: string };
+  | { type: "tip"; text: string }
+  // The village's three hotels with live "Check rates" buttons.
+  | { type: "hotels" }
+  // Bookable things outside the HOTELS data (Surfside hotels, boat trips).
+  | {
+      type: "book";
+      title: string;
+      items: {
+        name: string;
+        note: string;
+        kind: "hotel" | "tour";
+        address: string;
+      }[];
+    };
 
 export type Guide = {
   slug: string;
@@ -66,6 +79,7 @@ export const GUIDES: Guide[] = [
         type: "p",
         text: "We rank all three Bal Harbour properties on [our hotels page](/hotels). The short version: [The St. Regis](/hotels/st-regis-bal-harbour) is the flagship — 216 rooms, every one facing the ocean; the independent [Sea View Hotel](/hotels/sea-view-hotel) is the old-school value play from about $208; and the boutique [Ritz-Carlton](/hotels/ritz-carlton-bal-harbour) at the inlet is closed for renovation until January 2027. Surfside's headliner is the Four Seasons Surf Club, the 1930s landmark where Thomas Keller runs his Michelin-starred Surf Club Restaurant.",
       },
+      { type: "hotels" },
       { type: "h2", text: "Where should I eat — and does it matter which village?" },
       {
         type: "answer",
@@ -183,6 +197,7 @@ export const GUIDES: Guide[] = [
         type: "answer",
         text: "The cabana rows belong to the resorts, but several rent to non-guests on slower days — call the beach club directly after 10am and ask. Otherwise, bring your own chair and umbrella and set up on the public sand near the waterline; nobody will bother you.",
       },
+      { type: "hotels" },
       {
         type: "p",
         text: "If you want the full serviced-sand experience without negotiating, the honest move is staying oceanfront for a night or two — [the St. Regis](/hotels/st-regis-bal-harbour) runs the most polished beach operation on the strand, and the [Sea View](/hotels/sea-view-hotel) puts you on the same sand for a fraction of the rate.",
@@ -286,6 +301,7 @@ export const GUIDES: Guide[] = [
         type: "p",
         text: "Every rate row on [our hotel pages](/hotels) links to the booking sites' flexible-cancellation options — in summer, always take the refundable rate; the few dollars saved on prepaid isn't worth the September roulette.",
       },
+      { type: "hotels" },
       { type: "h2", text: "When are hotel prices lowest?" },
       {
         type: "answer",
@@ -448,6 +464,18 @@ export const GUIDES: Guide[] = [
         type: "answer",
         text: "The Haulover Sandbar — a shallow flat just inside the inlet where dozens of boats raft up on weekends into South Florida's most famous floating party. It is boat-only: you cannot walk or swim to it, and it has no lifeguards and no facilities. No boat? The show is fully visible (and honestly better) from Bal Harbour's own Jetty Walk.",
       },
+      {
+        type: "book",
+        title: "Get out to the sandbar",
+        items: [
+          {
+            name: "Haulover Sandbar boat trips",
+            note: "Shared and private boat trips that anchor at the sandbar — the only way to get there without your own boat.",
+            kind: "tour",
+            address: "Haulover Sandbar, Miami, Florida",
+          },
+        ],
+      },
       { type: "h2", text: "And the famous clothing-optional section?" },
       {
         type: "answer",
@@ -520,6 +548,16 @@ export const GUIDES: Guide[] = [
           "**Grand Beach Hotel Surfside** (9449 Collins Ave) — two connected properties: Surfside East is oceanfront with a 200-foot private beach and adults-only rooftop pool; Surfside West sits across Collins, a short walk to the sand at a gentler rate.",
           "**Residence Inn by Marriott Miami Beach Surfside** (9200 Collins Ave) — the extended-stay option, useful if you're here a week or more and want a kitchen.",
           "**Sun Harbour Boutique Hotel** (9576 Collins Ave) — a two-story Italian-villa-style property with 19 suites, one block off the beach, right at the Bal Harbour line — the small, quiet, independent option.",
+        ],
+      },
+      {
+        type: "book",
+        title: "Check rates in Surfside",
+        items: [
+          { name: "Four Seasons Hotel at The Surf Club", note: "The splurge — 77 rooms, two Michelin Keys.", kind: "hotel", address: "9101 Collins Ave, Surfside, FL" },
+          { name: "Grand Beach Hotel Surfside", note: "Oceanfront East wing, adults-only rooftop pool.", kind: "hotel", address: "9449 Collins Ave, Surfside, FL" },
+          { name: "Residence Inn Miami Beach Surfside", note: "Kitchens — the week-plus option.", kind: "hotel", address: "9200 Collins Ave, Surfside, FL" },
+          { name: "Sun Harbour Boutique Hotel", note: "19 suites, a block off the beach at the Bal Harbour line.", kind: "hotel", address: "9576 Collins Ave, Surfside, FL" },
         ],
       },
       {
@@ -621,6 +659,7 @@ export const GUIDES: Guide[] = [
         type: "p",
         text: "Park at the metered lot right at the entrance, or walk over if you're staying at [The St. Regis](/hotels/st-regis-bal-harbour) or the [Sea View Hotel](/hotels/sea-view-hotel), both a few minutes from the sand. There's no published lifeguard schedule here, so treat the water as unguarded and stay near other swimmers.",
       },
+      { type: "hotels" },
       {
         type: "tip",
         text: "Bring a coffee instead of buying one — nothing's open at 6:45am. Sant Ambroeus opens for [breakfast](/eat) later and is worth timing your walk back around.",

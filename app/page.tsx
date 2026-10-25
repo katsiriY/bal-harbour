@@ -6,7 +6,8 @@ import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
 import Reveal from "@/components/Reveal";
 import HeroVideo from "@/components/HeroVideo";
-import { HOTELS, bestRate } from "@/lib/hotels";
+import OutboundLink from "@/components/OutboundLink";
+import { HOTELS, checkRatesUrl } from "@/lib/hotels";
 import { HOME_FAQS } from "@/lib/faq";
 import {
   touristDestinationJsonLd,
@@ -210,20 +211,25 @@ export default function Home() {
                   <div className="text-sm text-ink">
                     from <strong>${hotel.price}</strong>/nt
                   </div>
-                  <a
-                    href={bestRate(hotel).url}
-                    target="_blank"
-                    rel="sponsored noopener"
+                  <OutboundLink
+                    href={checkRatesUrl(hotel)}
+                    placement="home_card"
+                    item={hotel.slug}
                     className="relative z-[2] rounded-full bg-gold/18 px-4 py-2 text-[13px] font-semibold text-gold-deep no-underline transition-colors hover:bg-gold/30"
                   >
                     Check rates
-                  </a>
+                  </OutboundLink>
                 </div>
               </div>
             </article>
           </Reveal>
         ))}
       </div>
+
+      <p className="relative -mt-7 px-6 pb-12 text-[12.5px] text-muted md:px-11">
+        We may earn a commission when you book through these links — the
+        price you pay is the same, and our picks are ours alone.
+      </p>
 
       {/* Category tiles */}
       <Reveal className="relative grid grid-cols-2 gap-4.5 px-6 pb-12 md:grid-cols-4 md:px-11">

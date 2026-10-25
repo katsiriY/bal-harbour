@@ -6,6 +6,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { HOTELS, bestRate, getHotelBySlug, relatedHotels } from "@/lib/hotels";
 import JsonLd from "@/components/JsonLd";
+import OutboundLink from "@/components/OutboundLink";
+import { marriottUrl } from "@/lib/affiliates";
 import { breadcrumbJsonLd, hotelJsonLd } from "@/lib/seo";
 
 export function generateStaticParams() {
@@ -109,14 +111,18 @@ export default async function HotelDetailPage({
         </div>
         <div className="relative h-[105px] overflow-hidden rounded-[20px] md:h-full">
           <Image src={gallery[4]} alt={galleryAlts[4]} fill sizes="25vw" className="object-cover" />
-          <a
-            href={hotel.officialUrl}
-            target="_blank"
-            rel="noopener"
+          <OutboundLink
+            href={
+              hotel.officialUrl.includes("marriott.com")
+                ? marriottUrl(hotel.officialUrl)
+                : hotel.officialUrl
+            }
+            placement="hotel_gallery"
+            item={hotel.slug}
             className="absolute bottom-2.5 right-2.5 rounded-full bg-ivory/92 px-3.5 py-2 text-[12.5px] font-semibold text-ink no-underline"
           >
             Official gallery ↗
-          </a>
+          </OutboundLink>
         </div>
       </div>
       <div className="relative px-6 pt-2 text-[11.5px] text-muted md:px-11">
@@ -161,27 +167,13 @@ export default async function HotelDetailPage({
               <span className="text-[15px] font-medium text-ink-4">/night</span>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-2.5">
-            <div className="flex flex-col gap-0.5 rounded-[14px] border-[1.5px] border-ink/18 px-3.5 py-2.5">
-              <div className="text-[11px] font-semibold tracking-[0.08em] text-gold-deep">
-                CHECK-IN
-              </div>
-              <div className="text-sm text-ink">Nov 12</div>
-            </div>
-            <div className="flex flex-col gap-0.5 rounded-[14px] border-[1.5px] border-ink/18 px-3.5 py-2.5">
-              <div className="text-[11px] font-semibold tracking-[0.08em] text-gold-deep">
-                CHECK-OUT
-              </div>
-              <div className="text-sm text-ink">Nov 16</div>
-            </div>
-          </div>
           <div className="flex flex-col gap-2.5">
             {hotel.rates.map((rate) => (
-              <a
+              <OutboundLink
                 key={rate.site}
                 href={rate.url}
-                target="_blank"
-                rel="sponsored noopener"
+                placement="hotel_rates"
+                item={hotel.slug}
                 className={[
                   "flex items-center justify-between rounded-[14px] px-4 py-3.5 no-underline",
                   rate.best
@@ -200,20 +192,21 @@ export default async function HotelDetailPage({
                 <div className="text-sm text-ink">
                   <strong>${rate.price}</strong> <span className="font-bold text-gold">↗</span>
                 </div>
-              </a>
+              </OutboundLink>
             ))}
           </div>
-          <a
+          <OutboundLink
             href={bestRate(hotel).url}
-            target="_blank"
-            rel="sponsored noopener"
+            placement="hotel_book_best"
+            item={hotel.slug}
             className="btn-gold rounded-full py-3.5 text-center text-[15px] font-bold text-ink no-underline"
           >
             Book the best rate ↗
-          </a>
+          </OutboundLink>
           <div className="text-center text-xs leading-relaxed text-muted-2">
-            Rates checked hourly. We earn a commission on bookings — the
-            price you pay is the same.
+            Indicative &ldquo;from&rdquo; prices by season — tap through for
+            live rates on your dates. We may earn a commission on bookings;
+            the price you pay is the same.
           </div>
         </div>
       </div>

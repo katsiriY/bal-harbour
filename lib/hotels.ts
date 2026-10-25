@@ -1,4 +1,4 @@
-import { bookingSearchUrl, expediaSearchUrl, marriottUrl } from "@/lib/affiliates";
+import { bookingSearchUrl, expediaSearchUrl, isAffiliateUrl, marriottUrl } from "@/lib/affiliates";
 
 export type FilterTag =
   | "Oceanfront"
@@ -263,7 +263,16 @@ export function relatedHotels(slug: string, count = 2): Hotel[] {
   return HOTELS.filter((h) => h.slug !== slug).slice(0, count);
 }
 
-// The rate every "Check rates" / "Book the best rate" CTA points at.
+// The genuinely cheapest rate — what "Book the best rate" points at.
 export function bestRate(hotel: Hotel): Rate {
   return hotel.rates.find((r) => r.best) ?? hotel.rates[0];
+}
+
+// Where a plain "Check rates" button goes. It makes no price claim, so it
+// prefers a tracked booking-site link (which shows live rates) and only
+// falls back to the best rate when nothing is monetized yet.
+export function checkRatesUrl(hotel: Hotel): string {
+  const best = bestRate(hotel);
+  if (isAffiliateUrl(best.url)) return best.url;
+  return hotel.rates.find((r) => isAffiliateUrl(r.url))?.url ?? best.url;
 }

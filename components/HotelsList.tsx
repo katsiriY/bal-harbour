@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import ImageCarousel from "@/components/ImageCarousel";
-import { bestRate, type FilterTag, type Hotel } from "@/lib/hotels";
+import OutboundLink from "@/components/OutboundLink";
+import { checkRatesUrl, type FilterTag, type Hotel } from "@/lib/hotels";
 
 const FILTERS: ("All" | FilterTag)[] = [
   "All",
@@ -119,14 +120,14 @@ export default function HotelsList({ hotels }: { hotels: Hotel[] }) {
                   >
                     Full review
                   </Link>
-                  <a
-                    href={bestRate(hotel).url}
-                    target="_blank"
-                    rel="sponsored noopener"
+                  <OutboundLink
+                    href={checkRatesUrl(hotel)}
+                    placement="hotels_list"
+                    item={hotel.slug}
                     className="btn-gold rounded-full px-5 py-2.5 text-[13.5px] font-semibold text-ink no-underline"
                   >
                     Check rates ↗
-                  </a>
+                  </OutboundLink>
                 </div>
               </div>
             </div>
