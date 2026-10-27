@@ -161,7 +161,7 @@ export const GUIDES: Guide[] = [
     heroImage: "/img/ocean-horizon.jpg",
     heroAlt: "Wide Atlantic Ocean horizon from Bal Harbour Beach at sunrise",
     published: "2026-07-03",
-    updated: "2026-10-12",
+    updated: "2026-10-26",
     intro:
       "The number-one question tourists ask us — usually while standing on Collins Avenue looking suspiciously at a resort gate — is 'can we even get on this beach?' Yes. All Florida beaches are public below the mean high-tide line, and Bal Harbour has a proper public entrance — with parking, restrooms and a shower — that doesn't involve walking through a hotel lobby pretending you're a guest. Here's exactly how it works.",
     blocks: [
@@ -253,6 +253,11 @@ export const GUIDES: Guide[] = [
         question: "Is the beach walkable from the Bal Harbour Shops?",
         answer:
           "Yes — about two minutes on foot. Exit the Shops toward Collins Avenue and cross to the 96th Street beach access; no need to drive or move your car between shopping and the sand.",
+      },
+      {
+        question: "How do you get beach access in Bal Harbour?",
+        answer:
+          "Through the single public entrance at 96th Street and Collins Avenue, on the Surfside border — it has metered parking, restrooms, an outdoor shower and a bike-share station, plus a paved beachwalk running the full mile north to Haulover Inlet. The only other entrance, the Enzo Enea–designed path at 102nd Street, is residents-only and needs an All Access Card.",
       },
     ],
     related: [

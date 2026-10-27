@@ -4,7 +4,23 @@ import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
-import { beachJsonLd, breadcrumbJsonLd } from "@/lib/seo";
+import { beachJsonLd, breadcrumbJsonLd, faqPageJsonLd } from "@/lib/seo";
+import type { Faq } from "@/lib/faq";
+
+// Answer-first so ChatGPT/Perplexity/AI Overviews can quote it directly —
+// visible text and the FAQPage JSON-LD below must stay identical.
+const BEACH_FAQS: Faq[] = [
+  {
+    question: "Is Bal Harbour Beach public?",
+    answer:
+      "Yes. Bal Harbour Beach is open to the public — the entrance is at 96th Street and Collins Avenue, with metered parking, restrooms and an outdoor shower by the path. The sand along the whole mile is free; only the cabana rows directly in front of the resorts are hotel-serviced.",
+  },
+  {
+    question: "Where is the public entrance to Bal Harbour Beach?",
+    answer:
+      "At 96th Street and Collins Avenue, on the Surfside border. From there a paved beachwalk runs the full mile north to the Jetty Walk at Haulover Inlet.",
+  },
+];
 
 export const metadata: Metadata = {
   title: "Is Bal Harbour Beach Public? Access, Parking & Local Tips (2026)",
@@ -129,9 +145,28 @@ export default function BeachPage() {
         </div>
       </div>
 
+      <div className="relative mx-6 mb-14 flex flex-col gap-3 rounded-[24px] bg-white/70 px-6 py-7 md:mx-11 md:px-9">
+        <h2 className="text-xl font-bold tracking-tight text-ink">
+          Good to know
+        </h2>
+        <div className="flex flex-col">
+          {BEACH_FAQS.map((faq) => (
+            <div key={faq.question} className="border-t border-ink/10 py-4 first:pt-0">
+              <h3 className="text-[15px] font-semibold text-ink">
+                {faq.question}
+              </h3>
+              <p className="mt-1.5 max-w-[620px] text-sm leading-relaxed text-ink-3">
+                {faq.answer}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <Footer />
 
       <JsonLd data={beachJsonLd()} />
+      <JsonLd data={faqPageJsonLd(BEACH_FAQS, "/beach")} />
       <JsonLd
         data={breadcrumbJsonLd([
           { name: "Home", path: "/" },

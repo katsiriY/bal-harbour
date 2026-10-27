@@ -213,3 +213,47 @@ Apex/www split: homepage apex 1293 impr / www 577 impr this window — apex now 
 - /guides/best-time-to-visit — pos ~4.3, impr 9, 0 clicks — still too little data two weeks after its tweak; give it more time
 
 Apex/www split: homepage apex 1856 impr / www 52 impr this window (~97% apex) — consolidation is essentially complete, up sharply from ~69% last run.
+
+## 2026-10-26 (window: 2026-09-26 to 2026-10-23)
+
+**Totals:** clicks 18, impressions 2269, CTR 0.793%, avg position 14.71.
+
+**WoW deltas vs 2026-10-19 block:** clicks -1 (19→18, -5.3%), impressions +33 (2236→2269, +1.5%), CTR -0.057pp (0.850%→0.793%), avg position worsened 1.25 places (13.46→14.71). First deceleration after 5 straight weeks of improvement on all four headline metrics — small in absolute terms, but worth flagging as the first reversal of the run. Page-level data this week shows pages exclusively as `https://bal-harbour.com/*` with no `www/` rows at all (vs. a residual www split in every prior block) — apex/www consolidation is now fully complete.
+
+**Top pages by impressions:**
+| Page | Impr | Pos | Clicks |
+|---|---|---|---|
+| / (homepage) | 1876 | 14.60 | 3 |
+| /shops | 86 | 27.80 | 0 |
+| /beach | 114 | 7.74 | 6 |
+| /guides/beach-access | 62 | 4.08 | 6 |
+| /eat | 27 | 18.52 | 0 |
+| /guides/bal-harbour-vs-surfside | 46 | 12.04 | 1 |
+| /hotels/ritz-carlton-bal-harbour | 25 | 8.64 | 1 |
+| /hotels | 21 | 50.62 | 0 |
+| /guides/haulover-park | 17 | 6.29 | 1 |
+| /guides | 12 | 10.17 | 0 |
+| /guides/best-time-to-visit | 10 | 4.30 | 0 |
+
+**Top queries by impressions:**
+| Query | Impr | Pos |
+|---|---|---|
+| bal harbour | 1173 | 10.86 (was 10.90) |
+| bal harbor | 67 | 12.67 (was 49 two weeks ago — growing fast) |
+| bal harbour miami | 44 | 14.86 |
+| bal harbour beach | 22 | 23.36 |
+| bal harbor miami | 21 | 23.90 |
+| bal harbour beach access | 13 | 19.08 (2nd straight week in top 50 — was 10 impr/pos 21.7 last run) |
+| bal habour | 13 | 11.92 |
+
+**Striking distance (position 5–20, impr ≥ 3), sorted by impr:**
+- / (homepage) — pos 14.60, impr 1876, 3 clicks — branded/domain-authority play, not a quick fix
+- /beach — pos 7.74, impr 114, **6 clicks** — converting strongly, no action needed this run (but see AI-engine action below)
+- /guides/bal-harbour-vs-surfside — pos 12.04, impr 46, 1 click — impressions kept growing; holding per the intent-mismatch call from 2 runs ago
+- /eat — pos 18.52, impr 27, 0 clicks — 3rd straight week at 0 clicks since the 10-12 meta fix, and position actually worsened (~12.5→18.52). Held rather than re-tweaked this run (diminishing-returns risk, same lesson as vs-surfside) — watch one more week before a second intervention.
+- /hotels/ritz-carlton-bal-harbour — pos 8.64, impr 25, 1 click — holding per keywords.md
+- /guides/haulover-park — pos 6.29, impr 17, **1 click (first ever)** — the 10-19 title/description tightening is converting
+- query **"bal harbour beach access"** — pos 19.08, impr 13 ← ACTED ON this run (2nd straight week with real, growing volume despite the page's own strong aggregate position — see journal)
+- /guides/best-time-to-visit — pos 4.30, impr 10, 0 clicks — still 0 clicks, below the 5-20 window now; hold
+
+**AI-engine proxy:** bal-harbour.com absent from all 10 AI-generated summaries AND the `site:bal-harbour.com` query for the **3rd straight run**. Per the standing plan, treated as real this run and acted on (content fix to /beach — see journal).
